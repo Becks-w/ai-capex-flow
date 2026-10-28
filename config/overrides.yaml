@@ -89,3 +89,9 @@ overrides:
   - {match: {id: 79},  action: merge, into: 338, note: "同上，候选区的另一记法"}
   - {match: {id: 319}, action: merge, into: 316, note: "Nebius 2025-09 可转债：初步说明书的 $1.0B 2030 年档是同一次发行（最终两档合计约 $3.16B）的一部分"}
   - {match: {id: 31},  action: merge, into: 33, note: "「银团为 Anthropic 提供 $63B 融资、博通硬件租给 Anthropic」是 SPV 贷款 #33 的另一记法（借款人写成了 Anthropic）"}
+
+  # ===== 2026-10-28 第六批：19:00 定时抽取复活的旧记法（find_edge 已改为挂回合并目标，之后不再新建） =====
+  - {match: {id: 374}, action: merge, into: 38, note: "SpaceX $40B GPU 债务融资完成报道，对手方写成未具名银团；与 #38（Apollo 牵头）同一笔，#65 已并入过一次"}
+  - {match: {id: 371}, action: merge, into: 45, note: "Meta $25B 普通股定价是 #45 $37.5B 股权发行的组成（#3 已并入过一次）"}
+  - {match: {id: 372}, action: merge, into: 45, note: "Meta $12.5B 强制可转优先股是 #45 的组成（#89 已并入过一次）"}
+  - {match: {id: 45}, action: set, fields: {amount_usd: 37500000000, amount_text: "$25B Class A common (40M shares at $625, upsized from $22.5B) + $12.5B mandatory convertible preferred (250M depositary shares at $50)"}, note: "普通股档定价时从 $22.5B 上调到 $25B，合计 $37.5B（10-27 定价公告）"}

@@ -1,0 +1,31 @@
+# CoreWeave 可转债补录（2026-10-28）：两笔完成公告挂在 8-K 第 1.01 / 3.02 项下而非 2.03 项，历史回填的项目筛选漏掉，按一手文件补入。2026-04 的 40 亿 1.75% 可转债（2032 到期）已在库中（#274），为第三笔，不在此文件。
+deals:
+  - kind: debt
+    from: CRWV
+    to: BONDHOLDERS
+    amount_usd: 2587500000
+    amount_text: $2,587,500,000 aggregate principal amount of 1.75% Convertible Senior Notes due 2031 (incl. full $337.5M option; $2.25B base)
+    instrument: convertible_notes
+    term: 1.75% coupon, due 2031; Rule 144A private offering; capped call transactions with Wells Fargo, Citibank et al.; net proceeds ≈ $2.54B for general corporate purposes
+    announced: "2025-12-11"
+    status: completed
+    title_zh: CoreWeave 完成 25.9 亿美元 1.75% 可转债（2031 到期）
+    title_en: CoreWeave closes $2.5875B 1.75% Convertible Senior Notes due 2031
+    summary_zh: 8-K：2025 年 12 月 8 日定价、12 月 11 日完成，基础 22.5 亿加超额配售 3.375 亿，共 25.875 亿美元，票息 1.75%、2031 年到期，Rule 144A 私募；同时与富国、花旗等签订 capped call，净募资约 25.4 亿美元作一般公司用途。与 2026 年 4 月的 40 亿（2032 到期）和 9 月的 42 亿（2033 到期）是三笔不同的可转债。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/1769628/000176962825000105/crwv-20251208.htm", title: "CoreWeave, Inc. Form 8-K (Items 1.01, 3.02, 8.01) — Convertible Notes Indenture", publisher: "SEC / CoreWeave 8-K", date: "2025-12-11", tier: 1, quote: "On December 11, 2025, CoreWeave, Inc. completed its previously announced private offering of $2,587,500,000 aggregate principal amount of its 1.75% Convertible Senior Notes due 2031"}
+  - kind: debt
+    from: CRWV
+    to: BONDHOLDERS
+    amount_usd: 4200000000
+    amount_text: $4.2 billion aggregate principal amount of 2.875% Convertible Senior Notes due 2033 (incl. full $500M option; upsized from $3.0B launch)
+    instrument: convertible_notes
+    term: 2.875% coupon, due 2033; Rule 144A private offering; capped call transactions with Barclays et al.; net proceeds ≈ $4.14B for general corporate purposes
+    announced: "2026-09-22"
+    status: completed
+    title_zh: CoreWeave 完成 42 亿美元 2.875% 可转债（2033 到期）
+    title_en: CoreWeave closes $4.2B 2.875% Convertible Senior Notes due 2033
+    summary_zh: 8-K：2026 年 9 月 17 日宣布发行 30 亿美元可转债，9 月 18 日上调定价，9 月 22 日完成，含超额配售 5 亿共 42 亿美元，票息 2.875%、2033 年到期，Rule 144A 私募；与巴克莱等签订 capped call，净募资约 41.4 亿美元。CoreWeave 2025 年 12 月以来第三笔可转债。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000432/crwv-20260917.htm", title: "CoreWeave, Inc. Form 8-K (Items 1.01, 3.02, 8.01) — Convertible Notes Indenture", publisher: "SEC / CoreWeave 8-K", date: "2026-09-22", tier: 1, quote: "On September 22, 2026, CoreWeave, Inc. completed its previously announced private offering of $4.2 billion aggregate principal amount of its 2.875% Convertible Senior Notes due 2033"}
+      - {url: "https://www.sec.gov/Archives/edgar/data/1769628/000176962826000429/crwv-20260917.htm", title: "CoreWeave, Inc. Form 8-K (Items 7.01, 8.01) — Launch of Convertible Notes Offering", publisher: "SEC / CoreWeave 8-K", date: "2026-09-17", tier: 1, quote: "intends to offer ... $3.0 billion in aggregate principal amount of its convertible senior notes due 2033"}

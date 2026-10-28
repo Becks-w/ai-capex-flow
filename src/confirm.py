@@ -1,7 +1,7 @@
 """合并、可信度分级、取代、人工 overrides。
 边的 tier：confirmed（有 tier 1/2 来源）> reported（媒体正文且置信 ≥ 阈值）> candidate（仅标题 / 低置信）。
 """
-import json
+import re, json
 from datetime import datetime, timedelta, timezone
 
 from common import SETTINGS, KINDS, load_yaml, log, now_iso
@@ -22,8 +22,10 @@ def merge_window(kind):
 
 def find_edge(con, kind, f, t, amount, announced=None):
     tol = SETTINGS["merge_amount_tolerance"]
-    rows = con.execute("""SELECT * FROM edges WHERE kind=? AND from_entity=? AND to_entity=? AND review!='deleted' AND distinct_deal=0
-                          ORDER BY last_seen DESC""", (kind, f, t)).fetchall()
+    # 已删除的边也参与匹配（排在活边之后）：被 merge 掉的记法再被新闻抽出时，挂到合并目标上；
+    # 被 delete 掉的错误记法再出现时，挂回那条已删除的边，不再新建。否则每次重抽都会复活一条重复。
+    rows = con.execute("""SELECT * FROM edges WHERE kind=? AND from_entity=? AND to_entity=? AND distinct_deal=0
+                          ORDER BY (review='deleted'), last_seen DESC""", (kind, f, t)).fetchall()
     win = merge_window(kind)
     for r in rows:
         if not _amount_ok(amount, r["amount_usd"], tol):
@@ -35,8 +37,19 @@ def find_edge(con, kind, f, t, amount, announced=None):
                     continue
             except ValueError:
                 pass
-        return r
+        return _merge_target(con, r)
     return None
+
+
+def _merge_target(con, r, hops=0):
+    """r 若是「merged into N」的已删除边，沿链找到仍存活的目标边；普通删除边原样返回（保持 deleted）。"""
+    if r["review"] != "deleted" or hops > 5:
+        return r
+    m = re.match(r"merged into #?(\d+)", r["review_note"] or "")
+    if not m:
+        return r
+    t = con.execute("SELECT * FROM edges WHERE id=?", (int(m.group(1)),)).fetchone()
+    return _merge_target(con, t, hops + 1) if t else r
 
 
 def add_source(con, edge_id, url, title, publisher, date, tier, quote=None, article_id=None):
