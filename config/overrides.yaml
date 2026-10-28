@@ -1,8 +1,13 @@
-# 人工校对，导出时套用。按顺序执行。
-# 每条：match（按 id，或 kind+from+to[+announced]），action: confirm | delete | set | supersede | merge
-# 例：
-# - {match: {id: 42}, action: confirm, note: "已核对 8-K"}
-# - {match: {kind: investment, from: NVDA, to: OPENAI, announced: "2025-09-22"}, action: supersede, by: 57, note: "LOI 被 2026-02 正式投资取代"}
-# - {match: {id: 12}, action: set, fields: {amount_usd: 3000000000, status: signed}, note: "金额按新闻稿"}
-# - {match: {id: 99}, action: delete, note: "重复"}
-overrides: []
+# 人工校对，导出时按顺序套用。
+# match：按 id，或 kind + from + to [+ announced]；action：confirm | delete | set | supersede | merge
+#   confirm  — 认定为真并计入（也用于把被聚类误判为重复的边救回）
+#   delete   — 不显示
+#   set      — 改字段（fields: amount_usd / status / announced / from_entity / to_entity / kind / title_zh …）
+#   supersede— 被 by 指向的边取代（旧边标 cancelled，不计入）
+#   merge    — 并入 into 指向的边（来源合并）
+overrides:
+  # Anthropic–博通 630 亿美元芯片融资：结构是 SPV 向银团借款、买博通芯片租给 Anthropic。
+  # 借款人改成 SPV；BofA 单独那条并进来；Anthropic→SPV 的租赁作为独立的一笔保留。
+  - {match: {id: 33}, action: set, fields: {from_entity: ANTHROPIC_XPU_SPV, title_zh: "SPV 向 BofA/花旗/大摩/黑石借 630 亿美元买博通芯片租给 Anthropic"}, note: "借款人是 SPV 而非 Anthropic"}
+  - {match: {id: 48}, action: merge, into: 33, note: "同一笔 SPV 贷款"}
+  - {match: {id: 47}, action: confirm, note: "租赁侧：Anthropic 向 SPV 租用芯片，与 SPV 的贷款是两笔承诺"}

@@ -4,22 +4,24 @@ from collections import defaultdict
 from datetime import datetime, timezone, timedelta
 
 from common import ROOT, SETTINGS, KINDS, KIND_ZH, connect, load_yaml, now_z, log
-from confirm import apply_overrides, recompute_all
+from confirm import apply_overrides, recompute_all, dedupe, cluster_duplicates
 
 SITE = ROOT / SETTINGS.get("site_dir", "docs")
 
 
 def counted(e):
-    return e["tier"] in ("confirmed", "reported") and e["status"] != "cancelled" and not e["superseded_by"] and e["review"] != "deleted"
+    return e["tier"] in ("confirmed", "reported") and e["status"] != "cancelled" and not e["superseded_by"] and e["review"] not in ("deleted", "duplicate")
 
 
 def export(con):
+    dedupe(con)
+    cluster_duplicates(con)
     apply_overrides(con)
     recompute_all(con)
     cfg = load_yaml("entities.yaml")
     groups = cfg["groups"]
     ents = {r["id"]: dict(r) for r in con.execute("SELECT * FROM entities")}
-    edges = [dict(r) for r in con.execute("SELECT * FROM edges WHERE review!='deleted' ORDER BY COALESCE(amount_usd,0) DESC, id")]
+    edges = [dict(r) for r in con.execute("SELECT * FROM edges WHERE review NOT IN ('deleted','duplicate') ORDER BY COALESCE(amount_usd,0) DESC, id")]
     srcs = defaultdict(list)
     for s in con.execute("SELECT * FROM edge_sources ORDER BY tier, date DESC"):
         srcs[s["edge_id"]].append({"url": s["url"], "title": s["title"], "publisher": s["publisher"], "date": s["date"], "tier": s["tier"]})

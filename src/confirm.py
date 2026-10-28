@@ -56,8 +56,8 @@ def recompute_tier(con, edge_id):
     pubs = {(s["publisher"] or s["url"].split("/")[2]) for s in srcs}
     if any(t <= 2 for t in tiers):
         tier = "confirmed"
-    elif body_srcs >= 1 and (e["confidence"] >= SETTINGS["reported_min_confidence"] or len(pubs) >= 2):
-        tier = "reported"
+    elif body_srcs >= 1 and len(pubs) >= 2 and e["confidence"] >= SETTINGS["reported_min_confidence"]:
+        tier = "reported"          # 媒体报道要两家独立来源的正文互相印证才计入
     else:
         tier = "candidate"
     if e["review"] == "confirmed":
@@ -141,7 +141,7 @@ def apply_overrides(con):
         act = o.get("action")
         for r in rows:
             if act == "confirm":
-                con.execute("UPDATE edges SET review='confirmed', review_note=? WHERE id=?", (o.get("note"), r["id"]))
+                con.execute("UPDATE edges SET review='confirmed', review_note=?, superseded_by=NULL WHERE id=?", (o.get("note"), r["id"]))
             elif act == "delete":
                 con.execute("UPDATE edges SET review='deleted', review_note=? WHERE id=?", (o.get("note"), r["id"]))
             elif act == "set":
@@ -164,6 +164,114 @@ def apply_overrides(con):
             if act != "merge":
                 recompute_tier(con, r["id"])
     con.commit()
+    return n
+
+
+def _merge_into(con, keep, drop):
+    con.execute("UPDATE OR IGNORE edge_sources SET edge_id=? WHERE edge_id=?", (keep, drop))
+    con.execute("DELETE FROM edge_sources WHERE edge_id=?", (drop,))
+    con.execute("UPDATE events SET edge_id=? WHERE edge_id=?", (keep, drop))
+    con.execute("UPDATE edges SET superseded_by=? WHERE superseded_by=?", (keep, drop))
+    k = con.execute("SELECT * FROM edges WHERE id=?", (keep,)).fetchone(); d = con.execute("SELECT * FROM edges WHERE id=?", (drop,)).fetchone()
+    sets, vals = [], []
+    for col in ("amount_usd", "amount_text", "instrument", "term", "capacity", "announced", "maturity_date", "title_zh", "title_en", "summary_zh"):
+        if not k[col] and d[col]:
+            sets.append(f"{col}=?"); vals.append(d[col])
+    if STATUS_RANK.get(d["status"], 0) > STATUS_RANK.get(k["status"], 0) and d["status"] != "cancelled":
+        sets.append("status=?"); vals.append(d["status"])
+    if (d["confidence"] or 0) > (k["confidence"] or 0):
+        sets.append("confidence=?"); vals.append(d["confidence"])
+    if d["seed"]:
+        sets.append("seed=1")
+    if sets:
+        con.execute(f"UPDATE edges SET {', '.join(sets)} WHERE id=?", vals + [keep])
+    con.execute("UPDATE edges SET review='deleted', review_note=? WHERE id=?", (f"merged into #{keep}", drop))
+
+
+def dedupe(con):
+    """实体重新映射或多来源抽取后，把同类型、同双方、金额相近、日期相近的边合并（保留较早的 id）。"""
+    tol = SETTINGS["merge_amount_tolerance"]; win = SETTINGS["merge_window_days"]
+    rows = con.execute("SELECT * FROM edges WHERE review!='deleted' ORDER BY kind, from_entity, to_entity, id").fetchall()
+    groups = {}
+    for r in rows:
+        groups.setdefault((r["kind"], r["from_entity"], r["to_entity"]), []).append(r)
+    merged = 0
+    for key, rs in groups.items():
+        kept = []
+        for r in rs:
+            target = None
+            for k in kept:
+                if not _amount_ok(r["amount_usd"], k["amount_usd"], tol):
+                    continue
+                if r["announced"] and k["announced"]:
+                    try:
+                        if abs((datetime.fromisoformat(r["announced"][:10]) - datetime.fromisoformat(k["announced"][:10])).days) > win:
+                            continue
+                    except ValueError:
+                        pass
+                target = k; break
+            if target:
+                _merge_into(con, target["id"], r["id"]); merged += 1
+            else:
+                kept.append(r)
+        for k in kept:
+            recompute_tier(con, k["id"])
+    con.commit()
+    if merged:
+        log.info("去重合并 %d 条边", merged)
+    return merged
+
+
+def _tier_rank(t):
+    return {"confirmed": 2, "reported": 1}.get(t, 0)
+
+
+def cluster_duplicates(con):
+    """同一笔交易被不同媒体用不同类型 / 对手方写出来（如 SPV 融资写成 lease / debt / vendor_financing）。
+       规则（只和已选定的主记录比，不传递）：
+         a) 双方相同（不分方向、不分类型）且金额差 ≤ 2% → 同一笔；
+         b) 共享一方、金额差 ≤ 5%、宣布日期相差 ≤ 10 天 → 同一笔，但两边的另一方都是汇总对手方且不同（债券市场 vs 股市）时不算。
+       主记录优先：种子 > 可信度层级 > 来源数 > 较早 id。其余标 review='duplicate'，不计入总额；overrides 里 confirm 可救回。每次导出重算。"""
+    con.execute("UPDATE edges SET review='pending', superseded_by=NULL, review_note=NULL WHERE review='duplicate'")
+    pooled = {r["id"] for r in con.execute("SELECT id FROM entities WHERE pooled=1")}
+    rows = [dict(r) for r in con.execute("SELECT * FROM edges WHERE review NOT IN ('deleted','confirmed') AND amount_usd IS NOT NULL AND amount_usd>0 AND superseded_by IS NULL")]
+    for r in rows:
+        r["nsrc"] = con.execute("SELECT COUNT(*) FROM edge_sources WHERE edge_id=?", (r["id"],)).fetchone()[0]
+    rows.sort(key=lambda r: (-r["seed"], -_tier_rank(r["tier"]), -r["nsrc"], r["id"]))
+    def close_dates(a, b, days):
+        if not a or not b:
+            return True
+        try:
+            return abs((datetime.fromisoformat(a[:10]) - datetime.fromisoformat(b[:10])).days) <= days
+        except ValueError:
+            return True
+    def same_deal(a, b):
+        pa, pb = {a["from_entity"], a["to_entity"]}, {b["from_entity"], b["to_entity"]}
+        diff = abs(a["amount_usd"] - b["amount_usd"]) / max(a["amount_usd"], b["amount_usd"])
+        if pa == pb and diff <= 0.02:
+            return True
+        shared = pa & pb
+        if shared and diff <= 0.05 and close_dates(a["announced"], b["announced"], 10):
+            oa, ob = pa - shared, pb - shared
+            if oa and ob and oa <= pooled and ob <= pooled and oa != ob:
+                return False
+            return True
+        return False
+    primaries, n = [], 0
+    for r in rows:
+        hit = next((p for p in primaries if same_deal(p, r)), None)
+        if hit is None:
+            primaries.append(r); continue
+        con.execute("UPDATE edges SET review='duplicate', superseded_by=?, review_note=? WHERE id=?",
+                    (hit["id"], f"同一交易的另一记法，主记录 #{hit['id']}", r["id"]))
+        for s in con.execute("SELECT * FROM edge_sources WHERE edge_id=?", (r["id"],)).fetchall():
+            add_source(con, hit["id"], s["url"], s["title"], s["publisher"], s["date"], s["tier"], s["quote"], s["article_id"])
+        n += 1
+    for p_ in primaries:
+        recompute_tier(con, p_["id"])
+    con.commit()
+    if n:
+        log.info("同一交易聚类：%d 条标为重复记法", n)
     return n
 
 

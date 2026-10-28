@@ -24,6 +24,7 @@ entities:
   - {id: TCEHY,  name: Tencent,            name_zh: 腾讯,        group: hyperscaler, ticker: null,  country: CN, aliases: [Tencent, 腾讯, "Tencent Cloud"]}
   - {id: BYTEDANCE, name: ByteDance,       name_zh: 字节跳动,    group: hyperscaler, ticker: null,  country: CN, aliases: [ByteDance, 字节跳动, Volcano Engine, 火山引擎]}
   - {id: BIDU,   name: Baidu,              name_zh: 百度,        group: hyperscaler, ticker: BIDU,  country: CN, aliases: [Baidu, 百度]}
+  - {id: NAVER,      name: Naver,            name_zh: Naver,       group: hyperscaler, ticker: null,  country: KR, aliases: [Naver, "Naver Cloud", "NAVER"]}
   - {id: IBM,    name: IBM,                name_zh: IBM,         group: hyperscaler, ticker: IBM,   country: US, aliases: [IBM]}
   # ---- AI 实验室 / 需求端 ----
   - {id: OPENAI,    name: OpenAI,     name_zh: OpenAI,     group: model_lab, country: US, aliases: [OpenAI, ChatGPT]}
@@ -39,6 +40,9 @@ entities:
   - {id: MOONSHOT,  name: Moonshot AI, name_zh: 月之暗面,  group: model_lab, country: CN, aliases: ["Moonshot AI", 月之暗面, Kimi]}
   - {id: ZHIPU,     name: Zhipu AI,   name_zh: 智谱,       group: model_lab, country: CN, aliases: [Zhipu, 智谱, "Z.ai"]}
   - {id: STARGATE,  name: Stargate LLC, name_zh: 星际之门, group: spv, country: US, aliases: [Stargate, "Stargate LLC", "Stargate project"]}
+  - {id: ANTHROPIC_XPU_SPV, name: Anthropic–Broadcom XPU financing SPV (BofA / Blackstone / Citi / Morgan Stanley), name_zh: Anthropic 博通芯片融资 SPV, group: spv, country: US, aliases: ["XPU SPV", "AI XPV", "chip-financing SPV", "chip financing SPV"]}
+  - {id: BEIGNET,    name: Beignet Investor LLC (Meta Hyperion SPV), name_zh: Beignet（Meta Hyperion SPV）, group: spv, country: US, aliases: ["Beignet Investor", Beignet]}
+  - {id: ABILENE_JV, name: Crusoe–Blue Owl–Primary Digital Abilene JV, name_zh: Abilene 合资（Crusoe / Blue Owl）, group: spv, country: US, aliases: ["Abilene JV", "Abilene joint venture"]}
   # ---- Neocloud / 矿转云 ----
   - {id: CRWV,   name: CoreWeave,       name_zh: CoreWeave,      group: neocloud, ticker: CRWV, country: US, aliases: [CoreWeave]}
   - {id: NBIS,   name: Nebius,          name_zh: Nebius,         group: neocloud, ticker: NBIS, country: NL, aliases: [Nebius, "Nebius Group"]}

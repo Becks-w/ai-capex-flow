@@ -1,0 +1,1709 @@
+deals:
+- kind: order
+  from: OPENAI
+  to: ORCL
+  amount_usd: 300000000000
+  amount_text: ~$300B over about five years (WSJ-reported; Oracle has not named the customer)
+  instrument: compute_contract
+  term: ~5 years starting 2027
+  capacity: 4.5 GW
+  announced: '2025-09-10'
+  status: signed
+  title_zh: OpenAI 与甲骨文签约 3000 亿美元算力合同
+  title_en: OpenAI signs ~$300B, 4.5 GW compute contract with Oracle (WSJ)
+  summary_zh: WSJ 报道 OpenAI 与甲骨文签署约 3000 亿美元、为期约五年（2027 年起）的云算力合同，对应 2025 年 7 月宣布的 Stargate 4.5 GW 扩容。甲骨文 FY26Q1 财报披露 RPO 达 4550 亿美元（同比 +359%），称当季与三家客户签了四份数十亿美元合同，但未点名 OpenAI。金额为媒体口径。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1341439/000119312525199175/orcl-ex99_1.htm
+    title: Oracle Announces Fiscal Year 2026 First Quarter Financial Results (EX-99.1) — RPO $455B
+    publisher: SEC / Oracle
+    date: '2025-09-09'
+    tier: 1
+  - url: https://www.theregister.com/2025/09/11/openai_reportedly_on_the_hook/
+    title: OpenAI reportedly on the hook for $300B Oracle Cloud bill
+    publisher: The Register
+    date: '2025-09-11'
+    tier: 3
+  - url: https://the-decoder.com/openai-signs-300-billion-cloud-contract-with-oracle-according-to-wsj/
+    title: OpenAI signs $300 billion cloud contract with Oracle, according to WSJ
+    publisher: The Decoder
+    date: '2025-09-11'
+    tier: 3
+- kind: order
+  from: OPENAI
+  to: MSFT
+  amount_usd: 250000000000
+  amount_text: incremental $250B of Azure services
+  instrument: compute_contract
+  term: null
+  capacity: null
+  announced: '2025-10-28'
+  status: signed
+  title_zh: OpenAI 承诺追加采购 2500 亿美元 Azure 服务
+  title_en: OpenAI commits incremental $250B of Azure in Microsoft partnership restructuring
+  summary_zh: 微软–OpenAI 合作重组：OpenAI 合同承诺追加采购 2500 亿美元 Azure 服务，微软放弃算力优先购买权；微软持有重组后 OpenAI Group PBC 约 27%（约 1350 亿美元），IP 权利延至 2032 年，API 产品继续独家在 Azure 直至 AGI 被独立认定。
+  supersedes: null
+  sources:
+  - url: https://blogs.microsoft.com/blog/2025/10/28/the-next-chapter-of-the-microsoft-openai-partnership/
+    title: The next chapter of the Microsoft–OpenAI partnership
+    publisher: Microsoft
+    date: '2025-10-28'
+    tier: 2
+- kind: order
+  from: OPENAI
+  to: AMZN
+  amount_usd: 38000000000
+  amount_text: $38B over seven years
+  instrument: compute_contract
+  term: 7 years
+  capacity: hundreds of thousands of NVIDIA GB200/GB300 GPUs; all initial capacity targeted before end-2026
+  announced: '2025-11-03'
+  status: signed
+  title_zh: OpenAI 与 AWS 签 380 亿美元七年算力协议
+  title_en: OpenAI signs $38B, 7-year compute agreement with AWS
+  summary_zh: OpenAI 首次与 AWS 签署多年期算力协议，380 亿美元、七年，立即在 AWS 上运行工作负载，使用数十万颗 NVIDIA GB200/GB300 GPU，目标 2026 年底前全部部署；为微软重组解除独家后的首批第三方云协议之一。2026 年 2 月又扩容 1000 亿美元（见下）。
+  supersedes: null
+  sources:
+  - url: https://www.aboutamazon.com/news/aws/aws-open-ai-workloads-compute-infrastructure
+    title: AWS and OpenAI announce multi-year strategic partnership
+    publisher: Amazon
+    date: '2025-11-03'
+    tier: 2
+- kind: order
+  from: OPENAI
+  to: AMZN
+  amount_usd: 100000000000
+  amount_text: +$100B over 8 years, expanding the $38B agreement
+  instrument: compute_contract
+  term: 8 years
+  capacity: ~2 GW of AWS Trainium (Trainium3 and Trainium4, deliveries from 2027)
+  announced: '2026-02-27'
+  status: signed
+  title_zh: OpenAI 将 AWS 协议扩容 1000 亿美元并承诺 2 GW Trainium
+  title_en: OpenAI expands AWS agreement by $100B over 8 years, commits ~2 GW Trainium
+  summary_zh: 与亚马逊 500 亿美元投资同日宣布：OpenAI 将原 380 亿美元 AWS 协议追加 1000 亿美元、为期八年，承诺消耗约 2 GW Trainium 算力；AWS 成为 OpenAI Frontier 的独家第三方云分销商。与亚马逊的股权投资在合同上挂钩。
+  supersedes: null
+  sources:
+  - url: https://press.aboutamazon.com/2026/2/openai-and-amazon-announce-strategic-partnership
+    title: OpenAI and Amazon Announce Strategic Partnership
+    publisher: Amazon
+    date: '2026-02-27'
+    tier: 2
+  - url: https://techcrunch.com/2026/02/27/openai-raises-110b-in-one-of-the-largest-private-funding-rounds-in-history/
+    title: OpenAI raises $110B in one of the largest private funding rounds in history
+    publisher: TechCrunch
+    date: '2026-02-27'
+    tier: 3
+- kind: order
+  from: OPENAI
+  to: CRWV
+  amount_usd: 11900000000
+  amount_text: up to $11.9B (later expanded by up to $4B in May 2025 and up to $6.5B in Sept 2025, ~$22.4B total)
+  instrument: compute_contract
+  term: 5 years (reported)
+  capacity: null
+  announced: '2025-03-10'
+  status: signed
+  title_zh: OpenAI 与 CoreWeave 签最高 119 亿美元算力合同（后扩至 224 亿）
+  title_en: OpenAI signs up to $11.9B compute contract with CoreWeave (expanded to ~$22.4B)
+  summary_zh: CoreWeave IPO 前与 OpenAI 签署最高 119 亿美元的 AI 基础设施合同；OpenAI 同时通过获发 3.5 亿美元 CoreWeave 股票成为其股东。后续 2025 年 5 月追加最高 40 亿、9 月追加最高 65 亿美元，2025 年合同总额约 224 亿美元。
+  supersedes: null
+  sources:
+  - url: https://investors.coreweave.com/news/news-details/2025/CoreWeave-Announces-Agreement-with-OpenAI-to-Deliver-AI-Infrastructure/default.aspx
+    title: CoreWeave Announces Agreement with OpenAI to Deliver AI Infrastructure
+    publisher: CoreWeave
+    date: '2025-03-10'
+    tier: 2
+  - url: https://www.coreweave.com/news/coreweave-expands-agreement-with-openai-by-up-to-6-5b
+    title: CoreWeave Expands Agreement with OpenAI by up to $6.5B
+    publisher: CoreWeave
+    date: '2025-09-25'
+    tier: 2
+- kind: order
+  from: OPENAI
+  to: GOOGL
+  amount_usd: null
+  amount_text: null
+  instrument: compute_contract
+  term: null
+  capacity: null
+  announced: '2025-06-10'
+  status: rumored
+  title_zh: OpenAI 据报采用 Google Cloud 算力（金额未披露）
+  title_en: OpenAI reportedly adds Google Cloud as compute provider (undisclosed)
+  summary_zh: 路透 6 月 10 日援引三位知情人士：OpenAI 于 5 月敲定使用 Google Cloud 补充训练与推理算力，以减少对微软依赖；三方均拒绝置评，金额与规模未披露。
+  supersedes: null
+  sources:
+  - url: https://9to5google.com/2025/06/10/report-google-openai-cloud-services-deal/
+    title: 'Report: Google and OpenAI strike cloud services deal'
+    publisher: 9to5Google
+    date: '2025-06-10'
+    tier: 3
+  - url: https://www.businesstoday.in/amp/technology/news/story/openai-taps-google-cloud-to-power-chatgpt-as-demand-surges-reducing-reliance-on-microsoft-report-479956-2025-06-11
+    title: OpenAI taps Google Cloud to power ChatGPT as demand surges
+    publisher: Business Today
+    date: '2025-06-11'
+    tier: 3
+- kind: order
+  from: OPENAI
+  to: CEREBRAS
+  amount_usd: 10000000000
+  amount_text: more than $10B over the contract life (reported; companies did not disclose)
+  instrument: compute_contract
+  term: multi-year, tranches coming online 2026 through 2028
+  capacity: 750 MW of Cerebras wafer-scale systems
+  announced: '2026-01-14'
+  status: signed
+  title_zh: OpenAI 向 Cerebras 采购 750 MW 低延迟推理算力（逾 100 亿美元）
+  title_en: OpenAI buys 750 MW of Cerebras inference compute, reportedly $10B+
+  summary_zh: 多年期协议：Cerebras 部署 750 MW 晶圆级系统供 OpenAI 推理使用，分批至 2028 年上线；Cerebras 自建/租赁数据中心、OpenAI 按云服务付费。金额官方未披露，路透/彭博援引知情人称超 100 亿美元。
+  supersedes: null
+  sources:
+  - url: https://www.cerebras.ai/blog/openai-partners-with-cerebras-to-bring-high-speed-inference-to-the-mainstream
+    title: OpenAI Partners with Cerebras to Bring High-Speed Inference to the Mainstream
+    publisher: Cerebras
+    date: '2026-01-14'
+    tier: 2
+  - url: https://www.datacenterdynamics.com/en/news/openai-signs-10-billion-deal-with-cerebras-with-750mw-of-big-chip-compute/
+    title: OpenAI signs $10 billion deal with Cerebras, with 750MW of big-chip compute
+    publisher: DCD
+    date: '2026-01-14'
+    tier: 3
+  - url: https://finance.yahoo.com/news/openai-buy-compute-capacity-startup-200619645.html
+    title: OpenAI signs $10 billion computing deal with Nvidia challenger Cerebras (Reuters)
+    publisher: Reuters via Yahoo Finance
+    date: '2026-01-14'
+    tier: 3
+- kind: order
+  from: OPENAI
+  to: AMD
+  amount_usd: null
+  amount_text: undisclosed; AMD expects 'tens of billions of dollars' in revenue
+  instrument: chip_purchase
+  term: multi-generation; first 1 GW of MI450 from H2 2026
+  capacity: 6 GW of AMD Instinct GPUs
+  announced: '2025-10-06'
+  status: signed
+  title_zh: OpenAI 与 AMD 签 6 GW Instinct GPU 定案协议
+  title_en: OpenAI signs definitive 6 GW AMD Instinct GPU agreement
+  summary_zh: 定案协议：OpenAI 分多代采购共 6 GW AMD Instinct GPU，首批 1 GW MI450 于 2026 年下半年开始部署。AMD 同时向 OpenAI 发放最高 1.6 亿股认股权证（见下）。AMD CFO 称预计带来数百亿美元收入。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/2488/000119312525230895/d28189dex991.htm
+    title: AMD 8-K Exhibit 99.1 — OpenAI and AMD Announce Strategic Partnership to Deploy 6 Gigawatts of AMD GPUs
+    publisher: SEC / AMD
+    date: '2025-10-06'
+    tier: 1
+- kind: investment
+  from: AMD
+  to: OPENAI
+  amount_usd: null
+  amount_text: warrant for up to 160M AMD shares (~10% of AMD); vests with deployments up to 6 GW and share-price milestones
+  instrument: warrant
+  term: null
+  capacity: vesting tied to 1 GW initial, scaling to 6 GW
+  announced: '2025-10-06'
+  status: signed
+  title_zh: AMD 向 OpenAI 发放最高 1.6 亿股认股权证
+  title_en: AMD issues OpenAI a warrant for up to 160M shares tied to 6 GW purchases
+  summary_zh: 与 6 GW 采购协议配套：AMD 向 OpenAI 发放最高 1.6 亿股普通股认股权证，首批随首个 1 GW 部署归属，其余随采购规模扩至 6 GW、AMD 股价达标及 OpenAI 里程碑分批归属。行权价（媒体报道 0.01 美元/股）未在新闻稿中列明。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/2488/000119312525230895/d28189dex991.htm
+    title: AMD 8-K Exhibit 99.1 — OpenAI and AMD Announce Strategic Partnership to Deploy 6 Gigawatts of AMD GPUs
+    publisher: SEC / AMD
+    date: '2025-10-06'
+    tier: 1
+- kind: order
+  from: OPENAI
+  to: AVGO
+  amount_usd: null
+  amount_text: null
+  instrument: chip_purchase
+  term: deployments H2 2026 through end-2029
+  capacity: 10 GW of OpenAI-designed custom accelerators
+  announced: '2025-10-13'
+  status: announced
+  title_zh: OpenAI 与博通合作部署 10 GW 自研加速器
+  title_en: OpenAI and Broadcom announce 10 GW custom accelerator collaboration
+  summary_zh: OpenAI 设计加速器与系统，博通协助开发并部署整机架（含博通以太网/PCIe/光互联），2026 年下半年起至 2029 年底完成 10 GW；未披露金额。
+  supersedes: null
+  sources:
+  - url: https://mfn.se/one/a/broadcom/openai-and-broadcom-announce-strategic-collaboration-to-deploy-10-gigawatts-of-openai-designed-ai-accelerators-7f50bad2
+    title: OpenAI and Broadcom Announce Strategic Collaboration to Deploy 10 Gigawatts of OpenAI-Designed AI Accelerators (GlobeNewswire)
+    publisher: MFN / GlobeNewswire
+    date: '2025-10-13'
+    tier: 3
+  - url: https://in.marketscreener.com/news/openai-and-broadcom-announce-strategic-collaboration-to-deploy-10-gigawatts-of-openai-designed-ai-ac-ce7d5ad8de89f225
+    title: OpenAI and Broadcom announce strategic collaboration to deploy 10 gigawatts of OpenAI-designed AI accelerators
+    publisher: MarketScreener
+    date: '2025-10-13'
+    tier: 3
+  - url: https://www.servethehome.com/broadcom-and-openai-announce-a-10gw-custom-xpu-deal/2/
+    title: Broadcom and OpenAI Announce a 10GW Custom XPU Deal
+    publisher: ServeTheHome
+    date: '2025-10-13'
+    tier: 3
+- kind: investment
+  from: SOFTBANK
+  to: OPENAI
+  amount_usd: 40000000000
+  amount_text: up to $40B (SoftBank net up to $30B after syndicating $10B to co-investors); $10B April 2025 + $30B December 2025
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2025-03-31'
+  status: completed
+  title_zh: 软银领投 OpenAI 400 亿美元融资（投前估值 2600 亿）
+  title_en: SoftBank leads $40B OpenAI round at $260B pre-money; completed Dec 2025
+  summary_zh: 软银承诺最高 400 亿美元（其中 100 亿可向联合投资人分销），投前估值 2600 亿美元：首期 100 亿于 2025 年 4 月到位，第二期最高 300 亿以 OpenAI 完成重组为条件。据路透，软银已于 2025 年 12 月底支付最后约 225 亿美元完成全部出资，持股约 11%。
+  supersedes: null
+  sources:
+  - url: https://group.softbank/en/news/press/20250401
+    title: SoftBank Group Corp. to Make Follow-on Investment in OpenAI
+    publisher: SoftBank Group
+    date: '2025-04-01'
+    tier: 2
+  - url: https://www.koreatimes.co.kr/amp/world/20251231/softbank-has-completed-its-40-billion-investment-in-openai-source-says
+    title: SoftBank has completed its $40 billion investment in OpenAI, source says (Reuters)
+    publisher: Reuters via The Korea Times
+    date: '2025-12-31'
+    tier: 3
+  - url: https://siliconangle.com/2025/12/30/softbank-reportedly-finalizes-openai-investment-22-5b-cash-infusion
+    title: SoftBank reportedly finalizes OpenAI investment with $22.5B cash infusion
+    publisher: SiliconANGLE
+    date: '2025-12-30'
+    tier: 3
+- kind: investment
+  from: NVDA
+  to: OPENAI
+  amount_usd: 100000000000
+  amount_text: up to $100B, invested progressively as each GW is deployed (letter of intent)
+  instrument: primary
+  term: null
+  capacity: at least 10 GW of NVIDIA systems; first GW targeted H2 2026 on Vera Rubin
+  announced: '2025-09-22'
+  status: cancelled
+  title_zh: 英伟达拟向 OpenAI 投资最高 1000 亿美元（LOI，已被取代）
+  title_en: NVIDIA LOI to invest up to $100B in OpenAI tied to 10 GW deployment (superseded)
+  summary_zh: 2025 年 9 月 22 日双方签署意向书：OpenAI 部署至少 10 GW 英伟达系统，英伟达随每 GW 上线分批投资最高 1000 亿美元。该 LOI 从未转为正式协议，2026 年 2 月被 300 亿美元直接股权投资取代；黄仁勋 3 月称 1000 亿“从来不是承诺”。
+  supersedes: null
+  sources:
+  - url: https://investor.nvidia.com/news/press-release-details/2025/OpenAI-and-NVIDIA-Announce-Strategic-Partnership-to-Deploy-10-Gigawatts-of-NVIDIA-Systems/default.aspx
+    title: OpenAI and NVIDIA Announce Strategic Partnership to Deploy 10 Gigawatts of NVIDIA Systems
+    publisher: NVIDIA
+    date: '2025-09-22'
+    tier: 2
+  - url: https://techloy.com/nvidias-30-billion-openai-bet-is-set-to-close-this-weekend
+    title: Nvidia's $30 billion OpenAI bet is set to close this weekend
+    publisher: Techloy
+    date: '2026-02-20'
+    tier: 3
+- kind: investment
+  from: NVDA
+  to: OPENAI
+  amount_usd: 30000000000
+  amount_text: $30B direct equity, not tied to deployment milestones
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2026-02-27'
+  status: signed
+  title_zh: 英伟达以 300 亿美元直接入股 OpenAI，取代 1000 亿 LOI
+  title_en: NVIDIA invests $30B in OpenAI's $110B round, replacing the $100B LOI
+  summary_zh: 作为 OpenAI 1100 亿美元融资（投前估值 7300 亿）的一部分，英伟达直接投资 300 亿美元，不与算力部署里程碑挂钩，取代 2025 年 9 月的 1000 亿美元意向书；软银同轮出资 300 亿（仅 TechCrunch 单一来源，未单列）。
+  supersedes: investment|NVDA|OPENAI|2025-09-22
+  sources:
+  - url: https://techcrunch.com/2026/02/27/openai-raises-110b-in-one-of-the-largest-private-funding-rounds-in-history/
+    title: OpenAI raises $110B in one of the largest private funding rounds in history
+    publisher: TechCrunch
+    date: '2026-02-27'
+    tier: 3
+  - url: https://orf.at/stories/3422475/
+    title: 'Nvidia-Chef: Keine 100-Milliarden-Investition in OpenAI'
+    publisher: ORF
+    date: '2026-03-04'
+    tier: 3
+  - url: https://techloy.com/nvidias-30-billion-openai-bet-is-set-to-close-this-weekend
+    title: Nvidia's $30 billion OpenAI bet is set to close this weekend
+    publisher: Techloy
+    date: '2026-02-20'
+    tier: 3
+- kind: investment
+  from: AMZN
+  to: OPENAI
+  amount_usd: 50000000000
+  amount_text: $50B ($15B upfront, $35B on conditions; fully funded by Q3 2026)
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2026-02-27'
+  status: completed
+  title_zh: 亚马逊向 OpenAI 投资 500 亿美元
+  title_en: Amazon invests $50B in OpenAI as anchor of $110B round
+  summary_zh: 亚马逊作为 OpenAI 1100 亿美元融资的最大出资方投资 500 亿美元：首期 150 亿美元，其余 350 亿美元在条件满足后支付。据亚马逊 2026 年 7 月 31 日 SEC 文件，已全部到位。与 AWS 1000 亿美元扩容合同挂钩。
+  supersedes: null
+  sources:
+  - url: https://press.aboutamazon.com/2026/2/openai-and-amazon-announce-strategic-partnership
+    title: OpenAI and Amazon Announce Strategic Partnership
+    publisher: Amazon
+    date: '2026-02-27'
+    tier: 2
+  - url: https://techcrunch.com/2026/02/27/openai-raises-110b-in-one-of-the-largest-private-funding-rounds-in-history/
+    title: OpenAI raises $110B in one of the largest private funding rounds in history
+    publisher: TechCrunch
+    date: '2026-02-27'
+    tier: 3
+  - url: https://www.pymnts.com/?p=4026479
+    title: Amazon Completes $50 Billion Investment in OpenAI (per SEC filing)
+    publisher: PYMNTS
+    date: '2026-07-31'
+    tier: 3
+- kind: investment
+  from: SOFTBANK
+  to: STARGATE
+  amount_usd: 500000000000
+  amount_text: up to $500B over four years; first $100B deploying immediately (equity from SoftBank, OpenAI, Oracle, MGX)
+  instrument: jv_equity
+  term: 4 years
+  capacity: null
+  announced: '2025-01-21'
+  status: announced
+  title_zh: Stargate 合资公司宣布 5000 亿美元美国 AI 基建计划
+  title_en: 'Stargate JV announced: $500B over 4 years, $100B initial deployment'
+  summary_zh: 软银、OpenAI、甲骨文、MGX 为初始股权出资方；软银负财务责任（孙正义任董事长）、OpenAI 负运营责任；Arm、微软、英伟达为技术伙伴。计划四年投入 5000 亿美元，首期 1000 亿立即启动。此处以软银作为 from 方代表全部出资人，金额为总体计划而非软银单独承诺。
+  supersedes: null
+  sources:
+  - url: https://group.softbank/en/news/press/20250122
+    title: Announcing The Stargate Project
+    publisher: SoftBank Group
+    date: '2025-01-22'
+    tier: 2
+- kind: order
+  from: ANTHROPIC
+  to: GOOGL
+  amount_usd: null
+  amount_text: tens of billions of dollars (up to 1 million TPUs)
+  instrument: compute_contract
+  term: null
+  capacity: up to 1 million TPUs; well over 1 GW online in 2026
+  announced: '2025-10-23'
+  status: announced
+  title_zh: Anthropic 扩大采购谷歌云 TPU，至多 100 万颗、价值数百亿美元
+  title_en: 'Anthropic expands Google Cloud TPU deal: up to 1M TPUs, tens of billions'
+  summary_zh: Anthropic 宣布扩大使用谷歌云，至多 100 万颗 TPU，交易价值数百亿美元，2026 年上线超 1 GW 算力；2026-04 再与谷歌/博通扩至多 GW（见下）。
+  supersedes: null
+  sources:
+  - url: https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services
+    title: Expanding our use of Google Cloud TPUs and Services
+    publisher: Anthropic
+    date: '2025-10-23'
+    tier: 2
+- kind: order
+  from: ANTHROPIC
+  to: AVGO
+  amount_usd: null
+  amount_text: undisclosed; ~3.5 GW of TPU capacity accessed through Broadcom from 2027
+  instrument: chip_purchase
+  term: null
+  capacity: ~3.5 GW via Broadcom from 2027 (Anthropic later cites 5 GW total with Google/Broadcom)
+  announced: '2026-04-06'
+  status: signed
+  title_zh: Anthropic 与谷歌、博通扩大多 GW 下一代 TPU 算力协议
+  title_en: 'Anthropic expands Google/Broadcom deal: ~3.5 GW next-gen TPUs from 2027'
+  summary_zh: 博通 8-K：Anthropic 自 2027 年起通过博通获取约 3.5 GW TPU 算力，消耗取决于其商业成功，各方正与运营/融资伙伴洽谈部署；博通同时与谷歌签订至 2031 年的 TPU 开发与供应保障协议。在 2025-10 的 1 GW 之上扩展。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1730168/000119312526144028/d87999d8k.htm
+    title: Broadcom Inc. Form 8-K, Item 8.01 (Anthropic / Google agreements)
+    publisher: SEC / Broadcom
+    date: '2026-04-06'
+    tier: 1
+  - url: https://www.anthropic.com/news/google-broadcom-partnership-compute
+    title: Anthropic expands partnership with Google and Broadcom for multiple gigawatts of next-generation compute
+    publisher: Anthropic
+    date: '2026-04-06'
+    tier: 2
+- kind: order
+  from: ANTHROPIC
+  to: FLUIDSTACK
+  amount_usd: 50000000000
+  amount_text: $50B investment in US data centers built with Fluidstack
+  instrument: colocation
+  term: null
+  capacity: null
+  announced: '2025-11-12'
+  status: announced
+  title_zh: Anthropic 与 Fluidstack 投 500 亿美元建美国数据中心
+  title_en: Anthropic to invest $50B in US data centers with Fluidstack
+  summary_zh: Anthropic 宣布投入 500 亿美元在美国建设自有工作负载的数据中心，由 Fluidstack 建设，首批在德州与纽约州，2026 年起陆续上线；Hut 8 River Bend 245 MW 租约属该体系。
+  supersedes: null
+  sources:
+  - url: https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure
+    title: Anthropic invests $50 billion in American AI infrastructure
+    publisher: Anthropic
+    date: '2025-11-12'
+    tier: 2
+- kind: order
+  from: ANTHROPIC
+  to: MSFT
+  amount_usd: 30000000000
+  amount_text: $30B of Azure compute capacity
+  instrument: compute_contract
+  term: null
+  capacity: up to 1 GW (NVIDIA Grace Blackwell / Vera Rubin)
+  announced: '2025-11-18'
+  status: signed
+  title_zh: Anthropic 承诺采购 300 亿美元 Azure 算力
+  title_en: Anthropic commits $30B to Microsoft Azure compute
+  summary_zh: Anthropic 承诺购买 300 亿美元 Azure 算力并可再签约至多 1 GW（Grace Blackwell/Vera Rubin）；Claude 上架 Microsoft Foundry；与 NVDA/MSFT 对 Anthropic 的投资同日宣布。
+  supersedes: null
+  sources:
+  - url: https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships
+    title: Microsoft, NVIDIA, and Anthropic announce strategic partnerships
+    publisher: Anthropic
+    date: '2025-11-18'
+    tier: 2
+  - url: https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/
+    title: Microsoft, NVIDIA and Anthropic announce strategic partnerships
+    publisher: Microsoft
+    date: '2025-11-18'
+    tier: 2
+- kind: order
+  from: ANTHROPIC
+  to: AMZN
+  amount_usd: 100000000000
+  amount_text: more than $100B of AWS spend over ten years
+  instrument: compute_contract
+  term: 10 years
+  capacity: up to 5 GW (nearly 1 GW Trainium2/3 by end-2026)
+  announced: '2026-04-20'
+  status: signed
+  title_zh: Anthropic 承诺十年在 AWS 支出逾 1000 亿美元，获至多 5 GW 算力
+  title_en: Anthropic commits $100B+ AWS spend over 10 years for up to 5 GW
+  summary_zh: 扩大 Project Rainier 合作：至多 5 GW 新算力（Trainium2–4 及未来定制芯片），2026 年底前近 1 GW；Anthropic 已用超 100 万颗 Trainium2。与亚马逊同日追加投资配套。
+  supersedes: null
+  sources:
+  - url: https://www.anthropic.com/news/anthropic-amazon-compute
+    title: Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute
+    publisher: Anthropic
+    date: '2026-04-20'
+    tier: 2
+- kind: order
+  from: ANTHROPIC
+  to: SPACEX
+  amount_usd: 45000000000
+  amount_text: $1.25B per month through May 2029 (~$45B at full rate; ~$40B+ per press)
+  instrument: compute_contract
+  term: 'through May 2029; 90-day mutual termination (Musk: 180-day lease)'
+  capacity: all of Colossus 1 (300+ MW, 220,000+ NVIDIA GPUs) plus Colossus 2 expansion
+  announced: '2026-05-06'
+  status: signed
+  title_zh: Anthropic 每月付 SpaceX 12.5 亿美元租用 Colossus 算力
+  title_en: Anthropic pays SpaceX $1.25B/month for Colossus 1 & 2 compute
+  summary_zh: 2026-05-03 签署云服务协议：Anthropic 包下 Colossus 1 全部算力（220,000+ GPU、300+ MW），并扩展至 Colossus 2；SpaceX S-1 载明月费 12.5 亿美元至 2029 年 5 月，任一方 90 天通知可终止；马斯克称实为 180 天租约。Anthropic 官方页面未披露金额。
+  supersedes: null
+  sources:
+  - url: https://www.anthropic.com/news/higher-limits-spacex
+    title: Higher usage limits for Claude and a compute deal with SpaceX
+    publisher: Anthropic
+    date: '2026-05-06'
+    tier: 2
+  - url: https://techcrunch.com/2026/05/28/how-long-is-anthropics-lease-with-spacex-opinions-vary/
+    title: How long is Anthropic's lease with SpaceX? Opinions vary
+    publisher: TechCrunch
+    date: '2026-05-28'
+    tier: 3
+  - url: https://www.silicon.co.uk/ai-2/anthropic-spacex-cloud-629995
+    title: Anthropic Paying SpaceX $1.25bn A Month For Compute
+    publisher: Silicon UK
+    date: '2026-05-21'
+    tier: 3
+- kind: lease
+  from: FLUIDSTACK
+  to: HUT
+  amount_usd: 7000000000
+  amount_text: $7.0B total contract value over 15-year base term (3.0% annual escalator; ~$17.7B with three 5-year renewals)
+  instrument: site_lease
+  term: 15 years + three 5-year renewals
+  capacity: 245 MW IT (ROFO on additional 1,000 MW)
+  announced: '2025-12-17'
+  status: signed
+  title_zh: Fluidstack 向 Hut 8 River Bend 租 245MW，15 年 70 亿美元，谷歌兜底
+  title_en: Hut 8 signs 15-year, 245 MW AI data center lease at River Bend with Fluidstack ($7.0B)
+  summary_zh: 路易斯安那 River Bend 园区三净租约，首个数据厅 2027Q2 投运；基础租期租金由谷歌财务兜底（非 Anthropic）；JPM/Goldman 提供最高 85% LTC 项目贷款。Hut 8 后续披露该容量服务于 Anthropic，是 Anthropic–Fluidstack 500 亿美元体系的首个项目。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1964789/000110465925122052/hut-20251217xex99d1.htm
+    title: Hut 8 Signs 15-Year, 245 MW AI Data Center Lease at River Bend Campus with Total Contract Value of $7.0 Billion (8-K Ex. 99.1)
+    publisher: SEC / Hut 8
+    date: '2025-12-17'
+    tier: 1
+  - url: https://www.sec.gov/Archives/edgar/data/1964789/000110465926019393/hut-20260225xex99d1.htm
+    title: Hut 8 Reports Fourth Quarter and Full Year 2025 Results (8-K Ex. 99.1)
+    publisher: SEC / Hut 8
+    date: '2026-02-25'
+    tier: 1
+- kind: investment
+  from: AMZN
+  to: ANTHROPIC
+  amount_usd: 4000000000
+  amount_text: $4B additional investment (total $8B)
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2024-11-22'
+  status: completed
+  title_zh: 亚马逊追加 40 亿美元投资 Anthropic，累计 80 亿
+  title_en: Amazon invests additional $4B in Anthropic, total $8B
+  summary_zh: 亚马逊追加 40 亿美元（含可转换票据），累计投资 80 亿美元，仍为少数股东；AWS 成为 Anthropic 主要云与训练伙伴，Claude 将在 Trainium 上训练。2026-04 再追加 50 亿+至多 200 亿。
+  supersedes: null
+  sources:
+  - url: https://www.aboutamazon.com/news/aws/amazon-invests-additional-4-billion-anthropic-ai
+    title: Amazon and Anthropic deepen strategic collaboration
+    publisher: Amazon
+    date: '2024-11-22'
+    tier: 2
+  - url: https://www.anthropic.com/news/anthropic-amazon-trainium
+    title: Powering the next generation of AI development with AWS
+    publisher: Anthropic
+    date: '2024-11-22'
+    tier: 2
+- kind: investment
+  from: NVDA
+  to: ANTHROPIC
+  amount_usd: 10000000000
+  amount_text: up to $10B
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2025-11-18'
+  status: announced
+  title_zh: 英伟达承诺向 Anthropic 投资至多 100 亿美元
+  title_en: NVIDIA commits up to $10B investment in Anthropic
+  summary_zh: 与 Azure 300 亿算力承诺同日宣布；Anthropic 2026-02 G 轮公告称该轮包含 MSFT/NVDA 此前宣布投资的一部分。
+  supersedes: null
+  sources:
+  - url: https://blogs.nvidia.com/blog/microsoft-nvidia-anthropic-announce-partnership/
+    title: Microsoft, NVIDIA and Anthropic Announce Strategic Partnerships
+    publisher: NVIDIA
+    date: '2025-11-18'
+    tier: 2
+  - url: https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships
+    title: Microsoft, NVIDIA, and Anthropic announce strategic partnerships
+    publisher: Anthropic
+    date: '2025-11-18'
+    tier: 2
+- kind: investment
+  from: MSFT
+  to: ANTHROPIC
+  amount_usd: 5000000000
+  amount_text: up to $5B
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2025-11-18'
+  status: announced
+  title_zh: 微软承诺向 Anthropic 投资至多 50 亿美元
+  title_en: Microsoft commits up to $5B investment in Anthropic
+  summary_zh: 与 Azure 300 亿算力承诺同日宣布；部分已计入 2026-02 G 轮。
+  supersedes: null
+  sources:
+  - url: https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/
+    title: Microsoft, NVIDIA and Anthropic announce strategic partnerships
+    publisher: Microsoft
+    date: '2025-11-18'
+    tier: 2
+  - url: https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships
+    title: Microsoft, NVIDIA, and Anthropic announce strategic partnerships
+    publisher: Anthropic
+    date: '2025-11-18'
+    tier: 2
+- kind: investment
+  from: PRIVATE_ROUND
+  to: ANTHROPIC
+  amount_usd: 30000000000
+  amount_text: $30B Series G at $380B post-money
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2026-02-12'
+  status: completed
+  title_zh: Anthropic 完成 300 亿美元 G 轮，估值 3800 亿
+  title_en: Anthropic raises $30B Series G at $380B valuation
+  summary_zh: GIC 与 Coatue 领投，D. E. Shaw、Dragoneer、Founders Fund、ICONIQ、MGX 联合领投；本轮包含微软与英伟达此前宣布投资的一部分；年化收入 140 亿美元。
+  supersedes: null
+  sources:
+  - url: https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation
+    title: Anthropic raises $30 billion in Series G funding at $380 billion post-money valuation
+    publisher: Anthropic
+    date: '2026-02-12'
+    tier: 2
+- kind: investment
+  from: AMZN
+  to: ANTHROPIC
+  amount_usd: 25000000000
+  amount_text: $5B now plus up to $20B more (on top of $8B prior)
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2026-04-20'
+  status: signed
+  title_zh: 亚马逊再投 Anthropic 50 亿美元，后续至多再投 200 亿
+  title_en: Amazon invests $5B now, up to $20B more in Anthropic
+  summary_zh: 在此前 80 亿基础上追加 50 亿美元，未来至多再投 200 亿；50 亿已计入 2026-05 H 轮的 150 亿超大规模云厂商承诺投资。
+  supersedes: null
+  sources:
+  - url: https://www.anthropic.com/news/anthropic-amazon-compute
+    title: Anthropic and Amazon expand collaboration for up to 5 gigawatts of new compute
+    publisher: Anthropic
+    date: '2026-04-20'
+    tier: 2
+  - url: https://www.anthropic.com/news/series-h
+    title: Anthropic raises $65B Series H at $965B valuation
+    publisher: Anthropic
+    date: '2026-05-28'
+    tier: 2
+- kind: investment
+  from: GOOGL
+  to: ANTHROPIC
+  amount_usd: 40000000000
+  amount_text: up to $40B ($10B now at $350B valuation + $30B contingent on performance)
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2026-04-24'
+  status: rumored
+  title_zh: 谷歌拟向 Anthropic 投资至多 400 亿美元（100 亿先行）
+  title_en: 'Google to invest up to $40B in Anthropic: $10B now, $30B performance-based'
+  summary_zh: Bloomberg 首报、Reuters/TechCrunch 跟进：先投 100 亿美元（估值 3500 亿），另 300 亿视业绩里程碑；配套谷歌云未来五年 5 GW 算力。无 anthropic.com/谷歌官方公告页，但 Anthropic H 轮公告提到 150 亿已承诺的云厂商投资。
+  supersedes: null
+  sources:
+  - url: https://techcrunch.com/2026/04/24/google-to-invest-up-to-40b-in-anthropic-in-cash-and-compute/
+    title: Google to invest up to $40B in Anthropic in cash and compute
+    publisher: TechCrunch
+    date: '2026-04-24'
+    tier: 3
+  - url: https://www.cyprus-mail.com/2026/04/24/google-plans-to-invest-up-to-40-billion-in-anthropic
+    title: Google plans to invest up to $40 billion in Anthropic (Reuters)
+    publisher: Cyprus Mail / Reuters
+    date: '2026-04-24'
+    tier: 3
+- kind: investment
+  from: PRIVATE_ROUND
+  to: ANTHROPIC
+  amount_usd: 65000000000
+  amount_text: $65B Series H at $965B post-money (incl. $15B previously committed hyperscaler investments)
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2026-05-28'
+  status: completed
+  title_zh: Anthropic 完成 650 亿美元 H 轮，估值 9650 亿
+  title_en: Anthropic raises $65B Series H at $965B valuation
+  summary_zh: Altimeter、Dragoneer、Greenoaks、Sequoia 领投，Capital Group、Coatue、D1、GIC、ICONIQ、XN 联合领投；含 150 亿已承诺云厂商投资（含亚马逊 50 亿）；美光、三星、SK 海力士为战略基础设施伙伴。
+  supersedes: null
+  sources:
+  - url: https://www.anthropic.com/news/series-h
+    title: Anthropic raises $65B Series H at $965B valuation
+    publisher: Anthropic
+    date: '2026-05-28'
+    tier: 2
+- kind: lease
+  from: XAI
+  to: APO
+  amount_usd: 12500000000
+  amount_text: up to $12.5B GPU-backed debt via SPV that buys NVIDIA chips and leases them to xAI (reported)
+  instrument: gpu_lease
+  term: 5 years (reported)
+  capacity: Colossus 2 GPUs (Memphis)
+  announced: '2025-10-08'
+  status: rumored
+  title_zh: xAI 据报以 SPV 租赁 Colossus 2 GPU，债务至多 125 亿美元
+  title_en: xAI reportedly leases Colossus 2 GPUs via $12.5B SPV debt (Apollo, Diameter)
+  summary_zh: Bloomberg/Reuters 报道：约 200 亿融资中 75 亿股权（Valor 牵头）+ 至多 125 亿债务，SPV 购买英伟达 GPU 后向 xAI 出租五年，以 GPU 为抵押；Apollo 与 Diameter 参与债务，英伟达据报出资至多 20 亿股权。2026-01 的 200 亿 E 轮公告未披露债务结构。
+  supersedes: null
+  sources:
+  - url: https://convergedigest.com/nvidia-reportedly-invests-up-to-2b-in-xai-to-power-colossus-2/
+    title: NVIDIA Reportedly Invests Up to $2B in xAI to Power Colossus 2
+    publisher: Converge Digest
+    date: '2025-10-09'
+    tier: 3
+  - url: https://finance.yahoo.com/news/nvidia-reportedly-invest-2bn-elon-101712438.html
+    title: Nvidia reportedly to invest up to $2bn in Elon Musk's xAI
+    publisher: Verdict via Yahoo Finance
+    date: '2025-10-08'
+    tier: 3
+- kind: investment
+  from: PRIVATE_ROUND
+  to: XAI
+  amount_usd: 20000000000
+  amount_text: $20B upsized Series E (target was $15B)
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2026-01-06'
+  status: completed
+  title_zh: xAI 完成 200 亿美元 E 轮，英伟达、思科战略参投
+  title_en: xAI closes upsized $20B Series E with NVIDIA, Cisco as strategic investors
+  summary_zh: 超过 150 亿目标；Valor、StepStone、Fidelity、QIA、MGX、Baron 等参与，英伟达与思科为战略投资者，用于扩建 GPU 集群；未披露估值及股权/债务拆分。此前 2024 年 B 轮、C 轮各 60 亿，2025-07 又募 50 亿债 + 50 亿股权。
+  supersedes: null
+  sources:
+  - url: https://x.ai/news/series-e
+    title: xAI Raises $20B Series E
+    publisher: xAI
+    date: '2026-01-06'
+    tier: 2
+  - url: https://techcrunch.com/2026/01/06/xai-says-it-raised-20b-in-series-e-funding/
+    title: xAI says it raised $20B in Series E funding
+    publisher: TechCrunch
+    date: '2026-01-06'
+    tier: 3
+- kind: investment
+  from: SPACEX
+  to: XAI
+  amount_usd: 250000000000
+  amount_text: all-stock acquisition valuing xAI at ~$250B (SpaceX ~$1T; combined $1.25T)
+  instrument: acquisition
+  term: null
+  capacity: null
+  announced: '2026-02-02'
+  status: completed
+  title_zh: SpaceX 以约 2500 亿美元全股票收购 xAI
+  title_en: SpaceX acquires xAI in all-stock deal valuing xAI at ~$250B
+  summary_zh: 2026-02-02 完成，xAI 每股换 0.1433 股 SpaceX，合并后估值 1.25 万亿美元；目的为轨道数据中心及为 xAI 提供资本，为 6 月 IPO（募资 750 亿美元）铺路。估值来自 Reuters/Bloomberg 消息源。
+  supersedes: null
+  sources:
+  - url: https://techcrunch.com/2026/02/02/elon-musk-spacex-acquires-xai-data-centers-space-merger/
+    title: Elon Musk's SpaceX officially acquires Elon Musk's xAI, with plan to build data centers in space
+    publisher: TechCrunch
+    date: '2026-02-02'
+    tier: 3
+  - url: https://www.arabnews.com/node/2631545/world
+    title: SpaceX acquires xAI in record-setting deal as Musk looks to unify AI and space ambitions (Reuters)
+    publisher: Arab News / Reuters
+    date: '2026-02-03'
+    tier: 3
+  - url: https://finance.yahoo.com/news/elon-musks-spacex-merges-xai-153111324.html
+    title: Elon Musk's SpaceX Merges With xAI In Trillion-Dollar Merger
+    publisher: Benzinga via Yahoo Finance
+    date: '2026-02-04'
+    tier: 3
+- kind: order
+  from: GOOGL
+  to: SPACEX
+  amount_usd: 30360000000
+  amount_text: $920M per month, Oct 2026–Jun 2029 (~$30.3B at full rate)
+  instrument: compute_contract
+  term: Oct 2026 – Jun 2029; 90-day termination after Dec 31 2026
+  capacity: ~110,000 NVIDIA GPUs (Memphis & Southaven)
+  announced: '2026-06-05'
+  status: signed
+  title_zh: 谷歌每月付 SpaceX 9.2 亿美元租用 Colossus 算力，总额约 300 亿
+  title_en: Google to pay SpaceX $920M/month for ~110k-GPU Colossus capacity
+  summary_zh: SpaceX IPO 文件披露：谷歌租用约 11 万颗英伟达 GPU 及配套硬件，2026-10 至 2029-06 月费 9.2 亿美元；谷歌云称为 Gemini Enterprise 需求的短期过渡算力；2026 年底后双方 90 天通知可终止。
+  supersedes: null
+  sources:
+  - url: https://www.euronews.com/business/2026/06/06/google-rents-spacexai-supercomputers-for-920m-a-month-ahead-of-ipo
+    title: Google rents SpaceX/AI supercomputers for $920M a month, ahead of IPO
+    publisher: Euronews
+    date: '2026-06-06'
+    tier: 3
+  - url: https://www.memphisflyer.com/google-spacex-reach-30b-rent-deal-for-colossus-compute-space/
+    title: Google, SpaceX Reach $30B Rent Deal for Colossus Compute Space
+    publisher: Memphis Flyer
+    date: '2026-06-08'
+    tier: 3
+- kind: debt
+  from: SPACEX
+  to: APO
+  amount_usd: 40000000000
+  amount_text: ~$40B sought ($10B bank loans + $30B investment-grade debt) to buy NVIDIA chips; Apollo-led (reported)
+  instrument: other
+  term: expected close 2027 (reported)
+  capacity: null
+  announced: '2026-10-06'
+  status: rumored
+  title_zh: SpaceX 据报寻求 Apollo 牵头 400 亿美元融资购买英伟达芯片
+  title_en: SpaceX reportedly seeks Apollo-led $40B financing for NVIDIA chip purchase
+  summary_zh: FT 首报、Reuters 跟进：SpaceX 洽谈约 400 亿美元（100 亿银行贷款 + 300 亿投资级债券）用于采购英伟达 AI 芯片，Apollo 预计牵头并向广泛投资者分销，PIMCO 在谈；预计 2027 年完成。此前 2026-06 SpaceX 已发行 250 亿美元首笔投资级债券。
+  supersedes: null
+  sources:
+  - url: https://www.thestar.com.my/tech/tech-news/2026/10/07/spacex-seeks-40-billion-to-buy-nvidia-chips-ft-reports
+    title: SpaceX seeks $40 billion financing to buy Nvidia chips, sources say (Reuters)
+    publisher: The Star / Reuters
+    date: '2026-10-07'
+    tier: 3
+  - url: https://investinglive.com/stocks/spacex-seeks-40-billion-in-debt-led-by-apollo-to-fund-nvidia-chip-order-ft-says/
+    title: SpaceX seeks $40 billion in debt led by Apollo to fund Nvidia chip order, FT says
+    publisher: investingLive
+    date: '2026-10-07'
+    tier: 3
+- kind: debt
+  from: META
+  to: BONDHOLDERS
+  amount_usd: 30000000000
+  amount_text: $30B senior notes, 6 tranches (2030–2065); net proceeds ~$29.9B
+  instrument: bond
+  term: '6 tranches: 4.200% 2030 $4B; 4.600% 2032 $4B; 4.875% 2035 $6.5B; 5.500% 2045 $4.5B; 5.625% 2055 $6.5B; 5.750% 2065 $4.5B'
+  capacity: null
+  announced: '2025-10-30'
+  status: completed
+  title_zh: Meta 发行 300 亿美元债券（当时最大规模）
+  title_en: Meta prices $30B six-tranche bond offering for general corporate purposes
+  summary_zh: 2025-10-30 定价的 300 亿美元六档无担保优先票据，用途为一般公司用途（实际用于 AI 数据中心扩张）；订单簿据报超过 1,250 亿美元，与 Hyperion 表外融资同月落地。2026-04 再发 250 亿美元。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1326801/000119312525261217/d762778d424b2.htm
+    title: Meta Platforms, Inc. Form 424B2 – $30,000,000,000 notes prospectus supplement
+    publisher: SEC EDGAR
+    date: '2025-10-30'
+    tier: 1
+- kind: investment
+  from: PUBLIC_INVESTORS
+  to: META
+  amount_usd: 35000000000
+  amount_text: '~$35B: $22.5B Class A common (forward sale, up to $25.875B with greenshoe) + ~$12.5B Series A mandatory convertible preferred; up to $60B ATM reported to follow'
+  instrument: primary
+  term: forward sale settlement on or before 2027-11-19; preferred mandatorily converts
+  capacity: null
+  announced: '2026-10-26'
+  status: announced
+  title_zh: Meta 启动约 350 亿美元股权融资（普通股+强制可转优先股）
+  title_en: Meta launches ~$35B equity offerings (common forward sale + mandatory convertible preferred)
+  summary_zh: Meta 史上最大股权融资：225 亿美元 A 类普通股远期出售 + 约 125 亿美元强制可转换优先股，Morgan Stanley/Goldman 承销；招股书称 Nvidia、AMD、Broadcom 表示非约束性意向合计认购最多 50 亿美元。标志 Meta 从回购转向外部融资以支撑 1,350–1,450 亿美元资本开支。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/0001326801/000119312526431040/d94886d424b5.htm
+    title: Meta Platforms, Inc. Form 424B5 – $22.5B Class A common stock (forward sale) preliminary prospectus supplement
+    publisher: SEC EDGAR
+    date: '2026-10-26'
+    tier: 1
+  - url: https://www.sec.gov/Archives/edgar/data/0001326801/000119312526431043/d133631d424b5.htm
+    title: Meta Platforms, Inc. Form 424B5 – 250,000,000 Series A Depositary Shares (mandatory convertible preferred)
+    publisher: SEC EDGAR
+    date: '2026-10-26'
+    tier: 1
+  - url: https://finance.yahoo.com/markets/stocks/articles/meta-launches-35-billion-stock-110947478.html
+    title: Meta launches $35 billion stock offering to fund AI expansion
+    publisher: Reuters (via Yahoo Finance)
+    date: '2026-10-26'
+    tier: 3
+- kind: investment
+  from: NVDA
+  to: META
+  amount_usd: 3000000000
+  amount_text: $3B participation in Meta's equity offering (within up to $5B non-binding interest from NVDA/AMD/AVGO combined)
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2026-10-27'
+  status: signed
+  title_zh: Nvidia 承诺 30 亿美元认购 Meta 股权发行
+  title_en: Nvidia commits $3B to Meta's equity offering alongside expanded Muse/Vera Rubin partnership
+  summary_zh: Nvidia 2026-10-27 宣布以 30 亿美元参与 Meta 新股发行，并扩大在 Muse 模型、Vera Rubin GPU/Vera CPU/Spectrum-X 上的合作；Meta 424B5 仅披露 NVDA/AMD/AVGO 合计最多 50 亿美元非约束性意向。属『供应商回购客户股权』的循环融资范例。未能在 nvidianews.nvidia.com 核实原始新闻稿。
+    英伟达新闻稿原文：NVIDIA will invest $3 billion in Meta’s equity offering。
+  supersedes: null
+  sources:
+  - url: https://nvidianews.nvidia.com/news/nvidia-and-meta-to-expand-collaboration-on-muse-and-muse-family-of-models-amid-robust-growth
+    title: NVIDIA and Meta to Expand Collaboration on Muse and Muse Family of Models Amid Robust Growth
+    publisher: NVIDIA Newsroom
+    date: '2026-10-26'
+    tier: 2
+  - url: https://finance.yahoo.com/markets/article/nvidia-to-invest-3-billion-in-meta-expand-partnership-on-muse-125249944.html
+    title: Nvidia to invest $3 billion in Meta, expand partnership on Muse
+    publisher: Yahoo Finance
+    date: '2026-10-27'
+    tier: 3
+  - url: https://www.fool.com/investing/2026/10/27/nvidias-new-3-billion-ai-bet-is-on-one-of-its-own-customers/
+    title: Nvidia's New $3 Billion AI Bet Is on One of Its Own Customers
+    publisher: The Motley Fool
+    date: '2026-10-27'
+    tier: 3
+  - url: https://www.sec.gov/Archives/edgar/data/0001326801/000119312526431040/d94886d424b5.htm
+    title: Meta 424B5 – notes NVIDIA/AMD/Broadcom non-binding interest up to $5.0B
+    publisher: SEC EDGAR
+    date: '2026-10-26'
+    tier: 1
+- kind: investment
+  from: OWL
+  to: META
+  amount_usd: 27000000000
+  amount_text: ~$27B total development cost; Blue Owl funds 80% pro rata (~$7B cash contributed at close; Meta received ~$3B one-time distribution)
+  instrument: jv_equity
+  term: 'Meta lease: 4-year initial term with extension options'
+  capacity: 2+ GW (Hyperion campus, Richland Parish, LA; ~2.1 GW per IFR)
+  announced: '2025-10-21'
+  status: completed
+  title_zh: Meta 与 Blue Owl 成立 270 亿美元 Hyperion 数据中心合资公司（80/20）
+  title_en: Meta–Blue Owl 80/20 JV to fund ~$27B Hyperion data center campus in Louisiana
+  summary_zh: Blue Owl 管理的基金持股 80%、Meta 20%，共同承担约 270 亿美元开发成本；Blue Owl 注资约 70 亿美元现金，Meta 投入土地与在建工程并收到约 30 亿美元一次性分配。Meta 负责建设并整体回租（4 年初始期+续期），同时提供 16 年有上限残值担保。Blue Owl 资金大部分来自 Beignet Investor LLC 向 PIMCO
+    等发行的私募债券。
+  supersedes: null
+  sources:
+  - url: https://about.fb.com/news/2025/10/meta-blue-owl-capital-develop-hyperion-data-center/
+    title: Meta Announces Joint Venture With Funds Managed by Blue Owl Capital to Develop Hyperion Data Center
+    publisher: Meta Newsroom
+    date: '2025-10-21'
+    tier: 2
+  - url: https://www.kirkland.com/news/press-release/2025/10/kirkland-represents-blue-owl-on-joint-venture-with-meta-to-develop-hyperion-data-center
+    title: Kirkland Represents Blue Owl on Joint Venture with Meta to Develop Hyperion Data Center
+    publisher: Kirkland & Ellis
+    date: '2025-10-21'
+    tier: 2
+- kind: debt
+  from: NEW:Beignet Investor LLC
+  to: BONDHOLDERS
+  amount_usd: 27300000000
+  amount_text: $27.3B 6.581% senior secured amortising bonds due May 2049 (T+225bp); PIMCO anchor
+  instrument: bond
+  term: ~23.6-year, due 2049-05; amortising; S&P A+
+  capacity: ~2.1 GW Hyperion campus
+  announced: '2025-10-16'
+  status: completed
+  title_zh: Beignet Investor（Blue Owl SPV）发行 273 亿美元 Hyperion 项目债券，PIMCO 领投
+  title_en: Beignet Investor LLC prices $27.3B 144A bond backing Meta Hyperion JV; PIMCO anchor
+  summary_zh: Blue Owl 基金子公司 Beignet Investor LLC 2025-10-16 定价 273 亿美元 2049 年到期有担保债券（6.581%，T+225bp），为史上最大单档公司债；Morgan Stanley 独家承销，PIMCO 为主锚定投资者。评级 A+ 依赖 Meta 租约与残值担保，债务不在 Meta 资产负债表内。
+  supersedes: null
+  sources:
+  - url: https://www.ifre.com/ifr-awards/2327933/financing-package-blue-owl-capitalbeignet-investors-us27.3bn-23.6-year-bond
+    title: 'Financing Package: Blue Owl Capital/Beignet Investor''s US$27.3bn 23.6-year bond'
+    publisher: IFR (LSEG)
+    date: '2025-12-01'
+    tier: 3
+  - url: https://about.fb.com/news/2025/10/meta-blue-owl-capital-develop-hyperion-data-center/
+    title: Meta Announces Joint Venture With Funds Managed by Blue Owl Capital (notes private debt offering to PIMCO; Morgan Stanley sole bookrunner)
+    publisher: Meta Newsroom
+    date: '2025-10-21'
+    tier: 2
+  - url: https://www.kirkland.com/news/press-release/2025/10/kirkland-represents-blue-owl-on-joint-venture-with-meta-to-develop-hyperion-data-center
+    title: Kirkland Represents Blue Owl on Joint Venture with Meta (debt issued to PIMCO and select bond investors)
+    publisher: Kirkland & Ellis
+    date: '2025-10-21'
+    tier: 2
+- kind: investment
+  from: BLK
+  to: META
+  amount_usd: 14000000000
+  amount_text: ~$14B total development cost; BlackRock (GIP/HPS funds) 80% pro rata, ~$4.9B cash at close; ~$12.5B SPV bond (Sopaipilla Investor LLC) at JV level
+  instrument: jv_equity
+  term: 'Meta lease: 4-year initial + four extension options (potential 20 years)'
+  capacity: 1 GW (El Paso, TX; capacity from 2028)
+  announced: '2026-07-28'
+  status: signed
+  title_zh: Meta 与 BlackRock 组建 140 亿美元 El Paso 数据中心合资（80/20）
+  title_en: Meta–BlackRock 80/20 venture to develop ~$14B, 1 GW El Paso data center campus
+  summary_zh: 复制 Hyperion 模式：BlackRock 管理基金持股 80%、Meta 20%；BlackRock 注资约 49 亿美元现金（部分来自合资层面约 125 亿美元 Sopaipilla Investor LLC 有担保债券），Meta 投入约 23 亿美元土地与在建工程并收到约 10 亿美元分配。Meta 为唯一租户，残值担保上限约 130 亿美元。
+  supersedes: null
+  sources:
+  - url: https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Announces-New-Strategic-Venture-with-BlackRock-to-Develop-Data-Center-in-El-Paso/default.aspx
+    title: Meta Announces New Strategic Venture with BlackRock to Develop Data Center in El Paso
+    publisher: Meta Investor Relations
+    date: '2026-07-28'
+    tier: 2
+  - url: https://www.milbank.com/en/news/milbank-advises-on-meta-and-blackrocks-new-strategic-venture-to-develop-el-paso-data-center-campus.html
+    title: Milbank Advises on Meta and BlackRock's New Strategic Venture to Develop El Paso Data Center Campus
+    publisher: Milbank LLP
+    date: '2026-07-31'
+    tier: 2
+- kind: order
+  from: META
+  to: CRWV
+  amount_usd: 14200000000
+  amount_text: up to ~$14.2B through 2031-12-14, with option to expand through 2032
+  instrument: compute_contract
+  term: through 2031-12-14 (option to extend into 2032)
+  capacity: NVIDIA GB300 systems (media); not quantified in 8-K
+  announced: '2025-09-30'
+  status: signed
+  title_zh: Meta 与 CoreWeave 签 142 亿美元算力合同（至 2031 年）
+  title_en: Meta commits up to $14.2B to CoreWeave for reserved cloud capacity through 2031
+  summary_zh: 2025-09-25 在 2023-12-10 主服务协议下签订新订单，Meta 初始承诺最多约 142 亿美元至 2031-12-14，可选扩至 2032 年。此前 CoreWeave 71% 收入来自微软，该合同显著分散客户集中度；2026-04 又追加 210 亿美元订单。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1769628/000176962825000050/crwv-20250925.htm
+    title: CoreWeave, Inc. Form 8-K – Item 1.01 Order Form with Meta Platforms
+    publisher: SEC EDGAR
+    date: '2025-09-30'
+    tier: 1
+- kind: order
+  from: META
+  to: CRWV
+  amount_usd: 21000000000
+  amount_text: ~$21B initial commitment (new capacity through 2032-12-20 + exercise of prior option through 2032-04-10); total Meta–CoreWeave contracts ~$35B
+  instrument: compute_contract
+  term: through 2032-12-20
+  capacity: multiple sites; includes early NVIDIA Vera Rubin deployments
+  announced: '2026-04-09'
+  status: signed
+  title_zh: Meta 追加 210 亿美元 CoreWeave 算力订单（至 2032 年）
+  title_en: CoreWeave signs expanded ~$21B AI cloud agreement with Meta through Dec 2032
+  summary_zh: 2026-03-31 签订新订单（同一 MSA），Meta 初始承诺约 210 亿美元，含对前一订单扩容选择权的行权；覆盖多地部署并包含首批 Vera Rubin 平台。两份合同合计约 350 亿美元。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1769628/000176962826000154/crwv-20260331.htm
+    title: CoreWeave, Inc. Form 8-K – Item 1.01 Order Form with Meta (~$21B)
+    publisher: SEC EDGAR
+    date: '2026-04-09'
+    tier: 1
+  - url: https://wf.coreweave.com/news/coreweave-and-meta-announce-21-billion-expanded-ai-infrastructure-agreement
+    title: CoreWeave and Meta Announce $21 Billion Expanded AI Infrastructure Agreement
+    publisher: CoreWeave
+    date: '2026-04-09'
+    tier: 2
+- kind: order
+  from: META
+  to: NBIS
+  amount_usd: 27000000000
+  amount_text: 'up to ~$27B over 5 years: $12B dedicated capacity + up to $15B additional committed purchases (expands Nov 2025 ~$3B contract)'
+  instrument: compute_contract
+  term: 5 years; service from early 2027
+  capacity: multiple locations; one of first large-scale NVIDIA Vera Rubin deployments
+  announced: '2026-03-16'
+  status: signed
+  title_zh: Meta 与 Nebius 签最高 270 亿美元 Vera Rubin 算力长约
+  title_en: Nebius signs up to ~$27B five-year Vera Rubin capacity agreement with Meta
+  summary_zh: Nebius 2026-03-16 宣布与 Meta 新签 5 年长期供应协议：120 亿美元专用容量（2027 年初起、Vera Rubin 平台、多地部署），Meta 另承诺在 Nebius 后续集群采购最多 150 亿美元，合计最高约 270 亿美元。为 2025-11 约 30 亿美元合同（SEC 6-K）的大幅扩展。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1513845/000110465926027886/tm268879d1_ex99-1.htm
+    title: Nebius Group N.V. Form 6-K Ex. 99.1 – Nebius Signs New Long-Term AI Infrastructure Agreement with Meta (up to ~$27B)
+    publisher: SEC EDGAR
+    date: '2026-03-16'
+    tier: 1
+  - url: https://www.sec.gov/Archives/edgar/data/1513845/000110465925109803/tm2530882d2_6k.htm
+    title: Nebius Group N.V. Form 6-K – Order with Meta Platforms (~$2.9B, 5 years)
+    publisher: SEC EDGAR
+    date: '2025-11-12'
+    tier: 1
+- kind: order
+  from: META
+  to: GOOGL
+  amount_usd: 10000000000
+  amount_text: more than $10B over six years (reported)
+  instrument: compute_contract
+  term: 6 years
+  capacity: null
+  announced: '2025-08-21'
+  status: rumored
+  title_zh: 传 Meta 与 Google Cloud 签 6 年逾 100 亿美元云合同
+  title_en: Meta reportedly signs six-year, $10B+ Google Cloud deal (The Information / Reuters)
+  summary_zh: The Information 首报、Reuters 援引知情人证实：Meta 将使用 Google Cloud 服务器、存储与网络等服务，主要用于 AI 基础设施；双方均未置评、未有官方确认。
+  supersedes: null
+  sources:
+  - url: https://www.ksl.com/article/51364070/meta-signs-over-10-billion-cloud-deal-with-google-source-says
+    title: Meta signs over $10 billion cloud deal with Google, source says
+    publisher: Reuters (via KSL)
+    date: '2025-08-21'
+    tier: 3
+  - url: https://datacentrereview.com/2025/08/meta-signs-six-year-10-billion-cloud-deal-with-google/
+    title: Meta signs six-year, $10 billion cloud deal with Google
+    publisher: Data Centre Review
+    date: '2025-08-26'
+    tier: 3
+- kind: order
+  from: META
+  to: AMD
+  amount_usd: null
+  amount_text: undisclosed; up to 6 GW of AMD Instinct GPUs (media estimate ~$60B, unofficial); AMD issues Meta a performance warrant for up to 160M shares
+  instrument: chip_purchase
+  term: multi-year, multi-generation; first 1 GW ships 2H 2026
+  capacity: up to 6 GW (MI450-based custom Instinct GPU, Helios racks, EPYC Venice)
+  announced: '2026-02-24'
+  status: signed
+  title_zh: Meta 与 AMD 签 6 GW 多代 GPU 采购协议（配 1.6 亿股认股权证）
+  title_en: AMD and Meta sign multi-year agreement for up to 6 GW of Instinct GPUs
+  summary_zh: 2026-02-24 联合公告：Meta 将跨多代部署最多 6 GW AMD Instinct GPU，首批 1 GW（定制 MI450、Helios 机架、Venice CPU）2026 下半年发货；未披露金额。AMD 同时向 Meta 发行最多 1.6 亿股业绩挂钩认股权证，复制 AMD–OpenAI 结构。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/2488/000000248826000045/pressreleasedatedfebruary2.htm
+    title: AMD Form 8-K Ex. 99.1 – AMD and Meta Announce 6 Gigawatt Agreement
+    publisher: SEC EDGAR / AMD
+    date: '2026-02-24'
+    tier: 1
+- kind: order
+  from: MSFT
+  to: NBIS
+  amount_usd: 17400000000
+  amount_text: ~$17.4B through 2031; up to ~$19.4B if Microsoft adds capacity; ~$6.96B aggregate upfront payments per Nebius 2025 annual report
+  instrument: compute_contract
+  term: 5 years, through 2031
+  capacity: dedicated GPU capacity at Vineland, NJ data center (300 MW initial, +400 MW potential); 9 tranches 2025–2026
+  announced: '2025-09-08'
+  status: signed
+  title_zh: 微软与 Nebius 签 174 亿美元（最高 194 亿）5 年算力合同
+  title_en: Nebius signs $17.4B (up to $19.4B) five-year dedicated GPU capacity deal with Microsoft
+  summary_zh: Nebius 子公司在新泽西 Vineland 新建数据中心为微软提供专用 GPU 服务，2025–2026 分批交付；合同生效以 Nebius 落实配套融资为前提。该合同支撑了 Nebius 随后 27.5 亿美元可转债 + 10 亿美元增发。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1513845/000110465925088312/tm2525580d1_6k.htm
+    title: Nebius Group N.V. Form 6-K – Agreement with Microsoft (~$17.4B, up to ~$19.4B)
+    publisher: SEC EDGAR
+    date: '2025-09-08'
+    tier: 1
+  - url: https://www.theenergymag.com/news/2026-05-04/microsoft-nebius-ai
+    title: Microsoft Committed $7 Billion Upfront in Nebius AI Deal
+    publisher: The Energy Mag
+    date: '2026-05-04'
+    tier: 3
+- kind: order
+  from: MSFT
+  to: IREN
+  amount_usd: 9700000000
+  amount_text: ~$9.7B over 5 years, including 20% prepayment; IREN buys ~$5.8B of GB300 equipment from Dell to fulfil it
+  instrument: compute_contract
+  term: 5 years
+  capacity: NVIDIA GB300 clusters, 200 MW critical IT load, Childress TX (Horizon 1–4, phased through 2026)
+  announced: '2025-11-03'
+  status: signed
+  title_zh: 微软与 IREN 签 97 亿美元 GB300 云算力合同（含 20% 预付）
+  title_en: IREN secures ~$9.7B five-year GB300 AI cloud contract with Microsoft (20% prepaid)
+  summary_zh: IREN 在德州 Childress 750 MW 园区的液冷数据中心（200 MW IT 负载）向微软提供 GB300 GPU，2026 年分四期上线；微软预付 20%。IREN 同步向 Dell 采购约 58 亿美元设备，资金来自现金、预付款与新增融资（2025-12 发行 20 亿美元可转债）。
+  supersedes: null
+  sources:
+  - url: https://iren.com/resources/blog/iren-signs97-billion-agreement-with-microsoft-to-deploy-ai-cloud-infrastructure
+    title: IREN Signs $9.7 Billion Agreement with Microsoft to Deploy AI Cloud Infrastructure
+    publisher: IREN
+    date: '2025-11-03'
+    tier: 2
+- kind: order
+  from: MSFT
+  to: NSCALE
+  amount_usd: 14000000000
+  amount_text: undisclosed officially; reported up to $14B (FT via Reuters); other reports cite up to $24B
+  instrument: compute_contract
+  term: multi-year; Texas service from Q3 2026, Portugal Q1 2026, UK Q1 2027
+  capacity: '~200,000 NVIDIA GB300 GPUs: ~104k Texas, ~52k Narvik Norway, ~23k Loughton UK, ~12.6k Sines Portugal'
+  announced: '2025-10-15'
+  status: signed
+  title_zh: 微软与 Nscale 签约约 20 万颗 GB300（美/葡/英/挪四国）
+  title_en: Nscale to supply Microsoft ~200,000 GB300 GPUs across Texas, Portugal, UK and Norway
+  summary_zh: 2025-10-15 Nscale 宣布扩大与微软合作，跨四国部署约 20 万颗 GB300（德州 Ionic Digital 园区 10.4 万颗为主）；官方未披露金额，FT 报道最高 140 亿美元。2026 年有报道称微软退出 Loughton（英国）部分，未核实。
+  supersedes: null
+  sources:
+  - url: https://www.nscale.com/press-releases/nscale-microsoft-2025
+    title: Nscale expands partnership with Microsoft to deliver ~200,000 NVIDIA GB300 GPUs across Europe and the US
+    publisher: Nscale
+    date: '2025-10-15'
+    tier: 2
+  - url: https://in.tradingview.com/news/reuters.com%2C2025%3Anewsml_L3N3VW0HK%3A0-uk-s-nscale-signs-deal-with-microsoft-to-supply-200-000-nvidia-ai-chips
+    title: 'UK''s Nscale signs deal with Microsoft to supply 200,000 Nvidia AI chips (FT: up to $14B)'
+    publisher: Reuters (via TradingView)
+    date: '2025-10-15'
+    tier: 3
+  - url: https://www.techzine.eu/news/infrastructure/135498/nscale-signs-mega-contract-with-microsoft-for-ai-data-centers/
+    title: Nscale signs mega contract with Microsoft for AI data centers (up to $24B per CNBC/FT)
+    publisher: Techzine
+    date: '2025-10-16'
+    tier: 3
+- kind: debt
+  from: CRWV
+  to: BX
+  amount_usd: 7500000000
+  amount_text: $7.5B debt financing facility (Blackstone lead, Magnetar co-lead)
+  instrument: ddtl
+  term: null
+  capacity: null
+  announced: '2024-05-17'
+  status: signed
+  title_zh: CoreWeave 签 75 亿美元债务融资，Blackstone/Magnetar 牵头
+  title_en: CoreWeave signs $7.5B debt facility led by Blackstone and Magnetar
+  summary_zh: Blackstone 旗下基金牵头、Magnetar 联合牵头、Coatue 战略参与，Carlyle/CDPQ/DigitalBridge/BlackRock/Eldridge 等跟投；资金用于扩建 GPU 算力以履行已签客户合同。此前 2023-08 已有同一牵头方的 23 亿美元设施。
+  supersedes: null
+  sources:
+  - url: https://investors.coreweave.com/news/news-details/2024/CoreWeave-Secures-7-5-Billion-Debt-Financing-Facility-led-by-Blackstone-and-Magnetar/default.aspx
+    title: CoreWeave Secures $7.5 Billion Debt Financing Facility led by Blackstone and Magnetar
+    publisher: CoreWeave
+    date: '2024-05-17'
+    tier: 2
+- kind: investment
+  from: CRWV
+  to: CORZ
+  amount_usd: 9000000000
+  amount_text: ~$9.0B all-stock (0.1235 CRWV per CORZ share, fully diluted at 5-day VWAP as of 2025-07-03)
+  instrument: acquisition
+  term: null
+  capacity: ~1.3 GW gross power (840 MW HPC + ~500 MW mining)
+  announced: '2025-07-07'
+  status: cancelled
+  title_zh: CoreWeave 90 亿美元全股票收购 Core Scientific，因股东否决终止
+  title_en: CoreWeave $9B all-stock acquisition of Core Scientific, terminated after vote failed
+  summary_zh: 2025-07-07 签署最终协议，意在将约 1.3GW 数据中心电力垂直整合；2025-10-30 Core Scientific 特别股东会未获通过（ISS/Glass Lewis 均反对），同日终止协议，双方维持托管商业关系。
+  supersedes: null
+  sources:
+  - url: https://investors.coreweave.com/news/news-details/2025/CoreWeave-to-Acquire-Core-Scientific/default.aspx
+    title: CoreWeave to Acquire Core Scientific
+    publisher: CoreWeave
+    date: '2025-07-07'
+    tier: 2
+  - url: https://www.sec.gov/Archives/edgar/data/1839341/000114036125039808/ef20057995_ex99-1.htm
+    title: Core Scientific Announces Termination of Merger Agreement with CoreWeave (8-K Ex. 99.1)
+    publisher: SEC / Core Scientific
+    date: '2025-10-30'
+    tier: 1
+- kind: order
+  from: NVDA
+  to: CRWV
+  amount_usd: 6300000000
+  amount_text: $6.3B initial value order form; NVIDIA to purchase residual unsold capacity through 2032-04-13
+  instrument: compute_contract
+  term: through 2032-04-13
+  capacity: null
+  announced: '2025-09-15'
+  status: signed
+  title_zh: 英伟达承诺购买 CoreWeave 63 亿美元剩余算力（兜底至 2032）
+  title_en: NVIDIA $6.3B order to buy CoreWeave's residual unsold cloud capacity through 2032
+  summary_zh: 依据 2023-04-10 主服务协议新签订单：若 CoreWeave 客户未用尽容量，英伟达须按交付条件购买剩余容量至 2032-04-13，实质为需求兜底。2026-01 英伟达另以每股 87.20 美元投资 20 亿美元入股 CoreWeave。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1769628/000176962825000047/crwv-20250909.htm
+    title: CoreWeave Form 8-K (Item 1.01) – NVIDIA order form under MSA
+    publisher: SEC / CoreWeave
+    date: '2025-09-15'
+    tier: 1
+  - url: https://www.sec.gov/Archives/edgar/data/1769628/000176962826000044/ex991pressrelease_final.htm
+    title: NVIDIA and CoreWeave Strengthen Collaboration to Accelerate Buildout of AI Factories (8-K Ex. 99.1, $2B equity)
+    publisher: SEC / CoreWeave
+    date: '2026-01-26'
+    tier: 1
+- kind: lease
+  from: CRWV
+  to: APLD
+  amount_usd: 7000000000
+  amount_text: ~$7B total revenue over two ~15-year leases (campus later fully leased at ~$11B after 150 MW option exercised Aug 2025)
+  instrument: site_lease
+  term: ~15 years
+  capacity: 250 MW critical IT load (+150 MW option, exercised Aug 2025 → 400 MW)
+  announced: '2025-06-02'
+  status: signed
+  title_zh: CoreWeave 租用 Applied Digital Ellendale 250MW，15 年约 70 亿美元
+  title_en: Applied Digital signs two ~15-year leases with CoreWeave for 250 MW at Ellendale (~$7B)
+  summary_zh: 北达科他州 Ellendale（Polaris Forge 1）两份约 15 年租约：首栋 100MW 2025Q4 投运、第二栋 150MW 2026 年中；CoreWeave 2025-08 行使 150MW 选择权后园区 400MW 全部租出，合计约 110 亿美元。该租约触发 Macquarie 50 亿美元优先股设施的首笔出资。
+  supersedes: null
+  sources:
+  - url: https://ir.applieddigital.com/news-events/press-releases/detail/123/
+    title: Applied Digital Announces 250MW AI Data Center Lease With CoreWeave in North Dakota
+    publisher: Applied Digital
+    date: '2025-06-02'
+    tier: 2
+  - url: https://ir.applieddigital.com/sec-filings/all-sec-filings/content/0001493152-25-012458/ex99-1.htm
+    title: Applied Digital Finalizes Additional 150MW Lease with CoreWeave in North Dakota (8-K Ex. 99.1)
+    publisher: Applied Digital / SEC
+    date: '2025-08-29'
+    tier: 2
+- kind: lease
+  from: FLUIDSTACK
+  to: WULF
+  amount_usd: 3700000000
+  amount_text: ~$3.7B contracted revenue over initial 10-year terms (CB-3/CB-4); CB-5 expansion 4 days later lifts total to $6.7B (~$16B with extensions)
+  instrument: site_lease
+  term: 10 years + two 5-year extensions
+  capacity: 200+ MW critical IT (CB-3/CB-4); ~360 MW total with CB-5 160 MW
+  announced: '2025-08-14'
+  status: signed
+  title_zh: Fluidstack 向 TeraWulf Lake Mariner 租 200+MW，10 年 37 亿美元（后扩至 67 亿）
+  title_en: TeraWulf signs 200+ MW, 10-year AI hosting agreements with Fluidstack at Lake Mariner
+  summary_zh: 两份 10 年 HPC 托管协议（CB-3/CB-4），西纽约 Lake Mariner；谷歌为 Fluidstack 租约义务提供 18 亿美元兜底并获认股权证。四天后 Fluidstack 行权扩容 CB-5 160MW，合同总额升至 67 亿美元，谷歌兜底升至 32 亿。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1083301/000110465925078084/tm2523008d2_ex99-1.htm
+    title: TeraWulf Signs 200+ MW, 10-Year AI Hosting Agreements with Fluidstack (8-K Ex. 99.1)
+    publisher: SEC / TeraWulf
+    date: '2025-08-14'
+    tier: 1
+  - url: https://www.sec.gov/Archives/edgar/data/1083301/000110465925079463/tm2523651d3_ex99-1.htm
+    title: TeraWulf Announces Fluidstack Expansion with 160 MW CB-5 Lease at Lake Mariner (8-K Ex. 99.1)
+    publisher: SEC / TeraWulf
+    date: '2025-08-18'
+    tier: 1
+- kind: guarantee
+  from: GOOGL
+  to: WULF
+  amount_usd: 3200000000
+  amount_text: ~$3.2B total backstop of Fluidstack lease obligations ($1.8B on 2025-08-14 + $1.4B on 2025-08-18)
+  instrument: lease_guarantee
+  term: null
+  capacity: ~360 MW at Lake Mariner
+  announced: '2025-08-18'
+  status: signed
+  title_zh: 谷歌为 Fluidstack–TeraWulf 租约兜底 32 亿美元，换约 14% 股权认股权证
+  title_en: Google backstops $3.2B of Fluidstack lease obligations to TeraWulf for ~14% warrants
+  summary_zh: 谷歌为 Fluidstack 在 Lake Mariner 的租约付款提供兜底以支持项目债融资，先 18 亿美元（约 4100 万股权证、8%），再增 14 亿美元，合计约 32 亿美元、摊薄持股约 14%，成为 TeraWulf 最大股东；该兜底是 2025-10 WULF Compute 32 亿美元 7.75% 高级担保票据的核心增信。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1083301/000110465925078084/tm2523008d2_ex99-1.htm
+    title: TeraWulf Signs 200+ MW, 10-Year AI Hosting Agreements with Fluidstack (8-K Ex. 99.1)
+    publisher: SEC / TeraWulf
+    date: '2025-08-14'
+    tier: 1
+  - url: https://www.sec.gov/Archives/edgar/data/1083301/000110465925079463/tm2523651d3_ex99-1.htm
+    title: TeraWulf Announces Fluidstack Expansion with 160 MW CB-5 Lease at Lake Mariner (8-K Ex. 99.1)
+    publisher: SEC / TeraWulf
+    date: '2025-08-18'
+    tier: 1
+  - url: https://investors.terawulf.com/news-events/press-releases/detail/119/terawulf-inc-announces-pricing-of-3-2-billion-of-senior/
+    title: TeraWulf Inc. Announces Pricing of $3.2 Billion of Senior Secured Notes
+    publisher: TeraWulf
+    date: '2025-10-16'
+    tier: 2
+- kind: lease
+  from: FLUIDSTACK
+  to: CIFR
+  amount_usd: 3000000000
+  amount_text: ~$3.0B contracted revenue over initial 10-year term (~$7.0B with two 5-year extensions); Google backstops $1.4B for ~5.4% warrants
+  instrument: site_lease
+  term: 10 years + two 5-year extensions
+  capacity: 168 MW critical IT (up to 244 MW gross)
+  announced: '2025-09-25'
+  status: signed
+  title_zh: Fluidstack 向 Cipher Barber Lake 租 168MW，10 年 30 亿美元，谷歌兜底 14 亿
+  title_en: Cipher Mining signs 168 MW, 10-year AI hosting agreement with Fluidstack at Barber Lake
+  summary_zh: 德州 Barber Lake 站点，目标 2026-09 交付 168MW；谷歌为 Fluidstack 租约兜底 14 亿美元并获约 2400 万股权证（约 5.4%），与 TeraWulf 同一模式。Cipher 保留项目全部所有权并随后发行 11 亿美元可转债；2025-11 再扩 39MW 至整站 300MW（未单独核验）。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1819989/000095010325012168/dp234624_ex9901.htm
+    title: Cipher Mining Signs 168 MW, 10-Year AI Hosting Agreement with Fluidstack (8-K Ex. 99.1)
+    publisher: SEC / Cipher Mining
+    date: '2025-09-25'
+    tier: 1
+- kind: lease
+  from: AMZN
+  to: CIFR
+  amount_usd: 5500000000
+  amount_text: ~$5.5B over 15-year lease
+  instrument: site_lease
+  term: 15 years
+  capacity: 300 MW (delivered in two phases in 2026)
+  announced: '2025-11-03'
+  status: signed
+  title_zh: Cipher 与 AWS 签 15 年 55 亿美元数据中心租约（300MW）
+  title_en: Cipher Mining signs 15-year ~$5.5B data center lease with AWS for 300 MW
+  summary_zh: 随 Q3 业绩披露：为 AWS AI 负载提供交钥匙空间与电力，两期交付（2026-07 起，2026Q4 完成），2026-08 起租；Cipher 同时宣布 13 亿美元可转债。叠加 Fluidstack 合同后 AI 托管租金合计约 85 亿美元。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1819989/000181998925000110/nov3_earningspressreleasex.htm
+    title: Cipher Mining Provides Third Quarter 2025 Business Update (8-K Ex. 99.1)
+    publisher: SEC / Cipher Mining
+    date: '2025-11-03'
+    tier: 1
+- kind: debt
+  from: ORCL
+  to: BONDHOLDERS
+  amount_usd: 18000000000
+  amount_text: $18B senior notes in six tranches (4.45%–6.10%)
+  instrument: bond
+  term: 5 to 40 years (2030–2065)
+  capacity: null
+  announced: '2025-09-24'
+  status: completed
+  title_zh: 甲骨文发行 180 亿美元债券
+  title_en: Oracle prices $18B six-tranche senior notes
+  summary_zh: 2025-09-24 签署承销协议、09-26 交割，六档票据 2030–2065 年到期，票息 4.45%–6.10%，BofA/Citi/DB/GS/HSBC/JPM 牵头；用途为一般公司用途（含资本开支），为 OCI/OpenAI 扩张融资。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1341439/000119312525220445/d31817d8k.htm
+    title: Oracle Corp Form 8-K (Item 8.01) – $18B senior notes
+    publisher: SEC
+    date: '2025-09-26'
+    tier: 1
+- kind: debt
+  from: ORCL
+  to: BONDHOLDERS
+  amount_usd: 25000000000
+  amount_text: $25B senior unsecured notes in eight tranches (FRN + 4.55%–6.85%); part of $45–50B 2026 plan with $5B mandatory convertible preferred + $20B ATM
+  instrument: bond
+  term: 3 to 40 years (2029–2066)
+  capacity: null
+  announced: '2026-02-02'
+  status: completed
+  title_zh: 甲骨文发行 250 亿美元债券（2026 年 450–500 亿融资计划的债务部分）
+  title_en: Oracle prices $25B eight-tranche notes under 2026 funding plan
+  summary_zh: 2026-02-01 甲骨文公布 2026 年 450–500 亿美元融资计划（约一半债、一半股权）；02-02 定价 250 亿美元八档票据（2029–2066），02-04 交割；公司称 2026 年不再发债。同日发行 50 亿美元 6.50% 强制可转优先股并设 200 亿美元 ATM。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1341439/000119312526035603/d33906d424b2.htm
+    title: Oracle Corp Prospectus Supplement (424B2) – $25,000,000,000 Notes
+    publisher: SEC
+    date: '2026-02-02'
+    tier: 1
+  - url: https://investor.oracle.com/investor-news/news-details/2026/Oracle-announces-Equity-and-Debt-Financing-Plan-for-Calendar-Year-2026/default.aspx
+    title: Oracle announces Equity and Debt Financing Plan for Calendar Year 2026
+    publisher: Oracle Investor Relations
+    date: '2026-02-01'
+    tier: 2
+  - url: https://www.sec.gov/Archives/edgar/data/1341439/000119312526039344/d63638d8k.htm
+    title: Oracle Corp Form 8-K – Underwriting Agreement; Series D Mandatory Convertible Preferred ($5B)
+    publisher: SEC
+    date: '2026-02-05'
+    tier: 1
+- kind: debt
+  from: GOOGL
+  to: BONDHOLDERS
+  amount_usd: 25000000000
+  amount_text: $17.5B USD notes (8 tranches) + €6.5B euro notes (6 tranches) ≈ $25B
+  instrument: bond
+  term: 3 to 50 years (USD 2028–2075; EUR 2028–2064)
+  capacity: null
+  announced: '2025-11-03'
+  status: completed
+  title_zh: Alphabet 发行 175 亿美元 + 65 亿欧元债券
+  title_en: Alphabet closes $17.5B USD and €6.5B euro bond offerings
+  summary_zh: 2025-11-06 交割：美元票据 8 档 175 亿美元（含 2075 年 50 年期），欧元票据 6 档 65 亿欧元；为 2025 年 910–930 亿美元资本开支融资。2026-02 再发 200 亿美元 + 55 亿英镑（含百年期债券）。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1652044/000119312525269979/d56115d8k.htm
+    title: Alphabet Inc. Form 8-K – $17.5B USD and €6.5B Euro Notes
+    publisher: SEC
+    date: '2025-11-06'
+    tier: 1
+  - url: https://www.sec.gov/Archives/edgar/data/1652044/000119312526051423/d946885d8k.htm
+    title: Alphabet Inc. Form 8-K – $20B USD Notes and £5.5B Sterling Notes (Feb 2026)
+    publisher: SEC
+    date: '2026-02-13'
+    tier: 1
+- kind: debt
+  from: AMZN
+  to: BONDHOLDERS
+  amount_usd: 53800000000
+  amount_text: $37B USD notes (11 tranches) + €14.5B euro notes (8 tranches, ≈$16.8B) ≈ $53.8B
+  instrument: bond
+  term: 2 to 50 years (USD 2028–2076; EUR 2028–2064)
+  capacity: null
+  announced: '2026-03-10'
+  status: completed
+  title_zh: 亚马逊发行 370 亿美元 + 145 亿欧元债券（史上最大之一）
+  title_en: Amazon raises $37B USD and €14.5B euro bonds in March 2026
+  summary_zh: 美元部分 2026-03-10 定价、03-13 交割，11 档 2028–2076 年（含 50 年期 6.05%）；欧元部分 03-11 定价、03-16 交割，8 档 145 亿欧元。为 2026 年约 2,000 亿美元资本开支融资；此前 2025-11 已发 150 亿美元（三年来首次）。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1018724/000110465926027729/tm266670d8_8k.htm
+    title: Amazon.com Inc. Form 8-K – $37B USD Notes
+    publisher: SEC
+    date: '2026-03-13'
+    tier: 1
+  - url: https://www.sec.gov/Archives/edgar/data/1018724/000110465926028556/tm266670d9_8k.htm
+    title: Amazon.com Inc. Form 8-K – €14.5B Euro Notes
+    publisher: SEC
+    date: '2026-03-16'
+    tier: 1
+  - url: https://www.sec.gov/Archives/edgar/data/1018724/000110465925114647/tm2530638d3_8k.htm
+    title: Amazon.com Inc. Form 8-K – $15B Notes (Nov 2025)
+    publisher: SEC
+    date: '2025-11-20'
+    tier: 1
+- kind: investment
+  from: NVDA
+  to: INTC
+  amount_usd: 5000000000
+  amount_text: $5B for 214,776,632 Intel common shares at $23.28 (private placement, ~4% stake)
+  instrument: primary
+  term: null
+  capacity: null
+  announced: '2025-09-18'
+  status: completed
+  title_zh: 英伟达 50 亿美元入股英特尔
+  title_en: Nvidia completes $5B equity investment in Intel
+  summary_zh: 2025-09-18 宣布，配合联合开发定制 x86 数据中心 CPU 与集成 RTX GPU 的 PC SoC（NVLink 互联）；FTC 12 月初放行，2025-12-26 完成发行 2.148 亿股，每股 23.28 美元。同期软银投 20 亿、美国政府以 CHIPS 资金换取 89 亿美元（9.9%）股权。
+  supersedes: null
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/50863/000005086325000204/intc-20251226.htm
+    title: Intel Corp Form 8-K (Item 3.02) – completion of sale of 214,776,632 shares to NVIDIA
+    publisher: SEC
+    date: '2025-12-29'
+    tier: 1
+  - url: https://nvidianews.nvidia.com/news/nvidia-and-intel-to-develop-ai-infrastructure-and-personal-computing-products
+    title: NVIDIA and Intel to Develop AI Infrastructure and Personal Computing Products
+    publisher: NVIDIA Newsroom
+    date: '2025-09-18'
+    tier: 2
+- kind: investment
+  from: AIP
+  to: ALIGNED
+  amount_usd: 40000000000
+  amount_text: ~$40B enterprise value for 100% of equity; plus $5B growth capital committed at closing
+  instrument: acquisition
+  term: null
+  capacity: 51 campuses, >6.4 GW operational and planned
+  announced: '2025-10-15'
+  status: completed
+  title_zh: AIP/MGX/GIP 400 亿美元收购 Aligned Data Centers
+  title_en: AIP, MGX and BlackRock's GIP close $40B Aligned Data Centers buyout
+  summary_zh: AIP（BlackRock/GIP/MGX/微软/英伟达，KIA 与淡马锡为锚定投资人）首笔投资，从 Macquarie 基金手中收购 Aligned 全部股权，企业价值约 400 亿美元，为史上最大数据中心交易；2026-07-21 完成交割并追加 50 亿美元增长资本。
+  supersedes: null
+  sources:
+  - url: https://aligneddc.com/?p=7563
+    title: AIP, MGX and BlackRock's GIP to Acquire All Equity in Aligned Data Centers
+    publisher: Aligned Data Centers
+    date: '2025-10-15'
+    tier: 2
+  - url: https://aligneddc.com/press-release/aip-mgx-and-blackrocks-gip-close-acquisition-of-aligned-data-centers/
+    title: AIP, MGX and BlackRock's GIP Close Acquisition of Aligned Data Centers
+    publisher: Aligned Data Centers
+    date: '2026-07-21'
+    tier: 2
+- kind: investment
+  from: OWL
+  to: CRUSOE
+  amount_usd: 15000000000
+  amount_text: $15B JV total (phase 1 $3.4B Oct 2024 + phase 2 six buildings; Blue Owl Real Assets + Primary Digital Infrastructure co-sponsor)
+  instrument: jv_equity
+  term: null
+  capacity: 1.2 GW, 8 buildings, up to 50,000 GB200 NVL72 per building (Abilene, TX)
+  announced: '2025-05-21'
+  status: signed
+  title_zh: Crusoe/Blue Owl/Primary Digital 150 亿美元 Abilene（Stargate）合资
+  title_en: Crusoe, Blue Owl and Primary Digital expand Abilene JV to $15B, 1.2 GW
+  summary_zh: 2024-10 一期 34 亿美元（206 MW）合资后，2025-05 扩至二期，园区达 8 栋 1.2 GW；由 JPMorgan 牵头的 71 亿美元建设贷款部分融资。该园区即 Oracle 为 OpenAI 承租的 Stargate Abilene。
+  supersedes: null
+  sources:
+  - url: https://crusoe.ai/newsroom/crusoe-blue-owl-capital-and-primary-digital-infrastructure-enter-joint-venture/
+    title: Crusoe, Blue Owl Capital and Primary Digital Infrastructure Enter Second Phase of $15B Joint Venture
+    publisher: Crusoe
+    date: '2025-05-21'
+    tier: 2
+  - url: https://crusoe.ai/newsroom/crusoe-blue-owl-capital-primary-digital-joint-venture/
+    title: Crusoe, Blue Owl Capital and Primary Digital Infrastructure Enter $3.4B Joint Venture
+    publisher: Crusoe
+    date: '2024-10-15'
+    tier: 2
+- kind: debt
+  from: NEW:Crusoe–Blue Owl–Primary Digital Abilene JV
+  to: JPM
+  amount_usd: 7100000000
+  amount_text: $7.1B construction loan (J.P. Morgan-led consortium, arranged by Newmark)
+  instrument: term_loan
+  term: null
+  capacity: 'phase 2: six buildings, campus total 1.2 GW'
+  announced: '2025-05-22'
+  status: completed
+  title_zh: Abilene 合资二期获 JPMorgan 牵头 71 亿美元建设贷款
+  title_en: JPMorgan-led consortium provides $7.1B construction loan for Abilene phase 2
+  summary_zh: 为 150 亿美元 Abilene 合资二期（六栋新楼）提供建设贷款，Newmark 安排；此前一期 206 MW 已于 2025-01 获 JPMorgan 23 亿美元建设贷款（原始来源未能打开）。
+  supersedes: null
+  sources:
+  - url: https://www.itiger.com/hans/news/2537792946
+    title: Newmark Facilitates $7.1 Billion Financing for Texas AI Data Center (MT Newswires)
+    publisher: MT Newswires via Tiger Brokers
+    date: '2025-05-23'
+    tier: 3
+  - url: https://rebusinessonline.com/newmark-arranges-7-1b-construction-loan-for-west-texas-data-center-project/
+    title: Newmark Arranges $7.1B Construction Loan for West Texas Data Center Project
+    publisher: REBusinessOnline
+    date: '2025-05-28'
+    tier: 3
+- kind: debt
+  from: VANTAGE
+  to: LENDER_SYNDICATE
+  amount_usd: 38000000000
+  amount_text: '~$38B senior secured project debt: $23.25B Texas (Shackelford) + $14.75B Wisconsin (Port Washington); JPMorgan & MUFG lead'
+  instrument: term_loan
+  term: 4 years + two 1-year extensions; interest-only during construction; ~250bp over benchmark
+  capacity: Texas 1.4 GW (10 buildings); Wisconsin ~1 GW (4 buildings)
+  announced: '2025-10-24'
+  status: rumored
+  title_zh: Vantage 两座 Oracle/OpenAI 数据中心 380 亿美元贷款（JPMorgan/MUFG 牵头）
+  title_en: Banks ready $38B debt for Vantage-built, Oracle-leased Stargate data centers
+  summary_zh: Bloomberg 报道 JPMorgan 与 MUFG 牵头、Wells Fargo/BNP/GS/SMBC/SocGen 参与的约 380 亿美元债务包，用于 Vantage 开发、Oracle 为 OpenAI Stargate 使用的德州 Shackelford（Frontier）与威州 Port Washington 园区；为迄今最大 AI 基建债务融资。无 Vantage
+    官方新闻稿。
+  supersedes: null
+  sources:
+  - url: https://news.bloomberglaw.com/banking-law/banks-ready-38-billion-of-debt-for-oracle-tied-data-centers-1
+    title: Banks Ready $38 Billion of Debt for Oracle-Tied Data Centers
+    publisher: Bloomberg
+    date: '2025-09-04'
+    tier: 3
+  - url: https://techstrong.it/?p=93473
+    title: Oracle Nears $38 Billion Debt Package for Vantage Data Centers (citing Bloomberg)
+    publisher: Techstrong IT
+    date: '2025-10-24'
+    tier: 3
+  - url: https://www.itiger.com/news/1137212418
+    title: Record $38 Billion Debt Sale Nears for Oracle-Tied Data Centers, Bloomberg Reports
+    publisher: Bloomberg via Tiger Newspress
+    date: '2025-10-24'
+    tier: 3
+- kind: debt
+  from: SOFTBANK
+  to: LENDER_SYNDICATE
+  amount_usd: 40000000000
+  amount_text: $40B unsecured bridge loan (JPMorgan, Goldman Sachs, Mizuho, SMBC, MUFG)
+  instrument: bridge
+  term: 12 months, matures 2027-03-25
+  capacity: null
+  announced: '2026-03-27'
+  status: signed
+  title_zh: 软银 400 亿美元过桥贷款为增持 OpenAI 融资
+  title_en: SoftBank secures $40B unsecured bridge loan to fund OpenAI stake
+  summary_zh: 软银史上最大美元借款，用于 2026-02 承诺的 OpenAI 增持（OpenAI 1,100 亿美元融资轮中软银出资 300 亿）及一般用途，2027-03 到期，计划以资产变现分期偿还；接替 2025 年由 Mizuho 牵头、用于 OpenAI/Ampere 的 150 亿美元一年期过桥贷款。
+  supersedes: null
+  sources:
+  - url: https://www.bnnbloomberg.ca/business/2026/03/27/softbank-secures-40-billion-loan-to-boost-openai-investments/
+    title: SoftBank secures $40 billion loan to boost OpenAI investments (Reuters)
+    publisher: Reuters via BNN Bloomberg
+    date: '2026-03-27'
+    tier: 3
+  - url: https://news.bloomberglaw.com/banking-law/softbank-seeks-record-loan-of-up-to-40-billion-for-openai-stake
+    title: SoftBank Seeks Record Loan of Up to $40 Billion for OpenAI Stake
+    publisher: Bloomberg
+    date: '2026-03-06'
+    tier: 3
+  - url: https://www.ifre.com/loans/2397450/softbank-lines-up-mammoth-loan-for-openai-deal
+    title: SoftBank lines up mammoth loan for OpenAI deal
+    publisher: IFR
+    date: '2026-03-14'
+    tier: 3
+- kind: order
+  from: AVGO
+  to: SAMSUNG
+  amount_usd: 200000000000
+  amount_text: more than $200B estimated through 2030 (non-binding MOU; no volumes disclosed)
+  instrument: chip_purchase
+  term: 5 years, through 2030
+  capacity: null
+  announced: '2026-07-25'
+  status: announced
+  title_zh: 三星与博通签署逾 2,000 亿美元 AI 芯片合作备忘录（HBM+2nm 代工+封装）
+  title_en: Samsung and Broadcom sign $200B+ MOU on HBM, 2nm foundry and packaging
+  summary_zh: 2026-07-25 旧金山 AI Summit 签署的非约束性 MOU，涵盖为博通下一代 AI 加速器供应 HBM4/HBM4E、以三星 2nm 及以下工艺代工、2.3D/2.5D 先进封装，三星估算至 2030 年价值逾 2,000 亿美元；无具体订单量，实际落地取决于 2nm 良率与客户认证。
+  supersedes: null
+  sources:
+  - url: https://www.mobileworldlive.com/ai-cloud/samsung-broadcom-ink-200b-ai-chip-pact/
+    title: Samsung, Broadcom ink $200B AI chip pact
+    publisher: Mobile World Live
+    date: '2026-07-27'
+    tier: 3
+  - url: https://www.sammobile.com/news/samsung-gets-200-billion-to-make-chips-for-broadcom/
+    title: Samsung gets $200 billion deal to make chips for Broadcom
+    publisher: SamMobile
+    date: '2026-07-25'
+    tier: 3
+  - url: https://www.trendforce.com/news/2026/07/27/news-tsmc-scales-2nm-capacity-as-samsung-wins-major-ai-chip-deal-with-broadcom/
+    title: TSMC Scales 2nm Capacity as Samsung Wins Major AI Chip Deal with Broadcom (MOU)
+    publisher: TrendForce
+    date: '2026-07-27'
+    tier: 3
+- kind: order
+  from: NVDA
+  to: SKHYNIX
+  amount_usd: 500000000000
+  amount_text: more than $500B strategic partnership (long-term HBM4 supply + SK Telecom 2 GW Vera Rubin data center; breakdown undisclosed; reported as LOI-level)
+  instrument: chip_purchase
+  term: multi-year (reported through 2030); first data center phase 2027
+  capacity: 2 GW AI data center (SK Telecom), first facility 2027
+  announced: '2026-07-26'
+  status: announced
+  title_zh: 英伟达与 SK 集团宣布逾 5,000 亿美元 AI 合作（HBM4 长期供应 + 2GW 数据中心）
+  title_en: Nvidia and SK Group announce $500B+ partnership incl. long-term HBM4 supply
+  summary_zh: 2026-07-26 宣布：SK 海力士与英伟达共同开发下一代 AI 内存并建立长期 HBM（含 HBM4）供应安排，SK 电讯基于 Vera Rubin 建设 2GW AI 云，总规模据 CNBC 报道逾 5,000 亿美元；多家媒体称为意向书而非约束性合同，金额为双方合计、未披露 HBM 采购部分，须谨慎使用。
+  supersedes: null
+  sources:
+  - url: https://view.asiae.co.kr/en/article/2026072703420181536
+    title: Nvidia Forms $500 Billion AI Alliance with SK (citing CNBC)
+    publisher: Asia Business Daily
+    date: '2026-07-27'
+    tier: 3
+  - url: https://www.trendforce.com/news/?p=61659
+    title: SK hynix Q2 2026 results; NVIDIA multi-year AI memory supply deal up to $500B (citing CNBC/Reuters)
+    publisher: TrendForce
+    date: '2026-07-29'
+    tier: 3

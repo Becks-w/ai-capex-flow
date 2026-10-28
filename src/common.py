@@ -219,6 +219,16 @@ POOLED_MAP = {"bondholders": "BONDHOLDERS", "bond investors": "BONDHOLDERS", "no
               "undisclosed": "UNDISCLOSED", "undisclosed customer": "UNDISCLOSED", "undisclosed counterparty": "UNDISCLOSED"}
 
 
+# 模型给的 NEW:名字 常有变体，用规则归到同一实体（先于别名匹配）
+NAME_RULES = [
+    (re.compile(r"SPV|XPU|XPV", re.I), re.compile(r"Broadcom|Anthropic|XPU|XPV", re.I), "ANTHROPIC_XPU_SPV"),
+    (re.compile(r"Beignet", re.I), None, "BEIGNET"),
+    (re.compile(r"Naver", re.I), None, "NAVER"),
+    (re.compile(r"Abilene", re.I), re.compile(r"JV|joint venture|Crusoe", re.I), "ABILENE_JV"),
+    (re.compile(r"Stargate", re.I), None, "STARGATE"),
+]
+
+
 def resolve_entity(con, pf, raw, cache, allow_new=True):
     """模型给的 id 或 NEW:Name → entities.id。未知实体自动新增为隔离状态（auto_added=1，页面不画）。"""
     raw = (raw or "").strip()
@@ -235,6 +245,10 @@ def resolve_entity(con, pf, raw, cache, allow_new=True):
     if key in POOLED_MAP:
         cache[raw] = POOLED_MAP[key]
         return POOLED_MAP[key]
+    for r1, r2, eid in NAME_RULES:
+        if r1.search(name) and (r2 is None or r2.search(name)) and con.execute("SELECT 1 FROM entities WHERE id=?", (eid,)).fetchone():
+            cache[raw] = eid
+            return eid
     hits, _, _ = pf.run(name)
     if len(hits) == 1:
         cache[raw] = hits[0]

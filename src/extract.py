@@ -37,6 +37,11 @@ LENDER_SYNDICATE (unnamed bank group), PRIVATE_CREDIT (unnamed private-credit le
 7. announced = the deal's announcement date (YYYY-MM-DD); use the article date if the article announces it.
 8. quote = verbatim sentence (<= 250 chars) that states the commitment. title_zh ≤ 30 个汉字；summary_zh 一两句中文，说明内容、期限、条件、与已有交易的关系；title_en one line.
 9. verdicts: exactly one per article id, relevant=false when no event was extracted, with a one-line reason.
+10. Aggregates are guidance, not deals: "total compute commitments of $X", "total lease obligations", "capex of $X" -> kind=guidance
+    (instrument compute_commitments / other / capex), never an order/lease to UNDISCLOSED.
+11. A financing structure is ONE deal: an SPV that borrows from banks and buys chips to lease to a customer is two edges at most —
+    debt SPV -> lenders, and lease customer -> SPV. Do not also emit vendor_financing / order variants of the same money.
+12. xAI has been a SpaceX subsidiary since Feb 2026: for compute deals with xAI/SpaceX after that date use SPACEX as the entity.
 
 ## Articles
 """
