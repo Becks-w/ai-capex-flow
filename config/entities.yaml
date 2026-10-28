@@ -64,6 +64,8 @@ entities:
   - {id: BTDR,   name: Bitdeer,         name_zh: Bitdeer,        group: neocloud, ticker: BTDR, country: SG, aliases: [Bitdeer]}
   - {id: RIOT,   name: Riot Platforms,  name_zh: Riot,           group: neocloud, ticker: RIOT, country: US, aliases: ["Riot Platforms"]}
   - {id: SOLUNA, name: Soluna,          name_zh: Soluna,         group: neocloud, ticker: SLNH, country: US, aliases: [Soluna]}
+  - {id: VOLTA, name: Volta, name_zh: Volta, group: neocloud, ticker: null, country: False, aliases: [Volta, "Volta AI"]}
+
   # ---- 芯片 / 存储 ----
   - {id: NVDA, name: NVIDIA,    name_zh: 英伟达,   group: chip, ticker: NVDA, country: US, aliases: [Nvidia, NVIDIA, 英伟达]}
   - {id: AMD,  name: AMD,       name_zh: AMD,      group: chip, ticker: AMD,  country: US, aliases: [AMD, "Advanced Micro Devices"]}
@@ -78,6 +80,9 @@ entities:
   - {id: CEREBRAS, name: Cerebras, name_zh: Cerebras, group: chip, country: US, aliases: [Cerebras]}
   - {id: GROQ, name: Groq,      name_zh: Groq,     group: chip, country: US, aliases: [Groq]}
   - {id: ASML, name: ASML,      name_zh: 阿斯麦,   group: chip, ticker: ASML, country: NL, aliases: [ASML]}
+  - {id: AMKOR, name: Amkor Technology, name_zh: Amkor, group: chip, ticker: AMKR, country: US, aliases: [Amkor, "Amkor Technology"]}
+  - {id: KYEC, name: King Yuan Electronics, name_zh: 京元电子, group: chip, ticker: null, country: TW, aliases: [KYEC, "King Yuan Electronics", "King Yuan", 京元电子]}
+
   # ---- 服务器 / 设备 / 网络 ----
   - {id: SMCI, name: Supermicro, name_zh: 超微,   group: equipment, ticker: SMCI, country: US, aliases: [Supermicro, "Super Micro"]}
   - {id: DELL, name: Dell,       name_zh: 戴尔,   group: equipment, ticker: DELL, country: US, aliases: [Dell, "Dell Technologies"]}
@@ -101,6 +106,8 @@ entities:
   - {id: EDGECONNEX, name: EdgeConneX,        name_zh: EdgeConneX, group: datacenter, country: US, aliases: [EdgeConneX]}
   - {id: AIRTRUNK, name: AirTrunk,            name_zh: AirTrunk, group: datacenter, country: AU, aliases: [AirTrunk]}
   - {id: SBENERGY, name: SB Energy,           name_zh: SB Energy, group: datacenter, country: US, aliases: ["SB Energy"]}
+  - {id: ATNORTH, name: atNorth, name_zh: atNorth, group: datacenter, ticker: null, country: IS, aliases: [atNorth]}
+
   # ---- 能源 / 电力 ----
   - {id: CVX,  name: Chevron,       name_zh: 雪佛龙,   group: energy, ticker: CVX,  country: US, aliases: [Chevron]}
   - {id: CEG,  name: Constellation, name_zh: 星座能源, group: energy, ticker: CEG,  country: US, aliases: [Constellation, "Constellation Energy"]}
@@ -110,6 +117,8 @@ entities:
   - {id: BE,   name: Bloom Energy,  name_zh: Bloom,    group: energy, ticker: BE,   country: US, aliases: ["Bloom Energy"]}
   - {id: GEV,  name: GE Vernova,    name_zh: GE Vernova, group: energy, ticker: GEV, country: US, aliases: ["GE Vernova"]}
   - {id: OKLO, name: Oklo,          name_zh: Oklo,     group: energy, ticker: OKLO, country: US, aliases: [Oklo]}
+  - {id: VOLTUS, name: Voltus, name_zh: Voltus, group: energy, ticker: null, country: US, aliases: [Voltus]}
+
   # ---- 资金方：私募 / 基建基金 ----
   - {id: OWL,  name: Blue Owl,     name_zh: Blue Owl, group: financier, ticker: OWL, country: US, aliases: ["Blue Owl", "Blue Owl Capital"]}
   - {id: BX,   name: Blackstone,   name_zh: 黑石,     group: financier, ticker: BX,  country: US, aliases: [Blackstone, 黑石]}

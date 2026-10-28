@@ -1,0 +1,28 @@
+# ===== 待确认草案：仅剩 C 级（2026-10-28）。apply_overrides 不读本文件。=====
+overrides:
+- match:
+    id: 4
+  action: delete
+  note: '[C] 「英伟达/AMD/博通至多 $5B」是意向总额，已被 #15 NVDA $3B 与 #20 AMD $1B 的实际认购取代；博通份额未见公告'
+- match:
+    id: 117
+  action: set
+  fields:
+    amount_usd: 30000000000
+    amount_text: $10B invested + up to $20B more (S-1)
+    status: signed
+    title_zh: 谷歌依 3 月协议投 Anthropic 100 亿美元，可再追加至多 200 亿
+  note: '[C] 以 S-1 口径为准，若你认可 $40B 则删掉本条'
+- match:
+    id: 77
+  action: merge
+  into: 80
+  note: '[C] 承租方未经 Riot 或 Anthropic 确认，先记为未披露；确认后再 set from_entity'
+- match:
+    id: 66
+  action: confirm
+  note: '[C] 英伟达 10-Q 披露为 neocloud 融资提供最低收入担保、上限 $108.5B，是真实披露，但抽取只拿到一篇转述。认了就计入「担保兜底」'
+entities_draft:
+- id: ANTHROPIC
+  cik: 2130357
+  note: Anthropic, PBC 的 S-1 在 EDGAR 上，CIK 0002130357

@@ -11,3 +11,34 @@ overrides:
   - {match: {id: 33}, action: set, fields: {from_entity: ANTHROPIC_XPU_SPV, title_zh: "SPV 向 BofA/花旗/大摩/黑石借 630 亿美元买博通芯片租给 Anthropic"}, note: "借款人是 SPV 而非 Anthropic"}
   - {match: {id: 48}, action: merge, into: 33, note: "同一笔 SPV 贷款"}
   - {match: {id: 47}, action: confirm, note: "租赁侧：Anthropic 向 SPV 租用芯片，与 SPV 的贷款是两笔承诺"}
+
+  # ===== 2026-10-28 人工校对第一批（A/B 级）=====
+  - {match: {id: 3}, action: merge, into: 45, note: "[A] $22.5B 普通股是 #45 $35B 发行的一部分"}
+  - {match: {id: 89}, action: merge, into: 45, note: "[A] $12.5B 优先股是 #45 $35B 发行的一部分"}
+  - {match: {id: 44}, action: delete, note: "[B] $95B = $35B 发行 + $60B ATM 的媒体加总，已分别计入 #45 / #50"}
+  - {match: {id: 176}, action: delete, note: "[B] $97.5B 为媒体加总口径，且误记为债务"}
+  - {match: {id: 1}, action: set, fields: {title_zh: 博通为 XPU SPV 提供残值担保，最大潜在责任约 430 亿美元, to_entity: ANTHROPIC_XPU_SPV}, note: "[A] 8-K 已披露受益方即该 SPV"}
+  - {match: {id: 34}, action: merge, into: 1, note: "[A] 同一残值担保的媒体口径（80%×$63B）"}
+  - {match: {id: 49}, action: merge, into: 1, note: "[A] 同一残值担保，无金额"}
+  - {match: {id: 42}, action: merge, into: 33, note: "[A] 第一留置权部分是 #33 $63B 贷款的组成"}
+  - {match: {id: 43}, action: merge, into: 33, note: "[A] 第二留置权部分是 #33 $63B 贷款的组成"}
+  - {match: {id: 55}, action: merge, into: 33, note: "[B] 黑石 $9B 为第二留置权承诺，属 #33 的份额"}
+  - {match: {id: 53}, action: delete, note: "[B] 「博通向 Anthropic 提供 $63B 融资」是同一结构的误记法，钱由 SPV 向银团借（#33），Anthropic 向 SPV 租（#47）"}
+  - {match: {id: 38}, action: set, fields: {status: completed, title_zh: SpaceX 完成 Apollo 牵头 400 亿美元 GPU 融资（$10B 银行贷款 + $30B 债券）}, note: "[A] 8-K 披露具约束力承诺；10-25 马斯克宣布完成"}
+  - {match: {id: 65}, action: merge, into: 38, note: "[A] 同一笔，对手方记为未具名银团"}
+  - {match: {id: 160}, action: merge, into: 38, note: "[A] 同一笔，误记为租赁"}
+  - {match: {id: 175}, action: merge, into: 38, note: "[A] 同一笔，误记为租赁"}
+  - {match: {id: 173}, action: merge, into: 38, note: "[A] $10B 银行贷款是 $40B 的组成"}
+  - {match: {id: 174}, action: merge, into: 38, note: "[A] $30B 债券是 $40B 的组成"}
+  - {match: {id: 39}, action: merge, into: 38, note: "[B] PIMCO $4B 是 $30B 债券中的认购份额"}
+  - {match: {id: 110}, action: supersede, by: 21, note: "[B] Anthropic–SpaceX Colossus 合同 10-26 修订为至多 $120.5B，原 $45B 不再单独计"}
+  - {match: {id: 109}, action: supersede, by: 24, note: "[B] Anthropic–Azure 承诺 10-26 修订为至少 $44.9B，原 $30B 不再单独计"}
+  - {match: {id: 19}, action: merge, into: 117, note: "[B] $10B 为首期"}
+  - {match: {id: 37}, action: merge, into: 117, note: "[B] 「可再投 $20B」为同一协议"}
+  - {match: {id: 80}, action: set, fields: {amount_text: about $9.1 billion over 20 years, amount_usd: 9100000000, announced: '2026-10-27'}, note: "[B] 合同价值来自 Riot 披露"}
+  - {match: {id: 12}, action: set, fields: {from_entity: VOLTA}, note: "[A] Bitdeer 6-K 披露的 Tydal 租约，租户 Volta"}
+  - {match: {id: 61}, action: set, fields: {to_entity: AMKOR}, note: "[B] 英伟达–Amkor $1.3B 封装产能"}
+  - {match: {id: 60}, action: set, fields: {to_entity: KYEC}, note: "[B] 英伟达–KYEC $1.1B 测试产能"}
+  - {match: {id: 69}, action: set, fields: {to_entity: ATNORTH}, note: "[B] CoreWeave 丹麦机房，无金额"}
+  - {match: {id: 158}, action: set, fields: {to_entity: VOLTUS}, note: "[B] 谷歌 1GW 虚拟电厂，无金额"}
+  - {match: {id: 180}, action: merge, into: 2, note: "[A] Vertiv 收购 UIG 的新闻稿与 8-K 是同一笔"}
