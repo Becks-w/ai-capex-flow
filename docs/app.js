@@ -21,7 +21,7 @@
     view: 'graph', sel: null, hover: null, flagEdge: null, snapshot: null, expanded: new Set() };
 
   // ---------- 格式 ----------
-  function fmtUSD(v, html) {
+  function fmtUSD(v, html, compact) {
     // 中文计数：万亿 / 亿 / 万 美元。1.6 万亿、5,460 亿、91 亿、5.7 亿、5,000 万
     if (v == null || !(v > 0)) return null;
     let n, u;
@@ -32,6 +32,7 @@
     if (u === '万亿') s = n >= 10 ? n.toFixed(1) : n.toFixed(2).replace(/0$/, '');
     else if (n >= 100) s = Math.round(n).toLocaleString('en-US');
     else s = (Math.abs(n - Math.round(n)) < 0.05 ? n.toFixed(0) : n.toFixed(1));
+    if (compact) return `${s}${u}`;
     return html ? `${s}<small>${u}美元</small>` : `${s} ${u}美元`;
   }
   function ago(iso) {
@@ -188,7 +189,7 @@
     nodeSel.append('circle').attr('r', d => d.r).attr('stroke', d => groupColor(d.group));
     const short = s => s.length > 22 ? s.slice(0, 21) + '…' : s;
     nodeSel.append('text').attr('class', d => 'lbl' + (d.r < 9 ? ' minor' : '')).attr('text-anchor', 'middle').attr('y', d => d.r + 12).text(d => short(entName(d.id)));
-    nodeSel.append('text').attr('class', d => 'amt' + (d.r < 9 ? ' minor' : '')).attr('text-anchor', 'middle').attr('y', d => d.r + 23).text(d => d.r >= 11 ? (fmtUSD(tot.get(d.id)) || '') : '');
+    nodeSel.append('text').attr('class', d => 'amt' + (d.r < 9 ? ' minor' : '')).attr('text-anchor', 'middle').attr('y', d => d.r + 23).text(d => d.r >= 11 ? (fmtUSD(tot.get(d.id), false, true) || '') : '');
     nodeSel.on('mousemove', (ev, d) => { setHover(d.id); showTip(nodeTip(d.id, tot.get(d.id), edges), ev); }).on('mouseleave', () => { setHover(null); hideTip(); })
       .on('click', (ev, d) => { ev.stopPropagation(); select(d.id === state.sel ? null : d.id); })
       .call(d3.drag().on('start', (ev, d) => { if (!ev.active) sim.alphaTarget(.3).restart(); d.fx = d.x; d.fy = d.y; }).on('drag', (ev, d) => { d.fx = ev.x; d.fy = ev.y; }).on('end', (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
