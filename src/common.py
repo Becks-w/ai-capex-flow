@@ -50,6 +50,9 @@ def connect():
     con.execute("PRAGMA journal_mode=WAL")       # 采集 / 抽取 / 导出可并行读写
     con.execute("PRAGMA busy_timeout=60000")
     con.executescript((ROOT / "schema" / "schema.sql").read_text(encoding="utf-8"))
+    # 迁移：distinct_deal=1 的边是人工认定的独立交易，合并 / 去重 / 聚类都不碰它
+    if "distinct_deal" not in {r[1] for r in con.execute("PRAGMA table_info(edges)")}:
+        con.execute("ALTER TABLE edges ADD COLUMN distinct_deal INTEGER NOT NULL DEFAULT 0")
     return con
 
 

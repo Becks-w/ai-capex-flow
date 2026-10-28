@@ -86,6 +86,7 @@ CREATE TABLE IF NOT EXISTS edges (
   last_seen TEXT NOT NULL DEFAULT (datetime('now')),
   superseded_by INTEGER,
   seed INTEGER NOT NULL DEFAULT 0,
+  distinct_deal INTEGER NOT NULL DEFAULT 0,   -- 人工认定独立交易，不参与合并 / 去重 / 聚类
   review TEXT NOT NULL DEFAULT 'pending',     -- pending | confirmed | corrected | deleted
   review_note TEXT
 );

@@ -183,3 +183,45 @@ deals:
     summary_zh: 10-Q：为部分 AI 云伙伴的数据中心租约违约提供土地、电力、机房担保，所有协议最大总敞口 35 亿美元，按信用衍生品核算。
     sources:
       - {url: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm", title: "NVIDIA Form 10-Q (quarter ended Jul 26, 2026) — Guarantees", publisher: "SEC / NVIDIA 10-Q", date: "2026-08-26", tier: 1}
+  - kind: order
+    from: ANTHROPIC
+    to: GOOGL
+    distinct: true   # 与 #17 $114.5B 承诺是两回事，不许按金额相近合并
+    amount_usd: 125000000000
+    amount_text: estimated $125.0–150.0 billion aggregate future payments (not included in the contractual commitments table); recorded at the low end
+    instrument: compute_contract
+    term: delivery 2028–2031; payments depend on capacity made available, deployment, pricing mechanics and deployment conditions
+    announced: "2026-10-26"
+    status: announced
+    title_zh: Anthropic 承诺再采购 2028–2031 年交付的 TPU 算力，估算 1,250–1,500 亿美元
+    title_en: Anthropic additional TPU compute commitment for 2028–2031, est. $125–150B (S-1, not in commitments table)
+    summary_zh: S-1：在 1,145 亿美元承诺之外，另承诺向包括谷歌在内的 TPU 供应商采购 2028–2031 年交付的额外算力；付款取决于交付容量、部署方式、定价机制与部署条件，公司估算合计约 1,250–1,500 亿美元，未列入合同承诺表。本条按下限 1,250 亿美元计，供应商暂记谷歌。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Infrastructure Service Arrangements (additional TPU compute)", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: investment
+    from: AMZN
+    to: ANTHROPIC
+    amount_usd: 4000000000
+    amount_text: up to $4.0 billion convertible notes under the Amazon 2023 NPA ($1.2B Sep 2023 + $3.4B Mar 2024)
+    instrument: convertible_notes
+    announced: "2023-09-25"
+    status: completed
+    title_zh: 亚马逊 2023 年协议向 Anthropic 认购 40 亿美元可转债
+    title_en: Amazon 2023 NPA — $4.0B convertible notes in Anthropic (S-1)
+    summary_zh: S-1：2023 年 9 月票据购买协议，分两期发行合计 40 亿美元可转债（2023 年 9 月 12 亿、2024 年 3 月 34 亿）。2026 年初部分已转为 G-3 优先股，余约 22 亿美元展期至 2034 年。与 2024 年协议的 40 亿美元（#112）是两笔。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Convertible Notes: Amazon 2023 and 2024 NPAs", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: debt
+    from: ANTHROPIC
+    to: LENDER_SYNDICATE
+    amount_usd: 15000000000
+    amount_text: $15 billion senior secured revolving credit facility (A&R Credit Agreement, Sep 2026), undrawn as of filing
+    instrument: revolving_credit_facility
+    term: matures September 4, 2031; springing maturity; full amount available for letters of credit
+    announced: "2026-09-04"
+    status: signed
+    title_zh: Anthropic 签 150 亿美元高级担保循环信贷额度（未提款）
+    title_en: Anthropic $15B senior secured revolving credit facility (S-1)
+    summary_zh: S-1：2026 年 9 月修订重述信贷协议，循环额度从 32.5 亿美元提高到 150 亿美元，可全额用于开立信用证，2031 年 9 月到期；提交时未提款。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Liquidity: A&R Credit Agreement", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}

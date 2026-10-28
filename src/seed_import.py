@@ -33,7 +33,7 @@ def run(paths=None):
                 continue
             ev = dict(d)
             ev["confidence"] = d.get("confidence") or (0.95 if min(s.get("tier", 3) for s in srcs) <= 2 else 0.8)
-            eid = upsert_edge(con, ev, f, t, None, seed=1)
+            eid = upsert_edge(con, ev, f, t, None, seed=1, distinct=bool(d.get("distinct")))
             for s in srcs:
                 from confirm import add_source
                 add_source(con, eid, s.get("url"), s.get("title"), s.get("publisher"), s.get("date"), s.get("tier", 3))

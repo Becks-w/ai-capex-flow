@@ -17,7 +17,7 @@ def _amount_ok(a, b, tol):
 
 def find_edge(con, kind, f, t, amount, announced=None):
     tol = SETTINGS["merge_amount_tolerance"]
-    rows = con.execute("""SELECT * FROM edges WHERE kind=? AND from_entity=? AND to_entity=? AND review!='deleted'
+    rows = con.execute("""SELECT * FROM edges WHERE kind=? AND from_entity=? AND to_entity=? AND review!='deleted' AND distinct_deal=0
                           ORDER BY last_seen DESC""", (kind, f, t)).fetchall()
     win = SETTINGS["merge_window_days"]
     for r in rows:
@@ -66,11 +66,11 @@ def recompute_tier(con, edge_id):
     return tier
 
 
-def upsert_edge(con, ev, f, t, source, seed=0):
+def upsert_edge(con, ev, f, t, source, seed=0, distinct=False):
     """ev: dict（模型事件或种子）；source: dict(url,title,publisher,date,tier,quote,article_id)。返回 edge_id。"""
     kind = ev["kind"]
     amount = ev.get("amount_usd") or None
-    ex = find_edge(con, kind, f, t, amount, ev.get("announced"))
+    ex = None if distinct else find_edge(con, kind, f, t, amount, ev.get("announced"))
     st = ev.get("status") or "announced"
     conf = float(ev.get("confidence") or (0.95 if seed else 0.5))
     if ex:
@@ -93,11 +93,11 @@ def upsert_edge(con, ev, f, t, source, seed=0):
         eid = ex["id"]
     else:
         cur = con.execute("""INSERT INTO edges(kind, from_entity, to_entity, amount_usd, amount_text, instrument, term, capacity,
-                             announced, maturity_date, status, confidence, title_zh, title_en, summary_zh, seed)
-                             VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                             announced, maturity_date, status, confidence, title_zh, title_en, summary_zh, seed, distinct_deal)
+                             VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
                           (kind, f, t, amount, ev.get("amount_text"), ev.get("instrument"), ev.get("term"), ev.get("capacity"),
                            ev.get("announced"), ev.get("maturity_date"), st, conf, ev.get("title_zh"), ev.get("title_en"),
-                           ev.get("summary_zh"), seed))
+                           ev.get("summary_zh"), seed, 1 if distinct else 0))
         eid = cur.lastrowid
     if source:
         add_source(con, eid, source.get("url"), source.get("title"), source.get("publisher"), source.get("date"),
@@ -191,7 +191,7 @@ def _merge_into(con, keep, drop):
 def dedupe(con):
     """实体重新映射或多来源抽取后，把同类型、同双方、金额相近、日期相近的边合并（保留较早的 id）。"""
     tol = SETTINGS["merge_amount_tolerance"]; win = SETTINGS["merge_window_days"]
-    rows = con.execute("SELECT * FROM edges WHERE review!='deleted' ORDER BY kind, from_entity, to_entity, id").fetchall()
+    rows = con.execute("SELECT * FROM edges WHERE review!='deleted' AND distinct_deal=0 ORDER BY kind, from_entity, to_entity, id").fetchall()
     groups = {}
     for r in rows:
         groups.setdefault((r["kind"], r["from_entity"], r["to_entity"]), []).append(r)
@@ -234,7 +234,7 @@ def cluster_duplicates(con):
        主记录优先：种子 > 可信度层级 > 来源数 > 较早 id。其余标 review='duplicate'，不计入总额；overrides 里 confirm 可救回。每次导出重算。"""
     con.execute("UPDATE edges SET review='pending', superseded_by=NULL, review_note=NULL WHERE review='duplicate'")
     pooled = {r["id"] for r in con.execute("SELECT id FROM entities WHERE pooled=1")}
-    rows = [dict(r) for r in con.execute("SELECT * FROM edges WHERE review NOT IN ('deleted','confirmed') AND amount_usd IS NOT NULL AND amount_usd>0 AND superseded_by IS NULL")]
+    rows = [dict(r) for r in con.execute("SELECT * FROM edges WHERE review NOT IN ('deleted','confirmed') AND distinct_deal=0 AND amount_usd IS NOT NULL AND amount_usd>0 AND superseded_by IS NULL")]
     for r in rows:
         r["nsrc"] = con.execute("SELECT COUNT(*) FROM edge_sources WHERE edge_id=?", (r["id"],)).fetchone()[0]
     rows.sort(key=lambda r: (-r["seed"], -_tier_rank(r["tier"]), -r["nsrc"], r["id"]))
