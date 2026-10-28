@@ -7,7 +7,7 @@
 <meta name="description" content="AI 巨头之间的订单、投资与债务关系图，自动盯 SEC 文件与新闻，经核实后入账，每 3 小时更新。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Barlow:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <div id="snapBanner" class="banner" hidden></div>
@@ -32,7 +32,7 @@
     <div class="chips" id="kindChips" role="group" aria-label="交易类型"></div>
     <div class="selects">
       <label>板块 <select id="fGroup"><option value="">全部</option></select></label>
-      <label>最小金额 <select id="fMin"><option value="0">不限</option><option value="1e9">≥ $1B</option><option value="5e9">≥ $5B</option><option value="1e10">≥ $10B</option><option value="5e10">≥ $50B</option></select></label>
+      <label>最小金额 <select id="fMin"><option value="0">不限</option><option value="1e9">≥ 10 亿美元</option><option value="5e9">≥ 50 亿美元</option><option value="1e10">≥ 100 亿美元</option><option value="5e10">≥ 500 亿美元</option></select></label>
       <label>时间 <select id="fPeriod"><option value="">全部</option><option value="90">近 90 天</option><option value="365">近一年</option><option value="2026">2026 年</option><option value="2025">2025 年</option></select></label>
       <label>可信度 <select id="fTier"><option value="counted">已核实</option><option value="confirmed">仅一手来源</option></select></label>
     </div>
@@ -67,6 +67,6 @@
 </div>
 <div id="tip" class="tip" hidden></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="app.js?v=1"></script>
+<script src="app.js?v=2"></script>
 </body>
 </html>

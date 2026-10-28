@@ -22,11 +22,17 @@
 
   // ---------- 格式 ----------
   function fmtUSD(v, html) {
+    // 中文计数：万亿 / 亿 / 万 美元。1.6 万亿、5,460 亿、91 亿、5.7 亿、5,000 万
     if (v == null || !(v > 0)) return null;
     let n, u;
-    if (v >= 1e12) { n = v / 1e12; u = 'T'; } else if (v >= 1e9) { n = v / 1e9; u = 'B'; } else if (v >= 1e6) { n = v / 1e6; u = 'M'; } else { return '$' + Math.round(v).toLocaleString(); }
-    const s = n >= 100 ? n.toFixed(0) : (Math.abs(n - Math.round(n)) < 0.05 ? n.toFixed(0) : n.toFixed(1));
-    return html ? `$${s}<small>${u}</small>` : `$${s}${u}`;
+    if (v >= 1e12) { n = v / 1e12; u = '万亿'; }
+    else if (v >= 1e8) { n = v / 1e8; u = '亿'; }
+    else { n = v / 1e4; u = '万'; }
+    let s;
+    if (u === '万亿') s = n >= 10 ? n.toFixed(1) : n.toFixed(2).replace(/0$/, '');
+    else if (n >= 100) s = Math.round(n).toLocaleString('en-US');
+    else s = (Math.abs(n - Math.round(n)) < 0.05 ? n.toFixed(0) : n.toFixed(1));
+    return html ? `${s}<small>${u}美元</small>` : `${s} ${u}美元`;
   }
   function ago(iso) {
     if (!iso) return '未知';
