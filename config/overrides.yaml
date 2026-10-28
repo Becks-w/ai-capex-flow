@@ -64,4 +64,4 @@ overrides:
   - {match: {id: 41},  action: merge, into: 35, note: "「博通联合银行与黑石设 $63B 租赁融资」是 $161.2B 主租约中由 SPV 融资的部分"}
   - {match: {id: 66},  action: merge, into: 193, note: "10-Q 原文：$108.5B = SB Energy/OpenAI $105B（#193）+ AI 云 $3.5B（#194），非最低收入担保"}
   - {match: {id: 22},  action: confirm, note: "Nscale $44.6B 与微软 $44.9B 金额相近、同日披露，被聚类误判为同一笔；S-1 分别列明，两笔独立"}
-
+  - {match: {id: 54},  action: merge, into: 33, note: "银行 $42B 贷款是 $63B SPV 融资的第一留置权部分（另 $21B 为黑石第二留置权），此前被误判为 #1 担保的重复，放出后需并入 #33"}
