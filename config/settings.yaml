@@ -27,6 +27,7 @@ max_article_chars: 12000
 
 # ---- 合并 / 确认 ----
 merge_window_days: 400
+merge_window_days_debt: 21          # 债务（发债 / 贷款）只在 21 天内合并：初步与最终募集说明书是同一笔，隔季再发的不是
 merge_amount_tolerance: 0.2
 reported_min_confidence: 0.7        # 媒体正文来源达到此置信即计入 reported
 candidate_keep_days: 90             # 候选边超过这个天数未升级就从页面隐藏（库里保留）

@@ -15,11 +15,16 @@ def _amount_ok(a, b, tol):
     return True
 
 
+def merge_window(kind):
+    """债务是有日期的事件（定价 / 签约），同一发行人几个月后再发一笔相近规模很常见，只在短窗口内合并。"""
+    return SETTINGS.get("merge_window_days_debt", 21) if kind == "debt" else SETTINGS["merge_window_days"]
+
+
 def find_edge(con, kind, f, t, amount, announced=None):
     tol = SETTINGS["merge_amount_tolerance"]
     rows = con.execute("""SELECT * FROM edges WHERE kind=? AND from_entity=? AND to_entity=? AND review!='deleted' AND distinct_deal=0
                           ORDER BY last_seen DESC""", (kind, f, t)).fetchall()
-    win = SETTINGS["merge_window_days"]
+    win = merge_window(kind)
     for r in rows:
         if not _amount_ok(amount, r["amount_usd"], tol):
             continue
@@ -195,7 +200,7 @@ def _merge_into(con, keep, drop):
 
 def dedupe(con):
     """实体重新映射或多来源抽取后，把同类型、同双方、金额相近、日期相近的边合并（保留较早的 id）。"""
-    tol = SETTINGS["merge_amount_tolerance"]; win = SETTINGS["merge_window_days"]
+    tol = SETTINGS["merge_amount_tolerance"]
     rows = con.execute("SELECT * FROM edges WHERE review!='deleted' AND distinct_deal=0 ORDER BY kind, from_entity, to_entity, id").fetchall()
     groups = {}
     for r in rows:
@@ -203,6 +208,7 @@ def dedupe(con):
     merged = 0
     for key, rs in groups.items():
         kept = []
+        win = merge_window(key[0])
         for r in rs:
             target = None
             for k in kept:
@@ -253,9 +259,13 @@ def cluster_duplicates(con):
     def same_deal(a, b):
         pa, pb = {a["from_entity"], a["to_entity"]}, {b["from_entity"], b["to_entity"]}
         diff = abs(a["amount_usd"] - b["amount_usd"]) / max(a["amount_usd"], b["amount_usd"])
+        if a["kind"] == "debt" and b["kind"] == "debt" and not close_dates(a["announced"], b["announced"], merge_window("debt")):
+            return False  # 同一发行人隔几个月再发一笔同规模债券，不是同一笔
         if pa == pb and diff <= 0.02:
             return True
         shared = pa & pb
+        if shared and shared <= pooled and (pa - shared) != (pb - shared):
+            return False  # 只共享一个汇总对手方（债券市场 / 银团）而借款人不同，不是同一笔（英伟达 $25B 债券 vs SpaceX $25B 债券）
         if (a["kind"] == "guarantee") != (b["kind"] == "guarantee"):
             return False  # 担保是交易的衍生承诺，不与订单 / 债务按共享一方聚类（如博通 $43B 担保 vs Anthropic $42B 可转票据）
         if shared and diff <= 0.05 and close_dates(a["announced"], b["announced"], 10):

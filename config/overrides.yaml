@@ -68,3 +68,24 @@ overrides:
   - {match: {id: 91},  action: merge, into: 33, note: "「银行团为 Anthropic 设备租赁融资 $42B」是 $63B SPV 融资的第一留置权，同 #54；去重守卫放出后并入"}
   - {match: {id: 25},  action: set, fields: {instrument: finance_lease, title_zh: "Anthropic 向博通融资租赁 TPU 设备，租金合计约 1,612 亿美元"}, note: "去重把 #35 并进了更早的 #25，标题改用 S-1 口径"}
   - {match: {id: 198}, action: confirm, note: "Amazon 2023 协议 $4B 与 2024 协议 $4B（#112）金额相同被聚类误判；S-1 分别列明，两笔独立"}
+
+  # ===== 2026-10-28 第四批：债务历史回填后的去重与口径 =====
+  - {match: {id: 280}, action: merge, into: 144, note: "亚马逊 2026-03 发债：$37B 美元档是 #144（$37B + €14.5B）的组成"}
+  - {match: {id: 279}, action: merge, into: 144, note: "亚马逊 2026-03 发债：€14.5B 欧元档是 #144 的组成"}
+  - {match: {id: 309}, action: merge, into: 143, note: "Alphabet 2025-11 发债：$17.5B 美元档是 #143（$17.5B + €6.5B）的组成"}
+  - {match: {id: 187}, action: merge, into: 38, note: "「SpaceX 经 SPV 融资 $40B 购英伟达芯片」与 8-K 的 Apollo $40B 是同一笔"}
+  - {match: {id: 211}, action: merge, into: 246, note: "CoreWeave DDTL 5.5 $2.6B 的两种记法（银团 / 摩根大通牵头）"}
+  - {match: {id: 245}, action: set, fields: {amount_usd: 2600000000, amount_text: "$2.6 billion delayed draw term loan (DDTL 3.0), Morgan Stanley-led", announced: "2025-07-31", title_zh: "CoreWeave 26 亿美元 DDTL 3.0 贷款，履行 OpenAI 合同"}, note: "种子导入把 2026-05 的 DDTL 5.0（$3.1B）并进了 2025-07 的 DDTL 3.0；本条还原 3.0，5.0 另以 distinct 种子单列"}
+  - {match: {id: 209}, action: merge, into: 193, note: "8-K 抽出的英伟达 $105B 担保（受益方写 SB Energy）与 10-Q 种子（受益方 OpenAI 租约）是同一笔"}
+  - {match: {id: 258}, action: set, fields: {amount_usd: null, amount_text: "amount not disclosed in the PIMCO / Related Digital release; Bloomberg had reported talks of ~$14B", title_zh: "PIMCO 锚定 Related Digital 密歇根甲骨文园区长期债务（金额未披露）"}, note: "新闻稿未给金额，$14B 只是此前谈判报道；按未披露计入，不进总额"}
+
+  # ===== 2026-10-28 第五批：债务窗口收紧后的分币种 / 分记法合并 =====
+  - {match: {id: 351}, action: merge, into: 143, note: "Alphabet 2025-11 发债：€6.5B 欧元档是 #143（$17.5B + €6.5B）的组成"}
+  - {match: {id: 346}, action: merge, into: 259, note: "Alphabet 2026-02 发债：£5.5B 英镑档已含在 #259（£5.5B + CHF）里"}
+  - {match: {id: 355}, action: merge, into: 245, note: "CoreWeave DDTL 3.0 $2.6B 的 8-K 记法（对手方未具名）与种子（摩根士丹利牵头）是同一笔"}
+  - {match: {id: 367}, action: merge, into: 366, note: "CoreWeave DDTL 5.0 重复导入"}
+  - {match: {id: 340}, action: merge, into: 366, note: "CoreWeave DDTL 5.0 的 8-K 记法（对手方未具名）"}
+  - {match: {id: 75},  action: merge, into: 338, note: "Galaxy Helios II $3.5B 票据：10 月媒体回顾与 7 月 8-K 是同一笔，以 8-K 日期为准"}
+  - {match: {id: 79},  action: merge, into: 338, note: "同上，候选区的另一记法"}
+  - {match: {id: 319}, action: merge, into: 316, note: "Nebius 2025-09 可转债：初步说明书的 $1.0B 2030 年档是同一次发行（最终两档合计约 $3.16B）的一部分"}
+  - {match: {id: 31},  action: merge, into: 33, note: "「银团为 Anthropic 提供 $63B 融资、博通硬件租给 Anthropic」是 SPV 贷款 #33 的另一记法（借款人写成了 Anthropic）"}

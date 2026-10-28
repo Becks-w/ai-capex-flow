@@ -66,6 +66,8 @@ entities:
   - {id: SOLUNA, name: Soluna,          name_zh: Soluna,         group: neocloud, ticker: SLNH, country: US, aliases: [Soluna]}
   - {id: VOLTA, name: Volta, name_zh: Volta, group: neocloud, ticker: null, country: False, aliases: [Volta, "Volta AI"]}
 
+  - {id: CRUX_AI, name: Crux AI, name_zh: Crux AI（黑石–谷歌 TPU 云）, group: neocloud, ticker: null, country: US, aliases: ["Crux AI", Crux]}
+
   # ---- 芯片 / 存储 ----
   - {id: NVDA, name: NVIDIA,    name_zh: 英伟达,   group: chip, ticker: NVDA, country: US, aliases: [Nvidia, NVIDIA, 英伟达]}
   - {id: AMD,  name: AMD,       name_zh: AMD,      group: chip, ticker: AMD,  country: US, aliases: [AMD, "Advanced Micro Devices"]}
@@ -107,6 +109,8 @@ entities:
   - {id: AIRTRUNK, name: AirTrunk,            name_zh: AirTrunk, group: datacenter, country: AU, aliases: [AirTrunk]}
   - {id: SBENERGY, name: SB Energy,           name_zh: SB Energy, group: datacenter, country: US, aliases: ["SB Energy"]}
   - {id: ATNORTH, name: atNorth, name_zh: atNorth, group: datacenter, ticker: null, country: IS, aliases: [atNorth]}
+
+  - {id: ECODATACENTER, name: EcoDataCenter, name_zh: EcoDataCenter, group: datacenter, ticker: null, country: SE, aliases: [EcoDataCenter, "Eco Data Center"]}
 
   # ---- 能源 / 电力 ----
   - {id: CVX,  name: Chevron,       name_zh: 雪佛龙,   group: energy, ticker: CVX,  country: US, aliases: [Chevron]}
@@ -159,6 +163,9 @@ entities:
   - {id: DB,   name: Deutsche Bank,  name_zh: 德意志银行, group: financier, country: DE, aliases: ["Deutsche Bank"]}
   - {id: BARC, name: Barclays,       name_zh: 巴克莱,   group: financier, country: GB, aliases: [Barclays]}
   - {id: HSBC, name: HSBC,           name_zh: 汇丰,     group: financier, country: GB, aliases: [HSBC, 汇丰]}
+  - {id: VALOR_COMPUTE, name: Valor Compute Infrastructure L.P. (xAI GPU lease vehicle), name_zh: Valor 算力载体（xAI GPU 租赁 SPV）, group: spv, ticker: null, country: US, aliases: ["Valor Compute Infrastructure", VCI, "Valor Equity Partners"]}
+  - {id: SOPAIPILLA, name: Sopaipilla Investor LLC (GIP/HPS–Meta El Paso SPV), name_zh: Sopaipilla（Meta 埃尔帕索 SPV）, group: spv, ticker: null, country: US, aliases: ["Sopaipilla Investor", "Project Sopaipilla", Sopaipilla]}
+
   # ---- 汇总对手方（pooled，不参与排行）----
   - {id: BONDHOLDERS, name: Bond investors (public markets), name_zh: 债券投资者（公开市场）, group: financier, pooled: true, aliases: []}
   - {id: PUBLIC_INVESTORS, name: Public equity investors, name_zh: 公开市场股权投资者, group: financier, pooled: true, aliases: []}

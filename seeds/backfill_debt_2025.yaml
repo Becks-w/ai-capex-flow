@@ -1,0 +1,771 @@
+# 债务历史回填种子（2026-10-28）：银行贷款、私募信贷与不在 EDGAR 的债券。来源经子代理逐笔核实：公司新闻稿（tier 2）或两家独立媒体正文（tier 3）；仅单一报道的 confidence 0.6 留在候选区。
+deals:
+- kind: debt
+  from: ANTHROPIC_XPU_SPV
+  to: APO
+  distinct: true
+  amount_usd: 35000000000
+  amount_text: initial $35 billion capital solution (Apollo-led, with Blackstone and global banks; A1 / A2 / Class B tranches, multi-year delayed draw)
+  instrument: chip_lease_backed_private_credit
+  term: multi-year draw schedule tracking chip deliveries; Broadcom residual-value support on senior tranches; first pillar of Broadcom AI XPV Platform (>20 GW through 2028)
+  announced: '2026-06-09'
+  status: signed
+  title_zh: Apollo 牵头 350 亿美元融资博通 AI XPV 芯片平台
+  title_en: Apollo leads $35B capital solution for Broadcom AI XPV Platform (Anthropic chips), with Blackstone
+  summary_zh: 2026 年 6 月 9 日 Apollo 宣布联合黑石及多家银行，为博通新设 AI XPV 平台提供首期 350 亿美元资金，以芯片租约为底层资产、分期多年提款，博通为高级档提供残值支持；首笔交易对应 Anthropic 自 2026 年中起逾 1 GW 的算力扩容。与 Anthropic S-1 所述「2026 年二季度博通把一份主租约的部分权利转让给第三方」相印证，和 10 月 630 亿美元银团融资是两笔。
+  sources:
+  - url: https://ir.apollo.com/news-events/press-releases/detail/629/apollo-leads-35-billion-capital-solution-for-broadcom-ai
+    title: Apollo Leads $35 Billion Capital Solution for Broadcom AI XPV Platform in Partnership with Blackstone and Leading Global Banks
+    publisher: Apollo (press release)
+    date: '2026-06-09'
+    tier: 2
+    quote: an initial $35 billion capital solution as part of Broadcom's new AI XPV Platform
+  - url: https://capacityglobal.com/news/anthropic-blackstone-apollo-35bn-ai-infrastructure-spv/
+    title: 'Anthropic, Blackstone, Apollo: $35bn AI infrastructure SPV'
+    publisher: Capacity Media
+    date: '2026-06-10'
+    tier: 3
+    quote: Apollo Global Management and Blackstone finalised a $35 billion financing package for Anthropic last week.
+- kind: debt
+  from: BYTEDANCE
+  to: LENDER_SYNDICATE
+  amount_usd: 29600000000
+  amount_text: $29.6 billion offshore syndicated loan (upsized from $20 billion target; orders above $30 billion)
+  instrument: syndicated_loan_unsecured
+  term: 3 years with option to extend by 2 more; opening margin SOFR + 68 bp; Citigroup and JPMorgan coordinators; ~30 banks, >60% Chinese banks
+  announced: '2026-09-04'
+  status: announced
+  title_zh: 字节跳动 296 亿美元离岸银团贷款，主要用于海外 AI
+  title_en: ByteDance $29.6B offshore syndicated loan from ~30 banks for AI build-out
+  summary_zh: 2026 年 9 月初 Bloomberg / Reuters 报道字节跳动落实 296 亿美元无抵押离岸银团贷款，由花旗和摩根大通协调，从 200 亿美元目标上调，3 年期可延至 5 年，定价 SOFR+68bp；名义用途为一般公司用途，实际主要支持中国境外 AI 数据中心。报道时各行仍在确认份额、尚未正式签约，字节未公开置评。接续 2024 年 108 亿美元贷款。
+  sources:
+  - url: https://www.channelinsider.com/channel-business/news-bytedance-29-billion-ai-loan-apac-china/
+    title: ByteDance Secures $29.6B Loan to Support Global AI Expansion
+    publisher: Channel Insider (citing Bloomberg, Reuters)
+    date: '2026-09-04'
+    tier: 3
+    quote: The TikTok owner has secured a $29.6 billion offshore syndicated loan from nearly 30 banks
+  - url: https://www.outlookbusiness.com/corporate/bytedance-secures-296-bn-loan-from-nearly-30-banks-for-ai-expansion
+    title: ByteDance secures $29.6 bn loan from nearly 30 banks for AI expansion
+    publisher: Outlook Business (Reuters)
+    date: '2026-09-04'
+    tier: 3
+    quote: has secured a $29.6 billion loan from nearly 30 banks
+  - url: https://technode.com/?p=198523
+    title: ByteDance preparing to receive $29.6 billion syndicated loan
+    publisher: TechNode (citing Yicai)
+    date: '2026-09-04'
+    tier: 3
+    quote: preparing to receive a $29.6 billion syndicated loan
+- kind: debt
+  from: BYTEDANCE
+  to: LENDER_SYNDICATE
+  amount_usd: 10800000000
+  amount_text: $10.8 billion offshore syndicated loan (upsized from $9.5 billion target; ~20 lenders)
+  instrument: syndicated_loan_unsecured
+  term: 3-year tenor with 2-year extension option; ~85 bp over SOFR; split equally between term loan and revolver; Citigroup, Goldman Sachs, JPMorgan coordinators; part refinanced 2021 $5B facility
+  announced: '2024-09-27'
+  status: completed
+  title_zh: 字节跳动 2024 年 108 亿美元离岸银团贷款
+  title_en: ByteDance $10.8B offshore syndicated loan (Asia ex-Japan record, Sep 2024)
+  summary_zh: 2024 年 9 月字节跳动签署 108 亿美元离岸银团贷款，花旗、高盛、摩根大通协调，约 20 家中外银行参与，3+2 年期、SOFR+约 85bp，一半定期贷款一半循环额度，部分用于置换 2021 年 50 亿美元贷款；为当时亚洲（日本除外）最大美元企业贷款。2026 年 296 亿美元新贷款以此为基准定价。
+  sources:
+  - url: https://www.bloomberg.com/news/articles/2024-09-27/bytedance-to-sign-10-8-billion-corporate-loan-in-asian-record
+    title: ByteDance to Sign $10.8 Billion Corporate Loan in Asian Record
+    publisher: Bloomberg
+    date: '2024-09-27'
+    tier: 3
+    quote: ByteDance to Sign $10.8 Billion Corporate Loan in Asian Record
+  - url: https://www.ifre.com/loans/2448118/bytedance-eyes-reset-of-record-jumbo-loan
+    title: ByteDance eyes reset of record jumbo loan
+    publisher: IFR
+    date: '2026-06-27'
+    tier: 3
+    quote: US$10.8bn loan completed in September 2024
+- kind: debt
+  from: SOFTBANK
+  to: LENDER_SYNDICATE
+  amount_usd: 25000000000
+  amount_text: margin loan backed by Arm shares increased by $5 billion to $25 billion (from $8.5B in 2023, $13.5B in 2024, $20B in 2025)
+  instrument: margin_loan_secured_by_arm_shares
+  term: secured by ~769 million Arm shares (~72% stake, as of May 2026); ~225 bp over SOFR + 25 bp CAS; expires September 2027
+  announced: '2026-09-18'
+  status: signed
+  confidence: 0.6
+  title_zh: 软银 Arm 股票抵押保证金贷款增至 250 亿美元
+  title_en: SoftBank upsizes Arm-backed margin loan by $5B to $25B
+  summary_zh: Bloomberg 2026 年 9 月 18 日援引知情人称，软银本月与贷款行重谈并签署协议，将以 Arm 股份抵押的保证金贷款上调 50 亿至 250 亿美元，用途与 OpenAI 等 AI 投资相关；利差维持 SOFR+约 225bp，2027 年 9 月到期，软银拒绝置评。第二来源仅有标题，故置信度 0.6。
+  sources:
+  - url: https://theedgemalaysia.com/node/818515
+    title: SoftBank boosts Arm-backed margin loan to US$25 billion amid AI bets
+    publisher: The Edge Malaysia (Bloomberg)
+    date: '2026-09-18'
+    tier: 3
+    quote: increased its margin loan backed by shares of its chip unit Arm Holdings plc by US$5 billion to US$25 billion
+  - url: https://www.newsquawk.com/headlines/softbank-9984-jt-boosts-arm-arm-margin-loan-to-usd-25bln-amid-growing-ai-bets
+    title: SoftBank (9984 JT) boosts Arm (ARM) margin loan to USD 25bln amid growing AI bets
+    publisher: Newsquawk
+    date: '2026-09-18'
+    tier: 3
+    quote: SoftBank (9984 JT) boosts Arm (ARM) margin loan to USD 25bln amid growing AI bets
+- kind: debt
+  from: SOFTBANK
+  to: LENDER_SYNDICATE
+  amount_usd: 10000000000
+  amount_text: $10 billion margin loan backed by OpenAI stake (target earlier cut to ~$6 billion; restored with SoftBank repayment guarantee); not confirmed closed by a primary source
+  instrument: margin_loan_secured_by_openai_shares
+  term: two-year loan with one-year extension option (per Bloomberg, Apr 2026); SoftBank offers repayment guarantee giving banks recourse beyond the pledged shares; expected lenders Goldman Sachs, JPMorgan, Mizuho
+  announced: '2026-07-01'
+  status: rumored
+  title_zh: 软银洽谈 100 亿美元 OpenAI 股权抵押贷款
+  title_en: SoftBank in talks for $10B loan backed by its OpenAI stake (Goldman, JPMorgan, Mizuho expected)
+  summary_zh: Bloomberg 2026 年 4 月 22 日报道软银寻求以 OpenAI 股份抵押的 100 亿美元两年期贷款，随后因银行对非上市公司估值的顾虑一度缩至约 60 亿；Reuters 7 月 1 日独家称谈判重启，软银提供还款担保让银行可追索母公司，预期贷款方为高盛、摩根大通、瑞穗。仅有聚合类网站称 8 月 6 日完成，未经 Reuters / Bloomberg 证实，故记为 rumored。
+  sources:
+  - url: https://www.thestar.com.my/tech/tech-news/2026/07/02/exclusive-softbank-renews-talks-for-10-billion-loan-against-openai-stake-adds-concessions-sources-say
+    title: Exclusive-SoftBank renews talks for $10 billion loan against OpenAI stake, adds concessions, sources say
+    publisher: The Star (Reuters)
+    date: '2026-07-01'
+    tier: 3
+    quote: SoftBank Group has reopened talks with a consortium of lenders for a $10 billion loan backed by its stake in OpenAI
+  - url: https://finance.yahoo.com/markets/stocks/articles/softbank-seeks-10-billion-margin-010147328.html
+    title: SoftBank seeks $10 billion margin loan backed by OpenAI shares, Bloomberg News reports
+    publisher: Yahoo Finance (Reuters / Bloomberg)
+    date: '2026-04-22'
+    tier: 3
+    quote: SoftBank Group is seeking a $10 billion loan secured by its shares in ChatGPT-maker OpenAI
+- kind: debt
+  from: CRUX_AI
+  to: LENDER_SYNDICATE
+  amount_usd: 22000000000
+  amount_text: ~$22 billion chip-backed loan from a group of 10 banks (being lined up), plus a separate $1 billion revolving credit facility
+  instrument: chip_backed_bank_loan
+  term: secured by Google TPUs and Crux customer contracts; banks include Goldman Sachs, SMBC, Barclays, BNP Paribas, Bank of Nova Scotia; may later be refinanced in investment-grade bond market
+  announced: '2026-09-16'
+  status: rumored
+  title_zh: 十家银行筹组 220 亿美元贷款，助 Crux AI 购买谷歌 TPU
+  title_en: Ten banks line up ~$22B chip-backed loan for Blackstone–Google venture Crux AI
+  summary_zh: Bloomberg 2026 年 9 月 16 日援引知情人称，高盛、三井住友、巴克莱、法巴、丰业等 10 家银行正为黑石与谷歌合资的 Crux AI 筹组约 220 亿美元贷款，用于采购谷歌 TPU，以芯片与客户合同抵押，另有 10 亿美元循环额度；银行仍在分销，相关方未置评，是否已签约不明。与 5 月黑石 50 亿美元股权承诺配套。
+  sources:
+  - url: https://pulse2.com/crux-ai-lines-up-22-billion-chip-loan-from-10-banks-to-buy-google-tpus/
+    title: Crux AI Lines Up $22 Billion Chip Loan From 10 Banks To Buy Google TPUs
+    publisher: Pulse 2.0 (citing Bloomberg)
+    date: '2026-09-16'
+    tier: 3
+    quote: is lining up a $22 billion loan from a group of 10 banks
+  - url: https://www.cash.ch/news/top-news/banken-finanzieren-ki-projekt-von-google-und-blackstone-mit-22-milliarden-dollar-969235
+    title: Banken finanzieren KI-Projekt von Google und Blackstone mit 22 Milliarden Dollar
+    publisher: cash.ch (Reuters)
+    date: '2026-09-17'
+    tier: 3
+    quote: Eine Gruppe von zehn Banken stellt einem Medienbericht zufolge 22 Milliarden Dollar für das neue Cloud-Projekt Crux AI
+- kind: debt
+  from: STACK
+  to: LENDER_SYNDICATE
+  amount_usd: 18000000000
+  amount_text: roughly $18 billion project finance loan from ~20 banks (administrative agents SMBC, BNP Paribas, Goldman Sachs, MUFG)
+  instrument: project_finance_construction_loan
+  term: Project Jupiter, Doña Ana County, New Mexico (~2.45 GW, Oracle-leased, OpenAI-linked); retail syndication to banks and institutions; by Sep 2026 quoted at 89–91 cents after Oracle force-majeure notice and pipeline denial
+  announced: '2025-11-07'
+  status: signed
+  title_zh: 银团 180 亿美元项目贷款，建甲骨文新墨西哥 Project Jupiter
+  title_en: ~20 banks lend ~$18B project finance for STACK/Blue Owl's Oracle-tied Project Jupiter, New Mexico
+  summary_zh: Bloomberg 2025 年 11 月 7 日报道约 20 家银行为 Blue Owl / STACK 开发、甲骨文承租的新墨西哥 Project Jupiter 数据中心提供约 180 亿美元项目融资，三井住友、法巴、高盛、三菱日联任行政代理并继续向其他银行和机构分销。2026 年 9 月 FT 称因燃气管道被州土地局否决、甲骨文发出不可抗力通知，该贷款二级报价跌至 89–91 美分，分销停滞。
+  sources:
+  - url: https://news.bgov.com/artificial-intelligence/banks-lend-18-billion-for-oracle-tied-data-center-in-new-mexico
+    title: Banks Lend $18 Billion for Oracle-Tied Data Center in New Mexico
+    publisher: Bloomberg Government
+    date: '2025-11-07'
+    tier: 3
+    quote: A group of about 20 banks is providing a roughly $18 billion project finance loan
+  - url: https://www.thestar.com.my/tech/tech-news/2026/09/19/oracle039s-18-billion-data-center-debt-under-pressure-ft-reports
+    title: Oracle's $18 billion data center debt under pressure, FT reports
+    publisher: The Star (Reuters, citing Financial Times)
+    date: '2026-09-18'
+    tier: 3
+    quote: About $18 billion in loans tied to an Oracle-leased data center in New Mexico has come under pressure
+- kind: debt
+  from: FIREBIRD
+  to: BX
+  amount_usd: 10000000000
+  amount_text: US$10 billion senior secured private debt facility (Blackstone Tactical Opportunities and Blackstone Credit & Insurance funds lead; Coatue supports)
+  instrument: private_credit_facility
+  term: staged draws against executed long-term contracts with hyperscalers and blue-chip AI customers; funds Project Southgate AI Factories (~1.6 GW by 2028, with CDC Data Centres and NVIDIA)
+  announced: '2026-02-09'
+  status: signed
+  title_zh: 黑石牵头 100 亿美元债务融资，支持澳洲 Firmus AI 工厂
+  title_en: Blackstone leads US$10B debt facility for Australia's Firmus (Project Southgate), Coatue participates
+  summary_zh: 2026 年 2 月 9 日 Firmus 宣布签署 100 亿美元高级担保私募债务额度，由黑石 Tactical Opportunities 与 Credit & Insurance 基金牵头、Coatue 参与，按已签长期客户合同分期提款，用于 Project Southgate 在墨尔本等地的 AI 工厂，目标 2028 年 1.6 GW；为澳洲史上最大私募债融资之一。
+  sources:
+  - url: https://www.milbank.com/en/news/milbank-advises-firmus-in-landmark-usdollar10b-financing-led-by-blackstone-and-coatue-to-accelerate-energy-efficient-ai-infrastructure.html
+    title: Milbank Advises Firmus in Landmark US$10B Financing Led by Blackstone and Coatue
+    publisher: Milbank LLP
+    date: '2026-02-12'
+    tier: 3
+    quote: Firmus entered into the US$10 billion debt financing facility with funds led by Blackstone Tactical Opportunities
+  - url: https://w.media/firmus-secures-usd-10bn-blackstone-led-deal-to-scale-ai-factories/
+    title: Firmus secures USD 10bn Blackstone-led deal to scale AI factories
+    publisher: W.Media
+    date: '2026-02-09'
+    tier: 3
+    quote: Firmus Technologies has secured a USD 10 billion private debt financing facility led by funds managed by Blackstone
+  - url: https://www.kirkland.com/news/press-release/2026/02/kirkland-represents-blackstone-on-ai-infrastructure-company-firmus-us-10-b-df-facility
+    title: Kirkland Represents Blackstone on AI Infrastructure Company Firmus' US$10 Billion Debt Financing Facility
+    publisher: Kirkland & Ellis
+    date: '2026-02-11'
+    tier: 3
+    quote: Kirkland & Ellis advised Blackstone on AI infrastructure company Firmus' US$10 billion debt financing facility
+- kind: debt
+  from: CRWV
+  to: MUFG
+  amount_usd: 8500000000
+  amount_text: $8.5 billion delayed draw term loan facility (DDTL 4.0; ~$7.5B initially drawable, rising to $8.5B on asset stabilisation)
+  instrument: gpu_backed_delayed_draw_term_loan
+  term: matures March 2032; floating tranche SOFR + 2.25%, fixed tranche ~5.9%; rated A3 (Moody's) / A (low) (DBRS); secured by CoreWeave Compute Acquisition Co. VIII assets and a contract with a leading AI enterprise; MUFG and Morgan Stanley co-structuring agents, Goldman Sachs and JPMorgan coordinating lead arrangers, Blackstone Credit & Insurance anchor
+  announced: '2026-03-31'
+  status: completed
+  title_zh: CoreWeave 85 亿美元投资级 GPU 抵押贷款（DDTL 4.0）
+  title_en: CoreWeave closes $8.5B DDTL 4.0, first investment-grade rated GPU-backed financing
+  summary_zh: 2026 年 3 月 31 日 CoreWeave 宣布完成 85 亿美元延迟提款定期贷款，获穆迪 A3 / DBRS A(low) 评级，为首笔投资级 GPU 抵押融资；三菱日联与摩根士丹利任联合结构代理和簿记行，高盛、摩根大通协调牵头，黑石信贷锚定，浮动档 SOFR+2.25%，2032 年 3 月到期，以 SPV 资产和某头部 AI 企业合同抵押。
+  sources:
+  - url: https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-Landmark-8-5-Billion-Financing-Facility-Achieving-First-Investment-Grade-Rated-GPU-backed-Financing/default.aspx
+    title: CoreWeave Closes Landmark $8.5 Billion Financing Facility Achieving First Investment Grade Rated GPU-backed Financing
+    publisher: CoreWeave (press release)
+    date: '2026-03-31'
+    tier: 2
+    quote: today announced it has closed an $8.5 billion delayed draw term loan facility
+  - url: https://www.lw.com/en/news/2026/03/latham-advises-on-coreweave-landmark-financing-facility
+    title: Latham Advises on CoreWeave Landmark Financing Facility
+    publisher: Latham & Watkins
+    date: '2026-03-31'
+    tier: 3
+- kind: debt
+  from: SPACEX
+  to: BONDHOLDERS
+  amount_usd: 25000000000
+  amount_text: $25 billion inaugural investment-grade senior unsecured notes, five tranches (due 2031/2033/2036/2046/2056)
+  instrument: senior_unsecured_notes
+  term: five-part deal; 2036s at ~140 bp and 30-year at ~175 bp over Treasuries; coupons ~5.35%–6.65%; ratings BBB / Baa1 / BBB+; ~$90B peak orders; proceeds repay ~$20B bridge loan and refinance X / xAI debt
+  announced: '2026-06-23'
+  status: completed
+  title_zh: SpaceX 首发 250 亿美元投资级债券，置换 X 与 xAI 债务
+  title_en: SpaceX prices inaugural $25B five-tranche investment-grade bond after IPO
+  summary_zh: 2026 年 6 月 23 日 SpaceX 完成上市后首次债券发行，五档合计 250 亿美元（从 200 亿上调），订单一度约 900 亿美元，主要用于偿还 200 亿美元过桥贷款并置换马斯克收购 X 及 xAI 去年举借的贷款和债券；穆迪 Baa1、标普 BBB、惠誉 BBB+，发行后一周二级利差走阔最多 20bp。
+  sources:
+  - url: https://www.ifre.com/bonds/2448355/splashdown-us25bn-spacex-bond-debut-exposes-funding-black-hole
+    title: 'Splashdown: US$25bn SpaceX bond debut exposes funding black hole'
+    publisher: IFR
+    date: '2026-06-27'
+    tier: 3
+    quote: SpaceX splashed down into the bond market on Tuesday, comfortably raising US$25bn from a five-part transaction.
+  - url: https://news.bgov.com/private-equity/musks-spacex-adds-billions-in-debt-while-cutting-interest-costs
+    title: Musk's SpaceX Adds Billions in Debt While Cutting Interest Costs
+    publisher: Bloomberg Government
+    date: '2026-06-24'
+    tier: 3
+    quote: SpaceX sold $25 billion of investment-grade bonds on Tuesday
+  - url: https://texaslawbook.net/spacex-announces-25b-inaugural-notes-issue/
+    title: SpaceX Announces $25B Inaugural Notes Issue
+    publisher: The Texas Lawbook
+    date: '2026-06-24'
+    tier: 3
+    quote: the pricing of an inaugural $25 billion bond issue
+- kind: debt
+  from: SOFTBANK
+  to: BONDHOLDERS
+  amount_usd: 11100000000
+  amount_text: $11.1 billion equivalent high-yield senior notes — $10.0B in three USD tranches ($1B 3.5y 8.625%, $4.5B 5.5y 9.25%, $4.5B 7.5y 9.75%) + €1.0B in two tranches (€500M 4y 7.125%, €500M 6y 8.0%)
+  instrument: senior_notes_high_yield
+  term: largest high-yield corporate bond sale on record; priced ~2026-09-24, settled 2026-09-29; funds third $10B tranche of SoftBank's follow-on OpenAI investment (closing Oct 1) and general corporate purposes
+  announced: '2026-09-24'
+  status: completed
+  title_zh: 软银发行 111 亿美元高收益债，史上最大垃圾债
+  title_en: SoftBank raises $11.1B in record high-yield bond sale to fund OpenAI bet
+  summary_zh: 2026 年 9 月 24 日软银完成美元 100 亿、欧元 10 亿合计约 111 亿美元高收益优先票据发行，为全球最大一笔高收益企业债，美元档票息 8.625%–9.75%；募集资金用于 10 月 1 日交割的 OpenAI 追加投资第三期 100 亿美元及一般用途，对应其对 OpenAI 合计 646 亿美元承诺。
+  sources:
+  - url: https://www.thestar.com.my/business/business-news/2026/09/24/softbank-raises-us111bil-in-world039s-biggest-high-yield-corporate-bond-sale
+    title: SoftBank raises US$11.1bil in world's biggest high-yield corporate bond sale
+    publisher: The Star (Bloomberg / Reuters)
+    date: '2026-09-24'
+    tier: 3
+    quote: SoftBank Group has raised $11.1 billion in dollar- and euro-denominated bonds
+  - url: https://www.devdiscourse.com/article/international/3981775-softbank-raises-111-billion-in-worlds-biggest-high-yield-corporate-bond-sale
+    title: SoftBank raises $11.1 billion in world's biggest high-yield corporate bond sale
+    publisher: Devdiscourse (Reuters)
+    date: '2026-09-24'
+    tier: 3
+    quote: SoftBank Group has raised $11.1 billion in dollar- and euro-denominated bonds
+- kind: debt
+  from: SOPAIPILLA
+  to: BONDHOLDERS
+  amount_usd: 12500000000
+  amount_text: about $12.5 billion senior secured notes sold (launched at $12.3 billion; some reports $12.55 billion); yield 7.534%
+  instrument: senior_secured_project_notes
+  term: issuer is holding vehicle for GIP/HPS 80% stake in Project Sopaipilla Holdings (Meta 20%); Meta sole tenant with residual value guarantee (~$13B declining); prelim A+ (S&P) / AA-(EXP) (Fitch); JPMorgan and Morgan Stanley leads; priced ~2.875 pp over Treasuries on 2026-07-27 after soft (~1.6x) demand; ~1 GW El Paso campus online 2028
+  announced: '2026-07-23'
+  status: completed
+  title_zh: Meta 埃尔帕索园区 SPV 发行约 125 亿美元担保票据
+  title_en: Sopaipilla Investor LLC (BlackRock GIP/HPS–Meta El Paso JV) sells ~$12.5B senior secured notes
+  summary_zh: 2026 年 7 月 23–24 日 Sopaipilla Investor LLC 启动 123 亿美元高级担保票据发行，为 Meta 埃尔帕索约 1 GW 园区融资，发行人是贝莱德 GIP 与 HPS 持股 80%、Meta 持股 20% 的合资公司控股载体，Meta 提供约 130 亿美元递减残值担保；因科技巨头债券供给过多，订单仅约 1.6 倍，7 月 27 日以 7.534% 收益率发行约 125 亿美元。
+  sources:
+  - url: https://www.globaldatacenterhub.com/p/blackrock-launches-123-billion-bond
+    title: BlackRock Launches $12.3 Billion Bond For Meta's El Paso Campus
+    publisher: Global Data Center Hub
+    date: '2026-07-27'
+    tier: 3
+    quote: Sopaipilla Investor, LLC launched $12.3 billion of senior secured notes on July 23-24, 2026
+  - url: https://news.bgov.com/texas-brief/blackrock-eyes-more-than-12-billion-debt-for-data-center-1
+    title: BlackRock Eyes More Than $12 Billion Debt for Data Center
+    publisher: Bloomberg Government
+    date: '2026-07-20'
+    tier: 3
+    quote: BlackRock Inc. is looking to sell more than $12 billion of bonds to help finance a Meta Platforms Inc. data center campus
+  - url: https://news.bgov.com/esg/blackrock-dodges-ai-bond-trading-flop-after-offering-junk-yields
+    title: BlackRock Dodges AI Bond-Trading Flop After Offering Junk Yields
+    publisher: Bloomberg Government
+    date: '2026-07-28'
+    tier: 3
+    quote: sold in an offering led by JPMorgan Chase & Co. and Morgan Stanley at a 7.534% yield, a level more common in junk bonds.
+- kind: debt
+  from: CRWV
+  to: MS
+  amount_usd: 3100000000
+  amount_text: $3.1 billion delayed draw term loan facility (DDTL 5.0)
+  instrument: gpu_backed_delayed_draw_term_loan
+  term: credit agreement dated 2026-05-15; borrower CoreWeave Financing DDTL V, LLC; Morgan Stanley Senior Funding administrative agent; Morgan Stanley and MUFG joint lead arrangers; SOFR + 4.50% (tightened 50 bp); matures 2031-11-15; draws until Sep 2026; Ba2 / BB+; funds infrastructure for two large non-investment-grade customers
+  announced: '2026-05-18'
+  status: completed
+  title_zh: CoreWeave 31 亿美元 GPU 抵押贷款（DDTL 5.0）
+  title_en: CoreWeave closes $3.1B DDTL 5.0 led by Morgan Stanley and MUFG
+  summary_zh: 2026 年 5 月 18 日 CoreWeave 宣布完成 31 亿美元延迟提款定期贷款 DDTL 5.0，摩根士丹利与三菱日联联合牵头，认购踊跃使定价收窄 50bp 至 SOFR+4.50%，2031 年 11 月到期，穆迪 Ba2 / 惠誉 BB+，用于履行两家大型非投资级客户合同所需的 GPU 服务器等资本开支。8-K 已披露信贷协议。
+  sources:
+  - url: https://www.sec.gov/Archives/edgar/data/1769628/000176962826000236/crwv-20260515.htm
+    title: CoreWeave, Inc. Form 8-K (event 2026-05-15) — DDTL 5.0 Credit Agreement
+    publisher: SEC / CoreWeave 8-K
+    date: '2026-05-18'
+    tier: 1
+    quote: providing for a $3.1 billion delayed draw term loan facility (the "DDTL 5.0 Facility")
+  - url: https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-3-1-Billion-Loan-Facility-Expanding-Access-to-Public-Markets-for-GPU-Backed-Financing/
+    title: CoreWeave Closes $3.1 Billion Loan Facility, Expanding Access to Public Markets for GPU-Backed Financing
+    publisher: CoreWeave (press release)
+    date: '2026-05-18'
+    tier: 2
+    quote: today announced it has closed its $3.1 billion delayed draw term loan facility
+- kind: debt
+  from: CRWV
+  to: JPM
+  amount_usd: 2600000000
+  amount_text: $2.6 billion delayed draw term loan facility (DDTL 5.5)
+  instrument: gpu_backed_delayed_draw_term_loan
+  term: borrower CoreWeave Financing DDTL V-V, LLC; JPMorgan and MUFG joint lead arrangers and bookrunners; SOFR + 5.50%; ~5-year maturity vs ~3-year average underlying contracts; Ba2 / BB+; non-recourse
+  announced: '2026-08-10'
+  status: completed
+  title_zh: CoreWeave 26 亿美元 DDTL 5.5，摩根大通牵头
+  title_en: CoreWeave closes $2.6B DDTL 5.5 led by JPMorgan and MUFG
+  summary_zh: 2026 年 8 月 10 日 CoreWeave 宣布完成 26 亿美元延迟提款定期贷款 DDTL 5.5，摩根大通与三菱日联联合牵头，SOFR+5.50%，约 5 年期长于底层约 3 年的客户合同，扩大可公开银团化的客户合同范围；与 2025 年 7 月同为 26 亿美元的 DDTL 3.0 是两笔。
+  sources:
+  - url: https://investors.coreweave.com/news/news-details/2026/CoreWeave-Closes-2-6-Billion-Loan-Facility-Expanding-Financing-Flexibility-for-AI-Infrastructure/default.aspx
+    title: CoreWeave Closes $2.6 Billion Loan Facility, Expanding Financing Flexibility for AI Infrastructure
+    publisher: CoreWeave (press release)
+    date: '2026-08-10'
+    tier: 2
+    quote: closed its $2.6 billion delayed draw term loan facility
+  - url: https://www.lw.com/en/news/2026/08/latham-advises-on-coreweave-delayed-draw-term-loan-facility
+    title: Latham Advises on CoreWeave Delayed Draw Term Loan Facility
+    publisher: Latham & Watkins
+    date: '2026-08-11'
+    tier: 3
+    quote: announced it has closed its US$2.6 billion delayed draw term loan facility (DDTL 5.5 facility)
+- kind: debt
+  from: CRWV
+  to: MS
+  amount_usd: 2600000000
+  amount_text: $2.6 billion delayed draw term loan facility (DDTL 3.0)
+  instrument: gpu_backed_delayed_draw_term_loan
+  term: SOFR + 4%; matures 2030-08-21; secured by substantially all assets of CoreWeave Compute Acquisition Co. VII, LLC; Morgan Stanley and MUFG joint bookrunners/lead arrangers, Goldman Sachs joint lead arranger; funds infrastructure for long-term OpenAI agreement
+  announced: '2025-07-31'
+  status: completed
+  title_zh: CoreWeave 26 亿美元贷款，履行 OpenAI 长期合同（DDTL 3.0）
+  title_en: CoreWeave closes $2.6B DDTL 3.0 to serve long-term OpenAI contract
+  summary_zh: 2025 年 7 月 31 日 CoreWeave 宣布完成 26 亿美元延迟提款定期贷款，摩根士丹利与三菱日联牵头、高盛联合安排，SOFR+4%，2030 年 8 月到期，以 SPV 全部资产抵押，用于为与 OpenAI 的长期协议采购设备和基础设施。
+  sources:
+  - url: https://investors.coreweave.com/news/news-details/2025/CoreWeave-Closes-2-6-Billion-Secured-Debt-Financing-Facility-Strengthening-Market-Position-as-AI-Cloud-Leader/default.aspx
+    title: CoreWeave Closes $2.6 Billion Secured Debt Financing Facility, Strengthening Market Position as AI Cloud Leader
+    publisher: CoreWeave (press release)
+    date: '2025-07-31'
+    tier: 2
+    quote: it has closed a $2.6 billion delayed draw term loan facility
+  - url: https://www.datacenterdynamics.com/en/news/coreweave-closes-26bn-in-secured-debt-financing-facility/
+    title: CoreWeave closes $2.6bn in secured debt financing facility
+    publisher: Data Center Dynamics
+    date: '2025-07-31'
+    tier: 3
+- kind: debt
+  from: CRWV
+  to: MAGNETAR
+  amount_usd: 2300000000
+  amount_text: $2.3 billion debt financing facility (DDTL 1.0), led by Magnetar Capital and Blackstone Tactical Opportunities
+  instrument: gpu_backed_delayed_draw_term_loan
+  term: collateralised by NVIDIA GPUs (per Reuters/Bloomberg); participants Coatue, DigitalBridge Credit, BlackRock, PIMCO, Carlyle funds; proceeds for compute fleet, new data centers, hiring
+  announced: '2023-08-03'
+  status: completed
+  title_zh: CoreWeave 23 亿美元 GPU 抵押贷款，Magnetar 与黑石牵头
+  title_en: CoreWeave $2.3B debt facility led by Magnetar and Blackstone, collateralised by NVIDIA GPUs (DDTL 1.0)
+  summary_zh: 2023 年 8 月 3 日 CoreWeave 宣布取得 23 亿美元债务融资额度，Magnetar 与黑石 Tactical Opportunities 牵头，Coatue、DigitalBridge Credit 及贝莱德、PIMCO、凯雷基金参与，以英伟达 H100 等 GPU 作抵押，是 GPU 抵押融资的开端，用于扩充算力、新建数据中心。
+  sources:
+  - url: https://coreweave.com/news/coreweave-secures-2-3-billion-debt-financing-facility-led-by-magnetar-capital-and-blackstone-to-meet-surging-demand-and-ongoing-expansion-of-specialized-cloud-infrastructure-to-power-ai
+    title: CoreWeave Secures $2.3 Billion Debt Financing Facility led by Magnetar Capital and Blackstone
+    publisher: CoreWeave (press release)
+    date: '2023-08-03'
+    tier: 2
+    quote: today announced it has secured a $2.3 billion debt financing facility
+  - url: https://www.blackstone.com/news/press/coreweave-secures-2-3-billion-debt-financing-facility-led-by-magnetar-capital-and-blackstone-to-meet-surging-demand-and-ongoing-expansion-of-specialized-cloud-infrastructure-to-power-ai/
+    title: CoreWeave Secures $2.3 Billion Debt Financing Facility led by Magnetar Capital and Blackstone
+    publisher: Blackstone (press release)
+    date: '2023-08-03'
+    tier: 2
+- kind: debt
+  from: ABILENE_JV
+  to: JPM
+  amount_usd: 2300000000
+  amount_text: $2.3 billion construction loan for 206 MW build-to-suit phase 1 at Lancium Clean Campus, Abilene, Texas
+  instrument: construction_loan
+  term: arranged by Newmark on behalf of Blue Owl, Crusoe and Primary Digital Infrastructure; 100% leased to Oracle (Stargate); followed by JPMorgan-led $7.1B phase-2 financing in May 2025
+  announced: '2025-01-22'
+  status: completed
+  title_zh: 摩根大通 23 亿美元建设贷款，建 Abilene 星际之门一期
+  title_en: JPMorgan $2.3B construction loan for Crusoe/Blue Owl Abilene phase 1 (Oracle-leased, Stargate)
+  summary_zh: 2025 年 1 月 22 日 Newmark 宣布为 Blue Owl、Crusoe、Primary Digital 合资体安排摩根大通 23 亿美元建设贷款，用于德州 Abilene Lancium 园区 206 MW 定制数据中心一期，由甲骨文整租、属 Stargate 项目；同年 5 月再获摩根大通牵头 71 亿美元二期融资。
+  sources:
+  - url: https://commercialobserver.com/2025/01/j-p-morgan-chase-loan-texas-data-center-oracle/
+    title: JP Morgan Chase Supplies $2.3B for Texas Data Center Project Leased to Oracle
+    publisher: Commercial Observer
+    date: '2025-01-22'
+    tier: 3
+    quote: secured a massive $2.3 billion construction financing package to develop its planned 206-megawatt data center
+  - url: https://irei.com/news/newmark-arranges-2-3b-construction-financing-for-206mw-build-to-suit-data-center
+    title: Newmark arranges $2.3b construction financing for 206MW build-to-suit data center
+    publisher: IREI (Newmark release)
+    date: '2025-01-24'
+    tier: 3
+    quote: Newmark Group has arranged a $2.3 billion loan to capitalize a 206 megawatt, build-to-suit data center development
+- kind: debt
+  from: CRUSOE
+  to: BAM
+  amount_usd: 750000000
+  amount_text: $750 million credit facility from Brookfield Asset Management's infrastructure debt platform
+  instrument: credit_facility
+  term: to fund development of AI factories (purpose-built AI data centers) and Crusoe Cloud; Eastdil Secured advised Crusoe
+  announced: '2025-06-11'
+  status: signed
+  title_zh: 布鲁克菲尔德向 Crusoe 提供 7.5 亿美元信贷额度
+  title_en: Crusoe secures $750M credit facility from Brookfield infrastructure debt
+  summary_zh: 2025 年 6 月 11 日 Crusoe 宣布从布鲁克菲尔德基础设施债务平台取得 7.5 亿美元信贷额度，主要用于 AI 工厂数据中心开发和 AI 云平台扩张。
+  sources:
+  - url: https://www.crusoe.ai/resources/newsroom/crusoe-secures-usd750-million-credit-facility-from-brookfield-to-accelerate
+    title: Crusoe Secures $750 Million Credit Facility from Brookfield to Accelerate AI Factory Development
+    publisher: Crusoe (newsroom)
+    date: '2025-06-11'
+    tier: 2
+    quote: today announced it has secured a $750 million credit facility from Brookfield Asset Management
+  - url: https://irei.com/news/crusoe-secures-750m-credit-facility-from-brookfield
+    title: Crusoe secures $750m credit facility from Brookfield
+    publisher: IREI
+    date: '2025-06-12'
+    tier: 3
+- kind: debt
+  from: OPENAI
+  to: JPM
+  amount_usd: 4000000000
+  amount_text: US$4 billion revolving credit facility, undrawn at closing (later increased to $4.7 billion per 2026 reports)
+  instrument: revolving_credit_facility
+  term: nine banks — JPMorgan Chase, Citi, Goldman Sachs, Morgan Stanley, Santander, Wells Fargo, SMBC, UBS, HSBC; announced alongside $6.6B funding round; brings liquidity to ~$10B
+  announced: '2024-10-03'
+  status: signed
+  title_zh: OpenAI 与九家银行签 40 亿美元循环信贷额度
+  title_en: OpenAI establishes $4B revolving credit facility with JPMorgan and eight other banks
+  summary_zh: 2024 年 10 月 3 日 OpenAI 宣布与摩根大通、花旗、高盛、摩根士丹利、桑坦德、富国、三井住友、瑞银、汇丰签订 40 亿美元循环信贷额度，签约时未提款，与 66 亿美元融资同时宣布，流动性合计约 100 亿美元；2026 年报道称额度已增至 47 亿美元。
+  sources:
+  - url: https://openai.com/index/new-credit-facility-enhances-financial-flexibility
+    title: New credit facility enhances financial flexibility
+    publisher: OpenAI
+    date: '2024-10-03'
+    tier: 2
+    quote: we have established a new US$4 billion credit facility with JPMorgan Chase, Citi, Goldman Sachs
+  - url: https://www.lw.com/en/news/2024/10/latham-watkins-advises-on-openais-new-us4-billion-credit-facility
+    title: Latham & Watkins Advises on OpenAI's New US$4 Billion Credit Facility
+    publisher: Latham & Watkins
+    date: '2024-10-09'
+    tier: 3
+    quote: This is a revolving credit facility that is undrawn at closing.
+- kind: debt
+  from: OPENAI
+  to: BAC
+  amount_usd: 520000000
+  amount_text: $520 million credit line (Bank of America's first loan to OpenAI)
+  instrument: revolving_credit_line
+  term: terms undisclosed; sits alongside the $4.7B nine-bank revolver; BofA had earlier declined to lend to OpenAI
+  announced: '2026-07-08'
+  status: signed
+  title_zh: 美国银行向 OpenAI 提供 5.2 亿美元信贷额度
+  title_en: Bank of America extends $520M credit line to OpenAI ahead of IPO
+  summary_zh: Bloomberg 与 Reuters 2026 年 7 月 8 日援引知情人报道，美国银行向筹备 IPO 的 OpenAI 提供 5.2 亿美元信贷额度，为该行首笔对 OpenAI 贷款，此前曾因 AI 初创亏损风险拒贷；条款未披露，OpenAI 未置评。
+  sources:
+  - url: https://www.thestar.com.my/tech/tech-news/2026/07/09/bofa-extends-first-520-million-loan-to-openai-ahead-of-ipo-source-says
+    title: BofA extends first $520 million loan to OpenAI ahead of IPO, source says
+    publisher: The Star (Reuters)
+    date: '2026-07-08'
+    tier: 3
+    quote: Bank of America has extended a $520 million credit line to OpenAI
+  - url: https://pulse2.com/bank-of-america-reportedly-reverses-course-and-extends-520-million-credit-line-to-openai/
+    title: Bank Of America Reportedly Reverses Course And Extends $520 Million Credit Line To OpenAI
+    publisher: Pulse 2.0 (citing Bloomberg)
+    date: '2026-07-11'
+    tier: 3
+    quote: Bank of America has quietly extended a $520 million credit line to OpenAI
+- kind: debt
+  from: VALOR_COMPUTE
+  to: APO
+  amount_usd: 3500000000
+  amount_text: $3.5 billion Apollo-led capital solution supporting VCI's $5.4 billion acquisition and lease of compute (NVIDIA GB200) to an xAI subsidiary
+  instrument: gpu_lease_financing_spv
+  term: triple-net lease to xAI subsidiary for xAI's second data center; NVIDIA anchor LP in VCI; Apollo footnote notes signed-but-unclosed deals may not close
+  announced: '2026-01-07'
+  status: signed
+  title_zh: Apollo 35 亿美元融资 Valor 向 xAI 租赁 GPU 载体
+  title_en: Apollo backs $5.4B Valor Compute Infrastructure–xAI GPU lease with $3.5B capital solution
+  summary_zh: 2026 年 1 月 7 日 Apollo 宣布旗下基金牵头 35 亿美元融资，支持 Valor Equity Partners 管理的 Valor Compute Infrastructure 以 54 亿美元购入英伟达 GB200 等算力并以三净租约租给 xAI 子公司，用于 xAI 第二座数据中心；英伟达为该载体锚定 LP。
+  sources:
+  - url: https://ir.apollo.com/news-events/press-releases/detail/599/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution
+    title: Apollo Backs $5.4 Billion Valor and xAI Data Center Compute Infrastructure Transaction with $3.5 Billion Capital Solution
+    publisher: Apollo (press release)
+    date: '2026-01-07'
+    tier: 2
+    quote: have led a $3.5 billion capital solution for Valor Compute Infrastructure L.P.
+  - url: https://www.barchart.com/story/news/36924940/apollo-backs-5-4-billion-valor-and-xai-data-center-compute-infrastructure-transaction-with-3-5-billion-capital-solution
+    title: Apollo Backs $5.4 Billion Valor and xAI Data Center Compute Infrastructure Transaction with $3.5 Billion Capital Solution
+    publisher: Barchart (GlobeNewswire)
+    date: '2026-01-07'
+    tier: 3
+- kind: debt
+  from: LAMBDA
+  to: JPM
+  amount_usd: 1000000000
+  amount_text: about $1 billion short-dated private placement debt to buy NVIDIA GPUs leased to Microsoft
+  instrument: private_placement_debt_gpu
+  term: arranged by JPMorgan, marketed to private-placement investors; repaid from Microsoft lease income; pricing/maturity undisclosed; JPMorgan declined comment
+  announced: '2026-08-28'
+  status: completed
+  confidence: 0.6
+  title_zh: Lambda 发行约 10 亿美元私募债，购 GPU 租给微软
+  title_en: Lambda raises ~$1B short-dated private debt via JPMorgan for GPUs leased to Microsoft
+  summary_zh: Bloomberg 2026 年 8 月 28 日援引知情人报道，Lambda 通过摩根大通安排约 10 亿美元短期私募债，用于采购英伟达 GPU 并租给微软，以租金偿债；条款未披露，摩根大通拒绝置评。两篇来源均转引同一 Bloomberg 报道，置信度 0.6。接续 8 月 12 日定价的 9.26 亿美元定期贷款。
+  sources:
+  - url: https://techcrunch.com/?p=3158531
+    title: Nvidia-backed Lambda raises $1B in private debt for Microsoft chip deal
+    publisher: TechCrunch (citing Bloomberg)
+    date: '2026-08-28'
+    tier: 3
+    quote: has raised $1 billion in private, short-dated debt
+  - url: https://cryptobriefing.com/lambda-raises-1b-private-debt-nvidia-microsoft/
+    title: Nvidia-backed Lambda raises $1 billion in private debt for Microsoft chip deal
+    publisher: Crypto Briefing (citing Bloomberg)
+    date: '2026-08-28'
+    tier: 3
+    quote: JPMorgan arranged the transaction, which was marketed to private-placement investors
+- kind: debt
+  from: LAMBDA
+  to: MS
+  amount_usd: 926000000
+  amount_text: $926 million senior secured term loan B (Baa2, Moody's), issued at 99.5
+  instrument: gpu_backed_term_loan_b
+  term: SOFR + 3.00%; fully amortising, matures 2030-12-31; secured by GPU servers and their cash flows; backs GPU deployment for a customer with an investment-grade offtaker; Morgan Stanley lead-left arranger/bookrunner/admin agent, MUFG joint bookrunner; priced 2026-08-12, closed 2026-08-27
+  announced: '2026-08-12'
+  status: completed
+  title_zh: Lambda 9.26 亿美元投资级 GPU 抵押定期贷款 B
+  title_en: Lambda closes $926M Baa2-rated senior secured term loan B led by Morgan Stanley
+  summary_zh: 2026 年 8 月 27 日 Lambda 宣布完成 9.26 亿美元高级担保定期贷款 B（8 月 12 日定价），穆迪 Baa2，SOFR+3.00%、2030 年底全额摊还，以本次采购的 GPU 服务器及其现金流抵押，用于为某投资级承购方支持的客户部署 GPU；摩根士丹利牵头、三菱日联联合簿记，为私营 neocloud 首笔广泛银团化的投资级 TLB。
+  sources:
+  - url: https://lambda.ai/blog/lambda-closes-926-million-senior-secured-term-loan-b-facility
+    title: Lambda closes $926 million senior secured term loan B facility, backing GPU deployment for an investment-grade customer
+    publisher: Lambda (blog / press release)
+    date: '2026-08-27'
+    tier: 2
+    quote: announced the closing of its $926 million senior secured term loan B facility
+  - url: https://pulse2.com/lambda-secures-926-million-gpu-term-loan-with-baa2-investment-grade-rating/
+    title: Lambda Secures $926 Million GPU Term Loan With Baa2 Investment-Grade Rating
+    publisher: Pulse 2.0
+    date: '2026-08-27'
+    tier: 3
+- kind: debt
+  from: MISTRAL
+  to: LENDER_SYNDICATE
+  amount_usd: 830000000
+  amount_text: $830 million (≈ €723 million) debt financing from a seven-bank consortium
+  instrument: gpu_data_centre_loan
+  term: lenders Bpifrance (anchor), BNP Paribas, Crédit Agricole CIB, HSBC, La Banque Postale, MUFG, Natixis CIB; funds 13,800 NVIDIA GB300 GPUs (44 MW) at Eclairion's Bruyères-le-Châtel site, operational by end-June 2026; Mistral's first debt raise
+  announced: '2026-03-30'
+  status: completed
+  title_zh: Mistral AI 首笔 8.3 亿美元银团贷款，建巴黎近郊数据中心
+  title_en: Mistral AI raises $830M debt from seven banks for Paris-area GB300 data centre
+  summary_zh: 2026 年 3 月 30 日 Mistral AI 宣布完成首笔债务融资，从 Bpifrance 牵头的七家银行取得 8.3 亿美元（约 7.23 亿欧元），用于在 Eclairion 运营的 Bruyères-le-Châtel 数据中心部署 13,800 颗英伟达 GB300（44 MW），计划 2026 年 6 月底投运，目标 2027 年底欧洲算力 200 MW。
+  sources:
+  - url: https://www.unite.ai/mistral-ai-secures-830-million-in-debt-to-build-paris-data-center/
+    title: Mistral AI Secures $830 Million in Debt to Build Paris Data Center
+    publisher: Unite.AI
+    date: '2026-03-30'
+    tier: 3
+    quote: Mistral AI has secured $830 million in debt financing from a consortium of seven banks.
+  - url: https://www.maddyness.com/2026/03/30/mistral-ai-securise-830-millions-de-dollars-en-dette-pour-exploiter-son-premier-centre-de-donnees-en-france/
+    title: Mistral AI sécurise 830 millions de dollars en dette pour exploiter son premier centre de données en France
+    publisher: Maddyness
+    date: '2026-03-30'
+    tier: 3
+    quote: Cette opération permet à Mistral AI de lever 830 millions de dollars en dette
+  - url: https://news.bgov.com/tech-and-telecom-law/mistral-raises-830-million-to-house-nvidia-chips-in-data-center
+    title: Mistral Raises $830 Million to House Nvidia Chips in Data Center
+    publisher: Bloomberg Government
+    date: '2026-03-30'
+    tier: 3
+- kind: debt
+  from: ECODATACENTER
+  to: DB
+  amount_usd: 703000000
+  amount_text: EUR 600 million (≈ US$703 million) debt financing from Deutsche Bank Private Credit and Infrastructure
+  instrument: private_credit_infrastructure_debt
+  term: Deutsche Bank underwrites and plans to sell down; funds expansion of Falun (to 68 MW) and Borlänge (360–400 MW planned) campuses in Sweden
+  announced: '2025-09-09'
+  status: signed
+  title_zh: 德意志银行向瑞典 EcoDataCenter 提供 6 亿欧元债务融资
+  title_en: EcoDataCenter secures €600M debt financing from Deutsche Bank Private Credit and Infrastructure
+  summary_zh: 2025 年 9 月 9 日瑞典 EcoDataCenter 宣布从德意志银行私募信贷与基础设施部门取得 6 亿欧元（约 7.03 亿美元）债务融资，德银包销后再分销，主要用于 Falun 和 Borlänge 园区扩建；自 2023 年以来公司与股东 Areim 累计融资约 18 亿欧元。
+  sources:
+  - url: https://www.mynewsdesk.com/se/ecodatacenter/pressreleases/ecodatacenter-raises-an-additional-eur-600-million-3402903
+    title: EcoDataCenter raises an additional EUR 600 million
+    publisher: EcoDataCenter (press release)
+    date: '2025-09-09'
+    tier: 2
+    quote: EcoDataCenter has successfully secured EUR 600 million in debt financing from Deutsche Bank Private Credit and Infrastructure
+  - url: https://www.datacenterdynamics.com/en/news/ecodatacenter-raises-703m-in-debt-financing/
+    title: EcoDataCenter raises $703m in debt financing
+    publisher: Data Center Dynamics
+    date: '2025-09-09'
+    tier: 3
+- kind: debt
+  from: AIRTRUNK
+  to: LENDER_SYNDICATE
+  amount_usd: 2990000000
+  amount_text: A$4.25 billion (≈ US$2.99 billion) green loan for SYD3 campus, Western Sydney
+  instrument: green_project_loan
+  term: 32 institutions; 14 underwriting banks incl. Santander, BNP Paribas, Crédit Agricole CIB, DBS, Deutsche Bank, ING, Mizuho, MUFG, NAB, RBC, SocGen, SMBC, HSBC, UOB; SMBC, HSBC, UOB green loan coordinators; campus completion mid-2028; lifts AirTrunk committed debt to ~A$38.4B
+  announced: '2026-10-27'
+  status: completed
+  title_zh: AirTrunk 42.5 亿澳元绿色贷款，建悉尼 SYD3 园区
+  title_en: AirTrunk secures A$4.25B green loan from 32 lenders for SYD3 Sydney campus
+  summary_zh: 2026 年 10 月 27 日黑石旗下 AirTrunk 宣布取得 42.5 亿澳元（约 29.9 亿美元）绿色贷款，14 家银行包销、32 家机构参与，三井住友、汇丰、大华任绿色贷款协调行，用于西悉尼 SYD3 园区 AI 与云容量建设，预计 2028 年中完工；AirTrunk 全球承诺债务升至约 384 亿澳元。
+  sources:
+  - url: https://www.datacenterdynamics.com/en/news/airtrunk-secures-au425-billion-green-loan-for-sydney-data-center-campus/
+    title: AirTrunk secures AU$4.25 billion green loan for Sydney data center campus
+    publisher: Data Center Dynamics
+    date: '2026-10-27'
+    tier: 3
+    quote: has secured a A$4.25 billion ( US$2.99 billion ) green loan
+  - url: https://www.theasset.com/article-esg/57388/airtrunk-secures-a-4-25-billion-green-loan-for-syd3
+    title: AirTrunk secures A$4.25 billion green loan for SYD3
+    publisher: The Asset
+    date: '2026-10-27'
+    tier: 3
+- kind: debt
+  from: RELATED
+  to: PIMCO
+  amount_usd: 14000000000
+  amount_text: fixed-rate, long-term debt anchored by PIMCO-managed funds for the $16 billion Saline Township campus; debt size undisclosed in release (Bloomberg Apr 8 reported PIMCO in talks on ~$14 billion, possibly 144A bond format)
+  instrument: private_placement_project_debt
+  term: equity from Related Digital and Blackstone-affiliated funds (~$2B reported); Bank of America structuring agent and financial advisor; Goldman Sachs and Wells Fargo advisors; closing subject to customary conditions; Oracle-dedicated campus in Michigan
+  announced: '2026-04-24'
+  status: signed
+  confidence: 0.6
+  title_zh: PIMCO 锚定 Related Digital 密歇根甲骨文园区长期债务
+  title_en: Related Digital secures PIMCO-anchored long-term debt for $16B Oracle campus in Saline Township, Michigan
+  summary_zh: 2026 年 4 月 24 日 Related Digital 与黑石宣布为密歇根 Saline Township 160 亿美元甲骨文专用数据中心园区落实融资：PIMCO 管理的基金和账户锚定固定利率长期债务，股权来自 Related 与黑石关联基金，美国银行任结构代理，交割尚待完成惯常条件；新闻稿未披露债务金额，Bloomberg 4 月 8 日称 PIMCO 洽谈约 140 亿美元，本条按该口径记、置信度 0.6。此前 Blue Owl 于 2025 年 12 月退出该项目。
+  sources:
+  - url: https://www.related.com/press-releases/2026-04-24/related-digital-announces-financing-16-billion-oracle-data-center-project
+    title: Related Digital Announces Financing for $16 Billion Oracle Data Center Project in Saline Township, Michigan
+    publisher: Related Companies (press release)
+    date: '2026-04-24'
+    tier: 2
+    quote: anchored by PIMCO-managed funds and accounts
+  - url: https://www.datacenterdynamics.com/en/news/pimco-in-talks-to-provide-14bn-in-debt-financing-for-oracles-michigan-data-center-report/
+    title: PIMCO in talks to provide $14bn in debt financing for Oracle's Michigan data center - report
+    publisher: Data Center Dynamics (citing Bloomberg)
+    date: '2026-04-08'
+    tier: 3
+- kind: debt
+  from: GOOGL
+  to: BONDHOLDERS
+  amount_usd: 11450000000
+  amount_text: non-USD legs of Feb 2026 multi-currency raise — £5.5 billion (≈ $7.5B) sterling incl. £1B 100-year note + CHF 3.055 billion (≈ $3.95B) in five tranches; the separate $20B USD leg (Feb 9) is on EDGAR and not counted here
+  instrument: senior_unsecured_notes_multi_currency
+  term: sterling tenors 3–32 years plus 100-year (priced ~120 bp over 10y gilts; first tech century bond since Motorola 1997), record sterling corporate deal; CHF tranches due 2029/2032/2036/2041/2051 (0.427%–1.8675%), record Swiss corporate deal; funds up to $185B 2026 capex
+  announced: '2026-02-10'
+  status: completed
+  title_zh: 谷歌英镑与瑞郎债券合计约 115 亿美元，含百年债
+  title_en: Alphabet sells record £5.5B sterling (incl. 100-year) and CHF 3.055B bonds, Feb 2026
+  summary_zh: 2026 年 2 月 10 日 Alphabet 在 24 小时内完成约 320 亿美元多币种发债：继 2 月 9 日 200 亿美元美元债后，发行 55 亿英镑（含 10 亿英镑百年期票据，为 1997 年摩托罗拉以来科技公司首次）和 30.55 亿瑞郎五档债券，均创各自市场企业债纪录，用于高达 1,850 亿美元的 AI 资本开支。本条只记非美元部分约 114.5 亿美元；美元部分见 EDGAR。
+  sources:
+  - url: https://www.swissinfo.ch/eng/alphabet-sells-almost-%2432-billion-bonds-as-tech-races-to-fund-ai/90918612
+    title: Alphabet sells almost $32 billion bonds as tech races to fund AI
+    publisher: SWI swissinfo.ch (Bloomberg)
+    date: '2026-02-10'
+    tier: 3
+    quote: The £5.5 billion ($7.5 billion) sterling offering
+  - url: https://www.homburger.ch/en/news/homburger-advises-alphabet-on-its-issuance-of-chf-3-055-bn-in-inaugural-five-tranche-chf-offering/
+    title: Homburger advises Alphabet on its issuance of CHF 3.055 bn in inaugural five-tranche CHF offering
+    publisher: Homburger
+    date: '2026-02-10'
+    tier: 3
+    quote: Homburger advises Alphabet on its issuance of CHF 3.055 bn in inaugural five-tranche CHF offering
+  - url: https://www.euronews.com/2026/02/10/alphabet-plans-to-sell-rare-100-year-bond-in-huge-multi-currency-debt-raise
+    title: Alphabet plans to sell rare 100-year bond in huge multi-currency debt raise
+    publisher: Euronews
+    date: '2026-02-10'
+    tier: 3
+    quote: Alphabet has put an extremely rare 100-year bond up for offer on sterling markets
+- kind: debt
+  from: AMZN
+  to: BONDHOLDERS
+  amount_usd: 5760000000
+  amount_text: £4.25 billion (≈ $5.76 billion) debut sterling bonds in four tranches (£1.25B 3y, £1B 6y, £1B 12y, £1B 19y)
+  instrument: senior_unsecured_notes_sterling
+  term: yields ~5.2% (3y) to ~6.7% (19y), 53–93 bp over gilts; final orders >£10.65B (~2.5x); follows Amazon's 2026 euro, Swiss franc and Canadian dollar deals; 2026 borrowing >$80B
+  announced: '2026-09-09'
+  status: completed
+  title_zh: 亚马逊首发 42.5 亿英镑债券
+  title_en: Amazon raises £4.25B in debut sterling bond sale (four tranches)
+  summary_zh: 2026 年 9 月 9 日亚马逊完成首次英镑债券发行，四档合计 42.5 亿英镑（约 57.6 亿美元），3 年期至 19 年期收益率约 5.2%–6.7%，最终订单超 106.5 亿英镑；是其 2026 年继欧元、瑞郎、加元之后的又一币种，当年发债已超 800 亿美元，用于 AI 基建开支。
+  sources:
+  - url: https://www.thestar.com.my/tech/tech-news/2026/09/09/amazon-set-to-raise-over-5-billion-in-first-sterling-bond-sale-lead-managers-say
+    title: Amazon will raise $5.8 billion in first sterling bond sale, lead managers say
+    publisher: The Star (Reuters)
+    date: '2026-09-09'
+    tier: 3
+    quote: Amazon raised £4.25 billion ($5.76 billion) from its first-ever sterling bond sale on Wednesday.
+  - url: https://letsdatascience.com/news/amazon-raises-gbp425-billion-in-debut-sterling-bond-sale-9ee1396e
+    title: Amazon Raises GBP4.25 Billion in Debut Sterling Bond Sale
+    publisher: Let's Data Science (citing Reuters, Bloomberg)
+    date: '2026-09-20'
+    tier: 3
+    quote: Amazon raised GBP4.25 billion in its first sterling-denominated bond sale on September 9, according to Reuters and Bloomberg.
+- kind: debt
+  from: CRWV
+  to: MS
+  distinct: true
+  amount_usd: 3100000000
+  amount_text: $3.1 billion GPU-backed delayed draw term loan (DDTL 5.0), investment grade
+  instrument: delayed_draw_term_loan
+  announced: "2026-05-18"
+  status: completed
+  title_zh: CoreWeave 31 亿美元 GPU 抵押贷款（DDTL 5.0）
+  title_en: CoreWeave $3.1B investment-grade GPU-backed delayed draw term loan (DDTL 5.0)
+  summary_zh: 2026 年 5 月 CoreWeave 完成 31 亿美元投资级 GPU 抵押延迟提款定期贷款（DDTL 5.0），摩根士丹利牵头；与 2025 年 7 月的 DDTL 3.0（26 亿美元）是两笔。
+  sources:
+    - {url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001769628&type=8-K&dateb=&owner=include&count=40", title: "CoreWeave 8-K filings index (May 2026, Item 2.03)", publisher: "SEC EDGAR", date: "2026-05-18", tier: 1}
