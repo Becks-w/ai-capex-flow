@@ -1,0 +1,7 @@
+data/*.sqlite
+data/*.sqlite-journal
+data/cik_cache.json
+logs/
+__pycache__/
+*.pyc
+.DS_Store

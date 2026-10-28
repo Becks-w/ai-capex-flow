@@ -1,0 +1,155 @@
+# 实体主表。id 全大写；group 决定图上的颜色与板块筛选；pooled=true 的是「汇总对手方」（债券市场、未具名银团），不参与排行。
+# ticker 有值的会被 EDGAR submissions 采集器盯 8-K/10-Q/424B；cik 自动解析。
+# aliases 用于预筛与归一（大小写敏感，避免 Meta/meta 误配）。
+groups:
+  hyperscaler: {zh: 巨头云, color: "#3987e5"}
+  model_lab:   {zh: AI 实验室, color: "#d95926"}
+  neocloud:    {zh: Neocloud, color: "#199e70"}
+  chip:        {zh: 芯片 / 存储, color: "#c98500"}
+  equipment:   {zh: 服务器 / 设备, color: "#008300"}
+  datacenter:  {zh: 数据中心开发商, color: "#d55181"}
+  energy:      {zh: 能源 / 电力, color: "#e66767"}
+  financier:   {zh: 资金方, color: "#9085e9"}
+  spv:         {zh: SPV / 合资, color: "#8a9bb5"}
+  other:       {zh: 其他, color: "#6f7f99"}
+
+entities:
+  # ---- 巨头云 ----
+  - {id: MSFT,   name: Microsoft,          name_zh: 微软,        group: hyperscaler, ticker: MSFT,  country: US, aliases: [Microsoft, Azure, MSFT, "Microsoft Azure"]}
+  - {id: AMZN,   name: Amazon / AWS,       name_zh: 亚马逊 / AWS, group: hyperscaler, ticker: AMZN,  country: US, aliases: [Amazon, AWS, "Amazon Web Services", "Amazon.com"]}
+  - {id: GOOGL,  name: Alphabet / Google,  name_zh: 谷歌,        group: hyperscaler, ticker: GOOGL, country: US, aliases: [Google, Alphabet, "Google Cloud", GCP, DeepMind, "Google DeepMind"]}
+  - {id: META,   name: Meta,               name_zh: Meta,        group: hyperscaler, ticker: META,  country: US, aliases: [Meta, "Meta Platforms", Hyperion, Prometheus, "Meta Superintelligence Labs"]}
+  - {id: ORCL,   name: Oracle,             name_zh: 甲骨文,      group: hyperscaler, ticker: ORCL,  country: US, aliases: [Oracle, OCI, "Oracle Cloud", "Oracle Cloud Infrastructure"]}
+  - {id: BABA,   name: Alibaba,            name_zh: 阿里巴巴,    group: hyperscaler, ticker: BABA,  country: CN, aliases: [Alibaba, "Alibaba Cloud", 阿里巴巴, 阿里云]}
+  - {id: TCEHY,  name: Tencent,            name_zh: 腾讯,        group: hyperscaler, ticker: null,  country: CN, aliases: [Tencent, 腾讯, "Tencent Cloud"]}
+  - {id: BYTEDANCE, name: ByteDance,       name_zh: 字节跳动,    group: hyperscaler, ticker: null,  country: CN, aliases: [ByteDance, 字节跳动, Volcano Engine, 火山引擎]}
+  - {id: BIDU,   name: Baidu,              name_zh: 百度,        group: hyperscaler, ticker: BIDU,  country: CN, aliases: [Baidu, 百度]}
+  - {id: IBM,    name: IBM,                name_zh: IBM,         group: hyperscaler, ticker: IBM,   country: US, aliases: [IBM]}
+  # ---- AI 实验室 / 需求端 ----
+  - {id: OPENAI,    name: OpenAI,     name_zh: OpenAI,     group: model_lab, country: US, aliases: [OpenAI, ChatGPT]}
+  - {id: ANTHROPIC, name: Anthropic,  name_zh: Anthropic,  group: model_lab, country: US, aliases: [Anthropic, Claude]}
+  - {id: XAI,       name: xAI,        name_zh: xAI,        group: model_lab, country: US, aliases: [xAI, Colossus, Grok]}
+  - {id: SPACEX,    name: SpaceX,     name_zh: SpaceX,     group: model_lab, country: US, aliases: [SpaceX, "Space Exploration Technologies"]}
+  - {id: MISTRAL,   name: Mistral AI, name_zh: Mistral,    group: model_lab, country: FR, aliases: ["Mistral AI", Mistral]}
+  - {id: SSI,       name: Safe Superintelligence, name_zh: SSI, group: model_lab, country: US, aliases: ["Safe Superintelligence", SSI]}
+  - {id: THINKINGMACHINES, name: Thinking Machines Lab, name_zh: Thinking Machines, group: model_lab, country: US, aliases: ["Thinking Machines", "Thinking Machines Lab"]}
+  - {id: PERPLEXITY, name: Perplexity, name_zh: Perplexity, group: model_lab, country: US, aliases: [Perplexity]}
+  - {id: COHERE,    name: Cohere,     name_zh: Cohere,     group: model_lab, country: CA, aliases: [Cohere]}
+  - {id: DEEPSEEK,  name: DeepSeek,   name_zh: 深度求索,   group: model_lab, country: CN, aliases: [DeepSeek, 深度求索]}
+  - {id: MOONSHOT,  name: Moonshot AI, name_zh: 月之暗面,  group: model_lab, country: CN, aliases: ["Moonshot AI", 月之暗面, Kimi]}
+  - {id: ZHIPU,     name: Zhipu AI,   name_zh: 智谱,       group: model_lab, country: CN, aliases: [Zhipu, 智谱, "Z.ai"]}
+  - {id: STARGATE,  name: Stargate LLC, name_zh: 星际之门, group: spv, country: US, aliases: [Stargate, "Stargate LLC", "Stargate project"]}
+  # ---- Neocloud / 矿转云 ----
+  - {id: CRWV,   name: CoreWeave,       name_zh: CoreWeave,      group: neocloud, ticker: CRWV, country: US, aliases: [CoreWeave]}
+  - {id: NBIS,   name: Nebius,          name_zh: Nebius,         group: neocloud, ticker: NBIS, country: NL, aliases: [Nebius, "Nebius Group"]}
+  - {id: LAMBDA, name: Lambda,          name_zh: Lambda,         group: neocloud, country: US, aliases: ["Lambda Labs", "Lambda, Inc", "Lambda Inc"]}
+  - {id: CRUSOE, name: Crusoe,          name_zh: Crusoe,         group: neocloud, country: US, aliases: [Crusoe, "Crusoe Energy"]}
+  - {id: FLUIDSTACK, name: Fluidstack,  name_zh: Fluidstack,     group: neocloud, country: GB, aliases: [Fluidstack]}
+  - {id: NSCALE, name: Nscale,          name_zh: Nscale,         group: neocloud, country: GB, aliases: [Nscale]}
+  - {id: TOGETHER, name: Together AI,   name_zh: Together AI,    group: neocloud, country: US, aliases: ["Together AI"]}
+  - {id: VULTR,  name: Vultr,           name_zh: Vultr,          group: neocloud, country: US, aliases: [Vultr]}
+  - {id: VOLTAGEPARK, name: Voltage Park, name_zh: Voltage Park, group: neocloud, country: US, aliases: ["Voltage Park"]}
+  - {id: FIREBIRD, name: Firmus / Firebird, name_zh: Firmus,     group: neocloud, country: AU, aliases: [Firmus, Firebird]}
+  - {id: IREN,   name: IREN,            name_zh: IREN,           group: neocloud, ticker: IREN, country: AU, aliases: [IREN, "Iris Energy"]}
+  - {id: CIFR,   name: Cipher Mining,   name_zh: Cipher Mining,  group: neocloud, ticker: CIFR, country: US, aliases: ["Cipher Mining", "Cipher Digital"]}
+  - {id: WULF,   name: TeraWulf,        name_zh: TeraWulf,       group: neocloud, ticker: WULF, country: US, aliases: [TeraWulf]}
+  - {id: APLD,   name: Applied Digital, name_zh: Applied Digital, group: neocloud, ticker: APLD, country: US, aliases: ["Applied Digital"]}
+  - {id: CORZ,   name: Core Scientific, name_zh: Core Scientific, group: neocloud, ticker: CORZ, country: US, aliases: ["Core Scientific"]}
+  - {id: HUT,    name: Hut 8,           name_zh: Hut 8,          group: neocloud, ticker: HUT,  country: US, aliases: ["Hut 8", "American Bitcoin"]}
+  - {id: GLXY,   name: Galaxy Digital,  name_zh: Galaxy Digital, group: neocloud, ticker: GLXY, country: US, aliases: ["Galaxy Digital", Helios]}
+  - {id: BTDR,   name: Bitdeer,         name_zh: Bitdeer,        group: neocloud, ticker: BTDR, country: SG, aliases: [Bitdeer]}
+  - {id: RIOT,   name: Riot Platforms,  name_zh: Riot,           group: neocloud, ticker: RIOT, country: US, aliases: ["Riot Platforms"]}
+  - {id: SOLUNA, name: Soluna,          name_zh: Soluna,         group: neocloud, ticker: SLNH, country: US, aliases: [Soluna]}
+  # ---- 芯片 / 存储 ----
+  - {id: NVDA, name: NVIDIA,    name_zh: 英伟达,   group: chip, ticker: NVDA, country: US, aliases: [Nvidia, NVIDIA, 英伟达]}
+  - {id: AMD,  name: AMD,       name_zh: AMD,      group: chip, ticker: AMD,  country: US, aliases: [AMD, "Advanced Micro Devices"]}
+  - {id: AVGO, name: Broadcom,  name_zh: 博通,     group: chip, ticker: AVGO, country: US, aliases: [Broadcom, 博通]}
+  - {id: TSM,  name: TSMC,      name_zh: 台积电,   group: chip, ticker: TSM,  country: TW, aliases: [TSMC, "Taiwan Semiconductor", 台积电]}
+  - {id: MU,   name: Micron,    name_zh: 美光,     group: chip, ticker: MU,   country: US, aliases: [Micron, 美光]}
+  - {id: SAMSUNG, name: Samsung Electronics, name_zh: 三星电子, group: chip, country: KR, aliases: [Samsung, "Samsung Electronics", 三星]}
+  - {id: SKHYNIX, name: SK hynix, name_zh: SK 海力士, group: chip, country: KR, aliases: ["SK hynix", "SK Hynix", 海力士]}
+  - {id: INTC, name: Intel,     name_zh: 英特尔,   group: chip, ticker: INTC, country: US, aliases: [Intel, 英特尔]}
+  - {id: ARM,  name: Arm,       name_zh: Arm,      group: chip, ticker: ARM,  country: GB, aliases: ["Arm Holdings"]}
+  - {id: MRVL, name: Marvell,   name_zh: 迈威尔,   group: chip, ticker: MRVL, country: US, aliases: [Marvell]}
+  - {id: CEREBRAS, name: Cerebras, name_zh: Cerebras, group: chip, country: US, aliases: [Cerebras]}
+  - {id: GROQ, name: Groq,      name_zh: Groq,     group: chip, country: US, aliases: [Groq]}
+  - {id: ASML, name: ASML,      name_zh: 阿斯麦,   group: chip, ticker: ASML, country: NL, aliases: [ASML]}
+  # ---- 服务器 / 设备 / 网络 ----
+  - {id: SMCI, name: Supermicro, name_zh: 超微,   group: equipment, ticker: SMCI, country: US, aliases: [Supermicro, "Super Micro"]}
+  - {id: DELL, name: Dell,       name_zh: 戴尔,   group: equipment, ticker: DELL, country: US, aliases: [Dell, "Dell Technologies"]}
+  - {id: HPE,  name: HPE,        name_zh: 慧与,   group: equipment, ticker: HPE,  country: US, aliases: [HPE, "Hewlett Packard Enterprise"]}
+  - {id: VRT,  name: Vertiv,     name_zh: 维谛,   group: equipment, ticker: VRT,  country: US, aliases: [Vertiv]}
+  - {id: ANET, name: Arista,     name_zh: Arista, group: equipment, ticker: ANET, country: US, aliases: [Arista, "Arista Networks"]}
+  - {id: CSCO, name: Cisco,      name_zh: 思科,   group: equipment, ticker: CSCO, country: US, aliases: [Cisco]}
+  - {id: FOXCONN, name: Foxconn, name_zh: 富士康, group: equipment, country: TW, aliases: [Foxconn, "Hon Hai", 鸿海, 富士康]}
+  # ---- 数据中心开发商 / 运营商 ----
+  - {id: VANTAGE, name: Vantage Data Centers, name_zh: Vantage, group: datacenter, country: US, aliases: [Vantage, "Vantage Data Centers"]}
+  - {id: QTS,     name: QTS,                  name_zh: QTS,     group: datacenter, country: US, aliases: [QTS, "QTS Data Centers"]}
+  - {id: ALIGNED, name: Aligned Data Centers, name_zh: Aligned, group: datacenter, country: US, aliases: [Aligned, "Aligned Data Centers"]}
+  - {id: STACK,   name: STACK Infrastructure, name_zh: STACK,   group: datacenter, country: US, aliases: ["STACK Infrastructure"]}
+  - {id: CYRUSONE, name: CyrusOne,            name_zh: CyrusOne, group: datacenter, country: US, aliases: [CyrusOne]}
+  - {id: SWITCH,  name: Switch,               name_zh: Switch,  group: datacenter, country: US, aliases: ["Switch Inc", "Switch, Inc"]}
+  - {id: EQIX,    name: Equinix,              name_zh: Equinix, group: datacenter, ticker: EQIX, country: US, aliases: [Equinix]}
+  - {id: DLR,     name: Digital Realty,       name_zh: Digital Realty, group: datacenter, ticker: DLR, country: US, aliases: ["Digital Realty"]}
+  - {id: COMPASS, name: Compass Datacenters,  name_zh: Compass, group: datacenter, country: US, aliases: ["Compass Datacenters"]}
+  - {id: RELATED, name: Related Digital,      name_zh: Related Digital, group: datacenter, country: US, aliases: ["Related Digital", "Related Companies"]}
+  - {id: POWERHOUSE, name: Poolside / Powerhouse, name_zh: Powerhouse, group: datacenter, country: US, aliases: [Powerhouse]}
+  - {id: EDGECONNEX, name: EdgeConneX,        name_zh: EdgeConneX, group: datacenter, country: US, aliases: [EdgeConneX]}
+  - {id: AIRTRUNK, name: AirTrunk,            name_zh: AirTrunk, group: datacenter, country: AU, aliases: [AirTrunk]}
+  - {id: SBENERGY, name: SB Energy,           name_zh: SB Energy, group: datacenter, country: US, aliases: ["SB Energy"]}
+  # ---- 能源 / 电力 ----
+  - {id: CVX,  name: Chevron,       name_zh: 雪佛龙,   group: energy, ticker: CVX,  country: US, aliases: [Chevron]}
+  - {id: CEG,  name: Constellation, name_zh: 星座能源, group: energy, ticker: CEG,  country: US, aliases: [Constellation, "Constellation Energy"]}
+  - {id: VST,  name: Vistra,        name_zh: Vistra,   group: energy, ticker: VST,  country: US, aliases: [Vistra]}
+  - {id: TLN,  name: Talen Energy,  name_zh: Talen,    group: energy, ticker: TLN,  country: US, aliases: [Talen, "Talen Energy"]}
+  - {id: NEE,  name: NextEra,       name_zh: NextEra,  group: energy, ticker: NEE,  country: US, aliases: [NextEra, "NextEra Energy"]}
+  - {id: BE,   name: Bloom Energy,  name_zh: Bloom,    group: energy, ticker: BE,   country: US, aliases: ["Bloom Energy"]}
+  - {id: GEV,  name: GE Vernova,    name_zh: GE Vernova, group: energy, ticker: GEV, country: US, aliases: ["GE Vernova"]}
+  - {id: OKLO, name: Oklo,          name_zh: Oklo,     group: energy, ticker: OKLO, country: US, aliases: [Oklo]}
+  # ---- 资金方：私募 / 基建基金 ----
+  - {id: OWL,  name: Blue Owl,     name_zh: Blue Owl, group: financier, ticker: OWL, country: US, aliases: ["Blue Owl", "Blue Owl Capital"]}
+  - {id: BX,   name: Blackstone,   name_zh: 黑石,     group: financier, ticker: BX,  country: US, aliases: [Blackstone, 黑石]}
+  - {id: APO,  name: Apollo,       name_zh: 阿波罗,   group: financier, ticker: APO, country: US, aliases: [Apollo, "Apollo Global", 阿波罗]}
+  - {id: KKR,  name: KKR,          name_zh: KKR,      group: financier, ticker: KKR, country: US, aliases: [KKR]}
+  - {id: ARES, name: Ares,         name_zh: Ares,     group: financier, ticker: ARES, country: US, aliases: [Ares, "Ares Management"]}
+  - {id: BAM,  name: Brookfield,   name_zh: 布鲁克菲尔德, group: financier, ticker: BAM, country: CA, aliases: [Brookfield]}
+  - {id: BLK,  name: BlackRock / GIP, name_zh: 贝莱德, group: financier, ticker: BLK, country: US, aliases: [BlackRock, GIP, "Global Infrastructure Partners", 贝莱德]}
+  - {id: AIP,  name: AI Infrastructure Partnership, name_zh: AI 基础设施合作伙伴, group: financier, country: US, aliases: ["AI Infrastructure Partnership", AIP]}
+  - {id: CG,   name: Carlyle,      name_zh: 凯雷,     group: financier, ticker: CG,  country: US, aliases: [Carlyle]}
+  - {id: MAGNETAR, name: Magnetar, name_zh: Magnetar, group: financier, country: US, aliases: [Magnetar]}
+  - {id: PIMCO, name: PIMCO,       name_zh: PIMCO,    group: financier, country: US, aliases: [PIMCO]}
+  - {id: MACQUARIE, name: Macquarie, name_zh: 麦格理, group: financier, country: AU, aliases: [Macquarie]}
+  - {id: SOFTBANK, name: SoftBank Group, name_zh: 软银, group: financier, country: JP, aliases: [SoftBank, "SoftBank Group", 软银, "SoftBank Vision Fund"]}
+  - {id: MGX,  name: MGX,          name_zh: MGX,      group: financier, country: AE, aliases: [MGX]}
+  - {id: MUBADALA, name: Mubadala, name_zh: 穆巴达拉, group: financier, country: AE, aliases: [Mubadala]}
+  - {id: PIF,  name: Saudi PIF / Humain, name_zh: 沙特 PIF, group: financier, country: SA, aliases: [PIF, "Public Investment Fund", Humain, HUMAIN]}
+  - {id: TEMASEK, name: Temasek,   name_zh: 淡马锡,   group: financier, country: SG, aliases: [Temasek, 淡马锡]}
+  - {id: THRIVE, name: Thrive Capital, name_zh: Thrive, group: financier, country: US, aliases: ["Thrive Capital"]}
+  - {id: A16Z, name: Andreessen Horowitz, name_zh: a16z, group: financier, country: US, aliases: ["Andreessen Horowitz", a16z]}
+  - {id: SEQUOIA, name: Sequoia,   name_zh: 红杉,     group: financier, country: US, aliases: [Sequoia, "Sequoia Capital"]}
+  - {id: DRAGONEER, name: Dragoneer, name_zh: Dragoneer, group: financier, country: US, aliases: [Dragoneer]}
+  - {id: COATUE, name: Coatue,     name_zh: Coatue,   group: financier, country: US, aliases: [Coatue]}
+  - {id: FIDELITY, name: Fidelity, name_zh: 富达,     group: financier, country: US, aliases: [Fidelity]}
+  - {id: LIGHTSPEED, name: Lightspeed, name_zh: Lightspeed, group: financier, country: US, aliases: ["Lightspeed Venture"]}
+  - {id: ICONIQ, name: ICONIQ,     name_zh: ICONIQ,   group: financier, country: US, aliases: [ICONIQ, "Iconiq"]}
+  - {id: GIC,  name: GIC,          name_zh: 新加坡 GIC, group: financier, country: SG, aliases: [GIC]}
+  # ---- 资金方：银行 ----
+  - {id: JPM,  name: JPMorgan Chase, name_zh: 摩根大通, group: financier, ticker: JPM, country: US, aliases: [JPMorgan, "JP Morgan", "JPMorgan Chase", 摩根大通]}
+  - {id: GS,   name: Goldman Sachs,  name_zh: 高盛,     group: financier, ticker: GS,  country: US, aliases: ["Goldman Sachs", 高盛]}
+  - {id: MS,   name: Morgan Stanley, name_zh: 摩根士丹利, group: financier, ticker: MS, country: US, aliases: ["Morgan Stanley", 摩根士丹利]}
+  - {id: BAC,  name: Bank of America, name_zh: 美国银行, group: financier, ticker: BAC, country: US, aliases: ["Bank of America", BofA]}
+  - {id: C,    name: Citigroup,      name_zh: 花旗,     group: financier, ticker: C,   country: US, aliases: [Citigroup, Citi, Citibank, 花旗]}
+  - {id: WFC,  name: Wells Fargo,    name_zh: 富国银行, group: financier, ticker: WFC, country: US, aliases: ["Wells Fargo"]}
+  - {id: MUFG, name: MUFG,           name_zh: 三菱日联, group: financier, country: JP, aliases: [MUFG, "Mitsubishi UFJ"]}
+  - {id: SMBC, name: SMBC,           name_zh: 三井住友, group: financier, country: JP, aliases: [SMBC, "Sumitomo Mitsui"]}
+  - {id: MIZUHO, name: Mizuho,       name_zh: 瑞穗,     group: financier, country: JP, aliases: [Mizuho]}
+  - {id: DB,   name: Deutsche Bank,  name_zh: 德意志银行, group: financier, country: DE, aliases: ["Deutsche Bank"]}
+  - {id: BARC, name: Barclays,       name_zh: 巴克莱,   group: financier, country: GB, aliases: [Barclays]}
+  - {id: HSBC, name: HSBC,           name_zh: 汇丰,     group: financier, country: GB, aliases: [HSBC, 汇丰]}
+  # ---- 汇总对手方（pooled，不参与排行）----
+  - {id: BONDHOLDERS, name: Bond investors (public markets), name_zh: 债券投资者（公开市场）, group: financier, pooled: true, aliases: []}
+  - {id: PUBLIC_INVESTORS, name: Public equity investors, name_zh: 公开市场股权投资者, group: financier, pooled: true, aliases: []}
+  - {id: PRIVATE_ROUND, name: Private-round investors, name_zh: 私募轮投资者, group: financier, pooled: true, aliases: []}
+  - {id: LENDER_SYNDICATE, name: Lender syndicate (unnamed banks), name_zh: 未具名银团, group: financier, pooled: true, aliases: []}
+  - {id: PRIVATE_CREDIT, name: Private credit lenders (unnamed), name_zh: 未具名私募信贷, group: financier, pooled: true, aliases: []}
+  - {id: UNDISCLOSED, name: Undisclosed counterparty, name_zh: 未披露对手方, group: other, pooled: true, aliases: []}

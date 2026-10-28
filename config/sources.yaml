@@ -1,0 +1,45 @@
+# 三层数据源。tier 1 = SEC 文件（collect_edgar.py，配置在 settings.yaml）
+# tier 2 = 官方新闻室 / 通讯社（全文）；tier 3 = 媒体（Google News 查询，解码回原文抓正文）
+newsrooms:          # tier 2
+  - {name: nvidia_newsroom,   url: "https://nvidianews.nvidia.com/releases.xml"}
+  - {name: openai_news,       url: "https://openai.com/news/rss.xml"}
+  - {name: anthropic_news,    url: "https://www.anthropic.com/rss.xml"}
+  - {name: microsoft_news,    url: "https://news.microsoft.com/source/feed/"}
+  - {name: aws_news,          url: "https://press.aboutamazon.com/rss/news-releases.xml"}
+  - {name: google_cloud_blog, url: "https://cloud.google.com/blog/rss"}
+  - {name: oracle_news,       url: "https://www.oracle.com/news/rss/"}
+  - {name: meta_news,         url: "https://about.fb.com/news/feed/"}
+  - {name: amd_news,          url: "https://www.amd.com/en/newsroom.rss"}
+  - {name: broadcom_news,     url: "https://www.broadcom.com/company/news/rss"}
+  - {name: coreweave_ir,      url: "https://investors.coreweave.com/rss/news-releases.xml"}
+  - {name: nebius_news,       url: "https://nebius.com/newsroom/rss"}
+  - {name: iren_news,         url: "https://iren.com/feed/"}
+  - {name: blackstone_news,   url: "https://www.blackstone.com/feed/"}
+  - {name: apollo_news,       url: "https://www.apollo.com/feed"}
+  - {name: blueowl_news,      url: "https://www.blueowl.com/feed"}
+  - {name: prnewswire_tech,   url: "https://www.prnewswire.com/rss/technology-latest-news/technology-latest-news-list.rss"}
+  - {name: prnewswire_fin,    url: "https://www.prnewswire.com/rss/financial-services-latest-news/financial-services-latest-news-list.rss"}
+  - {name: businesswire_tech, url: "https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRVQ=="}
+  - {name: globenewswire_tech, url: "https://www.globenewswire.com/RssFeed/subjectcode/11-Technology/feedTitle/GlobeNewswire%20-%20Technology"}
+
+media_rss:          # tier 3，直接 RSS（抓正文）
+  - {name: dcd,          url: "https://www.datacenterdynamics.com/en/rss/"}
+  - {name: techcrunch,   url: "https://techcrunch.com/feed/"}
+  - {name: theregister,  url: "https://www.theregister.com/headlines.atom"}
+  - {name: semianalysis, url: "https://newsletter.semianalysis.com/feed"}
+  - {name: dcfrontier,   url: "https://www.datacenterfrontier.com/rss"}
+
+google_news:        # tier 3，query 支持 OR / AND / site: / when:
+  queries:
+    - {name: hyperscaler_deals, q: '(Microsoft OR Amazon OR AWS OR Google OR Alphabet OR Meta OR Oracle) AND ("data center" OR GPU OR compute OR capacity OR Azure OR "cloud") AND (deal OR contract OR agreement OR bond OR bonds OR loan OR financing OR invest OR stake OR capex)'}
+    - {name: ai_labs,      q: '(OpenAI OR Anthropic OR xAI OR SpaceX OR Mistral OR "Thinking Machines" OR "Safe Superintelligence") AND (compute OR "data center" OR GPU OR financing OR debt OR raises OR funding OR valuation OR gigawatt OR invest)'}
+    - {name: chips,        q: '(Nvidia OR AMD OR Broadcom OR TSMC OR Micron OR "SK hynix" OR Samsung OR Intel OR Cerebras OR Groq) AND (order OR deal OR agreement OR supply OR invest OR stake OR billion)'}
+    - {name: neoclouds_a,  q: 'CoreWeave OR Nebius OR "Lambda Labs" OR Crusoe OR Fluidstack OR Nscale OR "Together AI" OR Vultr OR "Voltage Park"'}
+    - {name: neoclouds_b,  q: 'IREN OR "Cipher Mining" OR TeraWulf OR "Applied Digital" OR "Core Scientific" OR "Hut 8" OR "Galaxy Digital" OR Bitdeer OR "Riot Platforms"'}
+    - {name: dc_financing, q: '("data center" OR datacenter OR GPU OR "AI infrastructure") AND ("term loan" OR "GPU-backed" OR "asset-backed" OR "senior notes" OR "credit facility" OR "private credit" OR backstop OR SPV OR "joint venture" OR securitization)'}
+    - {name: financiers,   q: '("Blue Owl" OR Blackstone OR Apollo OR KKR OR Brookfield OR Ares OR Magnetar OR PIMCO OR BlackRock OR MGX OR SoftBank OR Carlyle) AND ("data center" OR AI OR GPU OR compute) AND (financing OR invest OR loan OR billion OR acquire)'}
+    - {name: dc_developers, q: '(Vantage OR QTS OR Aligned OR "STACK Infrastructure" OR CyrusOne OR Equinix OR "Digital Realty" OR "Related Digital" OR Compass) AND ("data center" OR campus OR gigawatt) AND (lease OR financing OR billion OR loan)'}
+    - {name: energy,       q: '("data center" OR AI) AND (Chevron OR Constellation OR Vistra OR Talen OR NextEra OR "Bloom Energy" OR "GE Vernova" OR Oklo) AND (power OR agreement OR PPA OR deal OR billion)'}
+    - {name: bonds,        q: '(Alphabet OR Amazon OR Meta OR Oracle OR Microsoft OR Nvidia OR Broadcom OR CoreWeave) AND (bond OR bonds OR notes OR "debt offering" OR "raises") AND billion'}
+    - {name: wires,        q: '(site:prnewswire.com OR site:businesswire.com OR site:globenewswire.com) AND ("data center" OR GPU OR "AI infrastructure" OR compute) AND (agreement OR contract OR financing OR notes OR loan OR lease)'}
+    - {name: cn_capex,     q: '(阿里巴巴 OR 腾讯 OR 字节跳动 OR 百度 OR 阿里云) AND (算力 OR 数据中心 OR 资本开支 OR 芯片) AND (采购 OR 订单 OR 投资 OR 亿)', hl: zh-CN, gl: CN, ceid: "CN:zh-Hans"}

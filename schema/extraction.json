@@ -1,0 +1,48 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "verdicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "article_id": {"type": "string"},
+          "relevant": {"type": "boolean"},
+          "reason": {"type": "string", "description": "一句话：为什么有/没有事件"}
+        },
+        "required": ["article_id", "relevant", "reason"]
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "article_id": {"type": "string"},
+          "kind": {"type": "string", "enum": ["order", "investment", "debt", "lease", "guarantee", "vendor_financing", "guidance"]},
+          "from_entity": {"type": "string", "description": "Canonical id from the entity list, or NEW:<Official company name>. order=buyer/payer; investment=investor; debt=borrower; lease=lessee (user of the equipment/site); guarantee=guarantor; vendor_financing=the vendor extending credit; guidance=the reporting company."},
+          "to_entity": {"type": "string", "description": "order=seller/provider; investment=investee; debt=lender (pooled: BONDHOLDERS / LENDER_SYNDICATE / PRIVATE_CREDIT); lease=lessor/financier; guarantee=beneficiary; vendor_financing=the customer receiving credit; guidance=empty string."},
+          "amount_usd": {"type": ["number", "null"], "description": "Total value in USD as a plain number; null if not stated."},
+          "amount_text": {"type": "string", "description": "Amount as written, incl. 'up to', currency, per-year figures."},
+          "instrument": {"type": "string", "description": "order: compute_contract|colocation|chip_purchase|power|equipment|other. investment: primary|secondary|acquisition|warrant|convertible|jv_equity|other. debt: bond|convertible|term_loan|ddtl|revolver|abs|gpu_backed_loan|bridge|other. lease: gpu_lease|site_lease|other. guarantee: lease_guarantee|credit_support|offtake_guarantee|other. vendor_financing: chip_financing|other. guidance: capex|rpo|backlog|total_debt|compute_commitments|other."},
+          "term": {"type": "string", "description": "Term / duration as written, e.g. '5 years', 'through 2030'; empty if none."},
+          "capacity": {"type": "string", "description": "Capacity as written (GW, MW, GPUs); empty if none."},
+          "announced": {"type": ["string", "null"], "description": "Announcement date YYYY-MM-DD (use the article date if the deal is announced in it)."},
+          "maturity_date": {"type": ["string", "null"]},
+          "period": {"type": "string", "description": "guidance only: fiscal period the number refers to."},
+          "status": {"type": "string", "enum": ["rumored", "announced", "signed", "completed", "amended", "cancelled"], "description": "rumored = media citing sources / in talks; announced = officially announced, not yet signed/closed; signed = definitive agreement; completed = closed/funded/priced; amended = changes an earlier deal; cancelled = terminated or superseded."},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "title_zh": {"type": "string", "description": "一行中文标题，≤ 30 字：谁向谁、什么、多少钱"},
+          "title_en": {"type": "string", "description": "One-line English title, <= 90 chars"},
+          "summary_zh": {"type": "string", "description": "一两句中文：交易内容、期限、条件、与已有交易的关系"},
+          "quote": {"type": "string", "description": "Verbatim sentence from the article stating the commitment (<= 250 chars)."}
+        },
+        "required": ["article_id", "kind", "from_entity", "to_entity", "amount_usd", "amount_text", "instrument", "term", "capacity", "announced", "maturity_date", "period", "status", "confidence", "title_zh", "title_en", "summary_zh", "quote"]
+      }
+    }
+  },
+  "required": ["verdicts", "events"]
+}

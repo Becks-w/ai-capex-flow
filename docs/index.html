@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI 订单与债务图谱</title>
+<meta name="description" content="AI 巨头之间的订单、投资与债务关系图，自动盯 SEC 文件与新闻，经核实后入账，每 3 小时更新。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Barlow:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="snapBanner" class="banner" hidden></div>
+<div class="wrap">
+  <header class="top">
+    <div class="title">
+      <div class="eyebrow">实时数据 · AI 资本流向</div>
+      <h1>AI 订单与债务图谱</h1>
+      <p class="sub">谁给谁下单、谁投资谁、谁欠谁的钱。自动盯 SEC 文件与新闻，经核实后入账。</p>
+    </div>
+    <div class="live">
+      <button id="liveBtn" class="livebtn" aria-expanded="false"><span class="dot" id="liveDot"></span><span id="liveState">LIVE</span><span class="muted" id="liveAgo"></span></button>
+      <div id="livePop" class="pop" hidden></div>
+    </div>
+  </header>
+
+  <section class="kpis" id="kpis" aria-label="总额"></section>
+  <p class="kpinote">每笔只计一次，供应链不抵消（OpenAI → Oracle 与 Oracle → NVIDIA 都算）。总额只含有一手来源或媒体正文核实的交易；已取消 / 被取代的不计；机器从标题抽出的候选单独列在页尾。</p>
+
+  <section class="filters" aria-label="筛选">
+    <div class="search"><input id="q" type="search" placeholder="搜公司或交易（如 NVDA、Stargate、Hyperion）" aria-label="搜索"></div>
+    <div class="chips" id="kindChips" role="group" aria-label="交易类型"></div>
+    <div class="selects">
+      <label>板块 <select id="fGroup"><option value="">全部</option></select></label>
+      <label>最小金额 <select id="fMin"><option value="0">不限</option><option value="1e9">≥ $1B</option><option value="5e9">≥ $5B</option><option value="1e10">≥ $10B</option><option value="5e10">≥ $50B</option></select></label>
+      <label>时间 <select id="fPeriod"><option value="">全部</option><option value="90">近 90 天</option><option value="365">近一年</option><option value="2026">2026 年</option><option value="2025">2025 年</option></select></label>
+      <label>可信度 <select id="fTier"><option value="counted">已核实</option><option value="confirmed">仅一手来源</option></select></label>
+    </div>
+  </section>
+
+  <section class="main">
+    <div class="card graphcard">
+      <div class="bar">
+        <div class="tabs" role="tablist"><button class="tab" id="tabGraph" role="tab" aria-selected="true">图</button><button class="tab" id="tabTable" role="tab" aria-selected="false">表</button></div>
+        <div class="tabs" id="topN"><button class="tab" data-n="20">Top 20</button><button class="tab" data-n="50" aria-selected="true">Top 50</button><button class="tab" data-n="0">全部</button></div>
+        <span class="count" id="count"></span>
+        <div class="zoom"><button id="zIn" aria-label="放大">+</button><button id="zOut" aria-label="缩小">−</button><button id="zFit" aria-label="复位">⤢</button></div>
+      </div>
+      <div class="stage" id="stage"><svg id="graph" role="img" aria-label="公司关系图"></svg><div class="hint" id="graphHint">点一家公司，只看它的往来；点空白处取消</div></div>
+      <div class="tablewrap" id="tableWrap" hidden><table id="table"><thead><tr><th>类型</th><th>付钱方 / 出资方</th><th>收钱方</th><th class="r">金额</th><th>日期</th><th>状态</th><th>可信度</th><th>交易</th><th class="r">来源</th></tr></thead><tbody></tbody></table></div>
+      <div class="legend" id="legend"></div>
+    </div>
+    <aside class="card side" id="side" aria-live="polite"></aside>
+  </section>
+
+  <section class="feeds">
+    <div class="card"><h2>最新新闻 <span class="muted" id="newsCount"></span></h2><ul class="feed" id="newsList"></ul></div>
+    <div class="card"><h2>最新申报文件 <span class="muted" id="filingCount"></span></h2><ul class="feed" id="filingList"></ul></div>
+  </section>
+
+  <section class="card cands" id="cands"></section>
+
+  <footer class="foot">
+    <p id="notes"></p>
+    <p>数据：<a href="data/graph.json">graph.json</a> · 历史：在地址后加 <code>?snapshot=YYYY-MM-DD</code> · 来源分级：一手来源 = SEC 文件 / 公司公告；媒体报道 = 正文核实；候选 = 仅标题或低置信。仅作描述，不构成投资建议。</p>
+  </footer>
+</div>
+<div id="tip" class="tip" hidden></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

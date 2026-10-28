@@ -1,0 +1,37 @@
+# ---- SEC ----
+sec_user_agent: "ai-capital-flows becky.wang@heyneww.com"   # SEC 要求 UA 带联系邮箱
+edgar_lookback_days: 10
+edgar_forms: ["8-K", "8-K/A", "6-K", "424B5", "424B2", "424B3", "10-Q", "10-K"]
+edgar_8k_items: ["1.01", "2.03", "3.02", "8.01", "7.01", "2.02"]
+edgar_always_items: ["1.01", "2.03", "3.02"]     # 这些 item 不做关键词预筛，必进抽取
+edgar_fulltext_queries:                           # EDGAR 全文检索（扫全部申报人，不限名单）
+  - '"data center" (lease OR "take-or-pay" OR "capacity") "gigawatt"'
+  - '"GPU" ("term loan" OR "delayed draw" OR "asset-backed" OR "senior secured notes")'
+  - '"compute" ("master services agreement" OR "cloud services agreement") billion'
+  - '("Anthropic" OR "OpenAI" OR "xAI") (agreement OR notes OR investment)'
+  - '"AI infrastructure" (financing OR "joint venture" OR "senior notes")'
+
+# ---- 新闻 ----
+feed_lookback_days: 4
+gnews_lookback: "when:4d"
+fetch_body_max_chars: 14000
+resolve_gnews_links: true           # 把 news.google.com 跳转解成原文地址并抓正文
+body_min_chars: 500
+
+# ---- 抽取（claude -p，订阅额度）----
+claude_model: sonnet
+claude_timeout_sec: 900
+extract_batch_size: 5
+extract_max_per_run: 40
+max_article_chars: 12000
+
+# ---- 合并 / 确认 ----
+merge_window_days: 400
+merge_amount_tolerance: 0.2
+reported_min_confidence: 0.7        # 媒体正文来源达到此置信即计入 reported
+candidate_keep_days: 90             # 候选边超过这个天数未升级就从页面隐藏（库里保留）
+
+# ---- 导出 ----
+site_dir: docs
+news_feed_items: 60
+filings_feed_items: 60

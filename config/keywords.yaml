@@ -1,0 +1,12 @@
+# 预筛：命中 ≥1 实体，且（强词 ≥1，或 弱词 ≥1 且有金额，或 弱词 ≥2 且实体 ≥2）。
+# 只决定「送不送去抽取」，不决定可信度。
+strong_keywords: [agreement, agreements, contract, contracts, deal, deals, lease, leases, "master lease", take-or-pay,
+  gigawatt, gigawatts, GW, megawatt, megawatts, loan, loans, "term loan", "delayed draw", notes, bond, bonds,
+  financing, "credit facility", revolver, asset-backed, securitization, GPU-backed, backstop, guarantee, guarantees,
+  warrant, warrants, "joint venture", SPV, capex, "capital expenditure", "capital expenditures", backlog, RPO,
+  "remaining performance obligations", "private credit", offering, debt, commit, commits, commitment, commitments,
+  signs, signed, obligation, obligations, invest, invests, investment, investments, stake, acquire, acquires, acquisition,
+  "funding round", raises, raised, valuation, "letter of intent", LOI, "memorandum of understanding", MOU]
+weak_keywords: [order, orders, capacity, MW, GPU, GPUs, "data center", "data centers", datacenter, colocation, compute,
+  power, chips, expands, expansion, supply, partnership, cloud, Azure, AWS, "Google Cloud", OCI, Blackwell, Rubin, Trainium, TPU, HBM]
+amount_regex: '(?:\$|US\$|USD\s?|€|£|¥)\s?\d[\d,.]*\s?(?:billion|million|trillion|bn|mn|B|M)\b|\d[\d,.]*\s?(?:billion|million|trillion)\s?(?:dollars|USD|euros)'

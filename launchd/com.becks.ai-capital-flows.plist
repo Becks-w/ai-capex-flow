@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.becks.ai-capital-flows</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/beckywang/Projects/ai-capital-flows/run.sh</string>
+  </array>
+  <!-- 每 3 小时：07:00 10:00 13:00 16:00 19:00 22:00（本地时间）。Mac 休眠错过的会在唤醒后补跑一次。 -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>10</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>13</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>16</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>19</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>22</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key><string>/Users/beckywang/Projects/ai-capital-flows/logs/launchd.out.log</string>
+  <key>StandardErrorPath</key><string>/Users/beckywang/Projects/ai-capital-flows/logs/launchd.err.log</string>
+  <key>RunAtLoad</key><false/>
+</dict>
+</plist>

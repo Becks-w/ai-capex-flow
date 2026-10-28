@@ -1,0 +1,8 @@
+# 人工校对，导出时套用。按顺序执行。
+# 每条：match（按 id，或 kind+from+to[+announced]），action: confirm | delete | set | supersede | merge
+# 例：
+# - {match: {id: 42}, action: confirm, note: "已核对 8-K"}
+# - {match: {kind: investment, from: NVDA, to: OPENAI, announced: "2025-09-22"}, action: supersede, by: 57, note: "LOI 被 2026-02 正式投资取代"}
+# - {match: {id: 12}, action: set, fields: {amount_usd: 3000000000, status: signed}, note: "金额按新闻稿"}
+# - {match: {id: 99}, action: delete, note: "重复"}
+overrides: []
