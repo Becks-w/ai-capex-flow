@@ -92,6 +92,8 @@ select{font:inherit;font-size:13px;padding:5px 8px;border-radius:7px;border:1px 
 .node text{font-size:11px;fill:var(--fg);pointer-events:none;paint-order:stroke;stroke:var(--surface-2);stroke-width:3px;stroke-linejoin:round}
 .node .amt{font-family:var(--num);font-weight:600;font-size:10px;fill:var(--muted)}
 .node.dim{opacity:.18}
+.node .minor{display:none}
+.node.near .minor,.node.sel .minor,.node:hover .minor{display:block}
 .node.sel circle{stroke-width:3.5}
 .link{fill:none;stroke-linecap:round;transition:opacity .15s}
 .link.dim{opacity:.05}

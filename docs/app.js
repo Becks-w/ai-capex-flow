@@ -180,8 +180,9 @@
       .on('mousemove', (ev, d) => showTip(dealTip(d.e), ev)).on('mouseleave', hideTip).on('click', (ev, d) => { ev.stopPropagation(); select(d.e.from_entity, true, d.e.id); });
     nodeSel = gRoot.append('g').selectAll('.node').data(nodes).join('g').attr('class', d => 'node' + (d.pooled ? ' pooled' : ''));
     nodeSel.append('circle').attr('r', d => d.r).attr('stroke', d => groupColor(d.group));
-    nodeSel.append('text').attr('text-anchor', 'middle').attr('y', d => d.r + 12).text(d => entName(d.id));
-    nodeSel.append('text').attr('class', 'amt').attr('text-anchor', 'middle').attr('y', d => d.r + 23).text(d => d.r >= 11 ? (fmtUSD(tot.get(d.id)) || '') : '');
+    const short = s => s.length > 22 ? s.slice(0, 21) + '…' : s;
+    nodeSel.append('text').attr('class', d => 'lbl' + (d.r < 9 ? ' minor' : '')).attr('text-anchor', 'middle').attr('y', d => d.r + 12).text(d => short(entName(d.id)));
+    nodeSel.append('text').attr('class', d => 'amt' + (d.r < 9 ? ' minor' : '')).attr('text-anchor', 'middle').attr('y', d => d.r + 23).text(d => d.r >= 11 ? (fmtUSD(tot.get(d.id)) || '') : '');
     nodeSel.on('mousemove', (ev, d) => { setHover(d.id); showTip(nodeTip(d.id, tot.get(d.id), edges), ev); }).on('mouseleave', () => { setHover(null); hideTip(); })
       .on('click', (ev, d) => { ev.stopPropagation(); select(d.id === state.sel ? null : d.id); })
       .call(d3.drag().on('start', (ev, d) => { if (!ev.active) sim.alphaTarget(.3).restart(); d.fx = d.x; d.fy = d.y; }).on('drag', (ev, d) => { d.fx = ev.x; d.fy = ev.y; }).on('end', (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
@@ -215,9 +216,9 @@
   function applyHighlight() {
     if (!nodeSel) return;
     const focus = state.hover || state.sel;
-    if (!focus) { nodeSel.classed('dim', false).classed('sel', false); linkSel.classed('dim', false).classed('hi', false); return; }
+    if (!focus) { nodeSel.classed('dim', false).classed('sel', false).classed('near', false); linkSel.classed('dim', false).classed('hi', false); return; }
     const { edges } = graphData(); const nb = neighborhood(focus, edges);
-    nodeSel.classed('dim', d => !nb.has(d.id)).classed('sel', d => d.id === state.sel);
+    nodeSel.classed('dim', d => !nb.has(d.id)).classed('sel', d => d.id === state.sel).classed('near', d => nb.has(d.id));
     linkSel.classed('dim', d => d.e.from_entity !== focus && d.e.to_entity !== focus).classed('hi', d => d.e.from_entity === focus || d.e.to_entity === focus);
     linkSel.filter(d => d.e.from_entity === focus || d.e.to_entity === focus).raise();
     nodeSel.filter(d => nb.has(d.id)).raise();
