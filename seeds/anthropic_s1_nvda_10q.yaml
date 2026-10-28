@@ -225,3 +225,29 @@ deals:
     summary_zh: S-1：2026 年 9 月修订重述信贷协议，循环额度从 32.5 亿美元提高到 150 亿美元，可全额用于开立信用证，2031 年 9 月到期；提交时未提款。
     sources:
       - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Liquidity: A&R Credit Agreement", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: investment
+    from: PRIVATE_ROUND
+    to: ANTHROPIC
+    amount_usd: 3570000000
+    amount_text: $3,567,668,210 aggregate purchase price, Series E-1 at $56.0865 per share (Jan–Mar 2025)
+    instrument: preferred_equity
+    announced: "2025-03-03"
+    status: completed
+    title_zh: Anthropic 完成 35.7 亿美元 E 轮
+    title_en: Anthropic Series E-1 financing, ~$3.57B (S-1)
+    summary_zh: S-1：2025 年 1 月至 3 月出售 Series E-1 优先股 6,361 万股，每股 56.0865 美元，合计约 35.7 亿美元；Spark Capital 等参与。同期另有可转债转为 E-4 / E-5 优先股约 21 亿美元，属旧票据转换，不另计。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Series E Redeemable Convertible Preferred Stock Financing", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: investment
+    from: PRIVATE_ROUND
+    to: ANTHROPIC
+    amount_usd: 13000000000
+    amount_text: approximately $13.0 billion, Series F-1 at $140.9676 per share to 202 accredited investors (Aug–Sep 2025)
+    instrument: preferred_equity
+    announced: "2025-09-02"
+    status: completed
+    title_zh: Anthropic 完成 130 亿美元 F 轮，估值 1,830 亿
+    title_en: Anthropic Series F-1 financing, ~$13.0B (S-1)
+    summary_zh: S-1：2025 年 8 月至 9 月向 202 名合格投资者出售 Series F-1 优先股 9,222 万股，每股 140.9676 美元，合计约 130 亿美元。另有可转债转为 F-2 优先股约 4.3 亿美元，属票据转换，不另计。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Recent Sales of Unregistered Securities", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
