@@ -251,6 +251,8 @@ def cluster_duplicates(con):
         if pa == pb and diff <= 0.02:
             return True
         shared = pa & pb
+        if (a["kind"] == "guarantee") != (b["kind"] == "guarantee"):
+            return False  # 担保是交易的衍生承诺，不与订单 / 债务按共享一方聚类（如博通 $43B 担保 vs Anthropic $42B 可转票据）
         if shared and diff <= 0.05 and close_dates(a["announced"], b["announced"], 10):
             oa, ob = pa - shared, pb - shared
             if oa and ob and oa <= pooled and ob <= pooled and oa != ob:

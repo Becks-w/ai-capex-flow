@@ -10,7 +10,7 @@ overrides:
   # 借款人改成 SPV；BofA 单独那条并进来；Anthropic→SPV 的租赁作为独立的一笔保留。
   - {match: {id: 33}, action: set, fields: {from_entity: ANTHROPIC_XPU_SPV, title_zh: "SPV 向 BofA/花旗/大摩/黑石借 630 亿美元买博通芯片租给 Anthropic"}, note: "借款人是 SPV 而非 Anthropic"}
   - {match: {id: 48}, action: merge, into: 33, note: "同一笔 SPV 贷款"}
-  - {match: {id: 47}, action: confirm, note: "租赁侧：Anthropic 向 SPV 租用芯片，与 SPV 的贷款是两笔承诺"}
+  # （#47 原先 confirm，2026-10-28 读 S-1 后改为并入 #35，见第二批）
 
   # ===== 2026-10-28 人工校对第一批（A/B 级）=====
   - {match: {id: 3}, action: merge, into: 45, note: "[A] $22.5B 普通股是 #45 $35B 发行的一部分"}
@@ -42,3 +42,26 @@ overrides:
   - {match: {id: 69}, action: set, fields: {to_entity: ATNORTH}, note: "[B] CoreWeave 丹麦机房，无金额"}
   - {match: {id: 158}, action: set, fields: {to_entity: VOLTUS}, note: "[B] 谷歌 1GW 虚拟电厂，无金额"}
   - {match: {id: 180}, action: merge, into: 2, note: "[A] Vertiv 收购 UIG 的新闻稿与 8-K 是同一笔"}
+
+  # ===== 2026-10-28 人工校对第二批：C 级裁决 + 读 Anthropic S-1 / NVIDIA 10-Q 原文后的修正 =====
+  # 一手数字本身在 seeds/anthropic_s1_nvda_10q.yaml，这里只做口径校正与去重。
+  - {match: {id: 4},   action: supersede, by: 15, note: "「三家芯片商至多 $5B」为意向总额，退出汇总保留历史；实际认购见 #15 NVDA $3B、#20 AMD $1B"}
+  - {match: {id: 117}, action: set, fields: {amount_usd: 30000000000, amount_text: "$10B invested (Series H, May 2026) + up to $20B facility under Google 2026 NPA, none issued as of Jun 30, 2026", status: signed, announced: "2026-03-01", title_zh: "谷歌投 Anthropic H 轮 100 亿美元，另有 200 亿美元附条件额度"}, note: "S-1 口径：已投 $10B + 附条件额度 $20B，非累计已投 $30B"}
+  - {match: {id: 77},  action: merge, into: 80, note: "承租方 Anthropic 为 KBW 推断，Riot 只说前沿 AI 实验室；并入 #80，承租方记未披露，$9.1B 为 20 年租约总额"}
+  - {match: {id: 161}, action: delete, note: "S-1 无 $160B 一项；对 Google 的承诺为 $114.5B（#17），额外 TPU 采购估算 $125–150B 未入承诺表"}
+  - {match: {id: 162}, action: delete, note: "S-1 无对 NVIDIA 的直接承诺；$86B = Nscale $44.6B + Lambda $41.3B，按实际服务商记录"}
+  - {match: {id: 17},  action: set, fields: {amount_usd: 114500000000, amount_text: "at least approximately $114.5 billion (Apr 2026 – Jul 2033)", announced: "2026-03-01", title_zh: "Anthropic 承诺向谷歌至少支出 1,145 亿美元算力"}, note: "S-1 原文 $114.5B，取代 2025-10 公告的「数百亿」口径"}
+  - {match: {id: 16},  action: set, fields: {amount_usd: 110000000000, amount_text: "at least $110.0 billion (May 2026 – Apr 2036)", title_zh: "Anthropic 承诺十年向亚马逊至少支出 1,100 亿美元"}, note: "S-1 原文 $110B，公告口径为逾 $100B"}
+  - {match: {id: 35},  action: set, fields: {kind: lease, instrument: finance_lease, title_zh: "Anthropic 向博通融资租赁 TPU 设备，租金合计约 1,612 亿美元"}, note: "S-1：五年期设备主租约，按融资租赁核算，非采购订单"}
+  - {match: {id: 47},  action: merge, into: 35, note: "S-1：博通租约由 Anthropic 两家 SPV 签约，二季度博通把一份租约的部分权利转让给第三方，即 $63B 银团融资对应部分；$63B 租赁包含在 $161.2B 内。SPV 债务 #33 与博通担保 #1 照留"}
+  - {match: {id: 116}, action: set, fields: {amount_usd: 20000000000, amount_text: "$5B invested (Series H, May 2026) + up to $15B facility under Amazon 2026 NPA, none issued as of Jun 30, 2026", announced: "2026-04-20", title_zh: "亚马逊投 Anthropic H 轮 50 亿美元，另有 150 亿美元附条件额度"}, note: "S-1 口径：2026 NPA 总额 $20B，已投 $5B 后剩 $15B；原记 $25B 多算 $5B"}
+  - {match: {id: 154}, action: merge, into: 116, note: "「至多 $15B 分三期」即 Amazon 2026 NPA 剩余额度"}
+  - {match: {id: 18},  action: supersede, by: 112, note: "「$8B 可转债」是 2023 + 2024 协议的累计数（$4B + $4B），非新投资"}
+  - {match: {id: 153}, action: supersede, by: 112, note: "「持有 $6.2B 可转债」是 2023 协议展期票据 $2.2B + 2024 协议 $4B 的存量"}
+
+  # ===== 2026-10-28 第三批：一手来源种子导入后的收尾 =====
+  - {match: {id: 191}, action: merge, into: 35, note: "S-1 种子按 order 匹配不到已改为 lease 的 #35，并入以挂上 S-1 来源"}
+  - {match: {id: 41},  action: merge, into: 35, note: "「博通联合银行与黑石设 $63B 租赁融资」是 $161.2B 主租约中由 SPV 融资的部分"}
+  - {match: {id: 66},  action: merge, into: 193, note: "10-Q 原文：$108.5B = SB Energy/OpenAI $105B（#193）+ AI 云 $3.5B（#194），非最低收入担保"}
+  - {match: {id: 22},  action: confirm, note: "Nscale $44.6B 与微软 $44.9B 金额相近、同日披露，被聚类误判为同一笔；S-1 分别列明，两笔独立"}
+

@@ -1,0 +1,185 @@
+# 一手来源补录（2026-10-28）：Anthropic S-1（2026-10-26）与 NVIDIA 10-Q（FY27Q2，2026-08-26）原文数字。
+# 合并规则会把同类型、同双方、金额 ±20% 内的条目挂到既有边上；金额口径不同的先用 overrides 校正再导入。
+deals:
+  - kind: order
+    from: ANTHROPIC
+    to: GOOGL
+    amount_usd: 114500000000
+    amount_text: at least approximately $114.5 billion (Apr 2026 – Jul 2033, regardless of usage)
+    instrument: compute_contract
+    term: April 2026 – July 2033; non-cancelable except Google's uncured material breach; shortfall true-up
+    announced: "2026-03-01"
+    status: signed
+    title_zh: Anthropic 承诺向谷歌至少支出 1,145 亿美元算力
+    title_en: Anthropic commits at least $114.5B to Google compute (S-1)
+    summary_zh: S-1：2026 年 3 月协议、5 至 8 月修订，2026 年 4 月至 2033 年 7 月至少支出约 1,145 亿美元，不足须补差。另承诺向包括谷歌在内的 TPU 供应商采购 2028–2031 年交付的额外算力，估算 1,250–1,500 亿美元，未入承诺表、本条不含。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Infrastructure Service Arrangements", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: order
+    from: ANTHROPIC
+    to: AMZN
+    amount_usd: 110000000000
+    amount_text: at least $110.0 billion (May 2026 – Apr 2036, regardless of usage)
+    instrument: compute_contract
+    term: May 2026 – April 2036; non-cancelable except Amazon's uncured material breach; shortfall true-up
+    announced: "2026-04-20"
+    status: signed
+    title_zh: Anthropic 承诺十年向亚马逊至少支出 1,100 亿美元
+    title_en: Anthropic commits at least $110B to Amazon compute over ten years (S-1)
+    summary_zh: S-1：2026 年 4 月协议，2026 年 5 月至 2036 年 4 月至少支出 1,100 亿美元，不足须补差。公告口径为「逾 1,000 亿美元」。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Infrastructure Service Arrangements", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: order
+    from: ANTHROPIC
+    to: MSFT
+    amount_usd: 44900000000
+    amount_text: at least $44.9 billion (Nov 2026 – May 2033)
+    instrument: compute_contract
+    term: November 2026 – May 2033; non-cancelable except per undelivered tranche
+    announced: "2026-10-26"
+    status: amended
+    title_zh: Anthropic 承诺向微软至少支出 449 亿美元（10 月修订）
+    title_en: Anthropic commits at least $44.9B to Microsoft Azure, amended Oct 2026 (S-1)
+    summary_zh: S-1：2025 年 11 月协议，2026 年 2 月和 10 月修订，2026 年 11 月至 2033 年 5 月至少支出 449 亿美元，不论实际用量。取代原 300 亿美元承诺。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Infrastructure Service Arrangements", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: order
+    from: ANTHROPIC
+    to: SPACEX
+    amount_usd: 120500000000
+    amount_text: up to $120.5 billion (~$3.1B per month once all capacity delivered, into 2029)
+    instrument: compute_contract
+    term: into 2029; after non-cancelable periods ending Jan/Mar 2027 either party may cancel on 90 days' notice
+    announced: "2026-10-26"
+    status: amended
+    title_zh: Anthropic 与 SpaceXAI 算力协议合计至多 1,205 亿美元
+    title_en: Anthropic SpaceXAI arrangements total up to $120.5B (S-1)
+    summary_zh: S-1：2026 年 5 月至 10 月与 SpaceX.AI 签署并修订多份协议，全部容量交付后每月约 31 亿美元，合计至多 1,205 亿美元；不可撤销期分别到 2027 年 1 月和 3 月，之后任一方 90 天通知可终止。取代原每月 12.5 亿美元口径。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Infrastructure Service Arrangements", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: order
+    from: ANTHROPIC
+    to: NSCALE
+    amount_usd: 44600000000
+    amount_text: up to approximately $44.6 billion (terms into 2033; fees accrue as capacity is accepted)
+    instrument: compute_contract
+    term: into 2033; Nscale must use best efforts to obtain qualifying financing for the GPUs and data centers
+    announced: "2026-08-01"
+    status: signed
+    title_zh: Anthropic 向 Nscale 租用英伟达 GPU 算力至多 446 亿美元
+    title_en: Anthropic Nscale GPU services agreements up to ~$44.6B (S-1)
+    summary_zh: S-1：2026 年 8 月与 Nscale 子公司签署 GPU 服务协议，合计至多约 446 亿美元，期限到 2033 年，费用随容量交付验收计提。与 Lambda 的 413 亿美元合计 859 亿美元，即媒体所称「对英伟达 860 亿美元承诺」。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Infrastructure Service Arrangements", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: order
+    from: ANTHROPIC
+    to: LAMBDA
+    amount_usd: 41300000000
+    amount_text: approximately $41.3 billion (terms into 2034; ~$34.9B is the Aug 2026 agreement)
+    instrument: compute_contract
+    term: into 2034; Aug 2026 agreement (~$34.9B) terminable if Lambda fails to secure the facility lease
+    announced: "2026-08-01"
+    status: signed
+    title_zh: Anthropic 向 Lambda 租用英伟达 GPU 算力约 413 亿美元
+    title_en: Anthropic Lambda agreements total ~$41.3B (S-1)
+    summary_zh: S-1：2026 年 5、6、8 月与 Lambda 签署协议，合计约 413 亿美元，期限到 2034 年；其中 8 月协议约 349 亿美元，若 Lambda 未及时取得机房租约任一方可终止。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Infrastructure Service Arrangements", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: order
+    from: ANTHROPIC
+    to: AVGO
+    amount_usd: 161200000000
+    amount_text: approximately $161.2 billion aggregate rent excluding interest (five-year master equipment leases, finance leases)
+    instrument: finance_lease
+    term: five-year master equipment leases; non-cancelable; obligations of two Anthropic SPV subsidiaries guaranteed by Anthropic, PBC
+    announced: "2026-04-06"
+    status: signed
+    title_zh: Anthropic 向博通融资租赁 TPU 设备，租金合计约 1,612 亿美元
+    title_en: Anthropic–Broadcom master equipment leases, ~$161.2B rent excluding interest (S-1)
+    summary_zh: S-1：与博通签署五年期设备主租约，按融资租赁核算，租金合计约 1,612 亿美元不含利息，提供 TPU 算力，部分 2026 年上线、更多 2027 年起。由 Anthropic 两家 SPV 子公司签约、母公司担保、以设备抵押；2026 年二季度博通把其中一份租约的部分权利转让给第三方（对应 630 亿美元银团融资）。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Infrastructure Equipment Leases", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: order
+    from: ANTHROPIC
+    to: AMD
+    amount_usd: 20000000000
+    amount_text: expected to exceed $20.0 billion for the initial tranche (no fixed dollar commitment); option for up to about the same again
+    instrument: hardware_supply
+    term: initial capacity in calendar 2027; non-cancelable by Anthropic except AMD's uncured material breach
+    announced: "2026-07-01"
+    status: signed
+    title_zh: Anthropic 承诺采购 AMD Helios 系统，首批预计逾 200 亿美元
+    title_en: Anthropic–AMD Hardware Supply Agreement, initial tranche expected to exceed $20B (S-1)
+    summary_zh: S-1：2026 年 7 月硬件供应框架协议，承诺 2027 年获取首批 Helios 机架算力，无固定金额，若足额采购预计支出逾 200 亿美元；另可追加约同等规模容量。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Infrastructure Service Arrangements", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: investment
+    from: GOOGL
+    to: ANTHROPIC
+    amount_usd: 30000000000
+    amount_text: $10.0B invested in Series H (May 2026) + up to $20.0B available under the Google 2026 NPA (none issued as of Jun 30, 2026)
+    instrument: preferred_equity_plus_convertible_note_facility
+    term: NPA notes 9.0% compounded, six-year maturity; facility reducible by up to $10B if Google exercises Class N option
+    announced: "2026-03-01"
+    status: signed
+    title_zh: 谷歌投 Anthropic H 轮 100 亿美元，另有 200 亿美元附条件额度
+    title_en: Google $10B Series H investment plus up to $20B note/stock facility (S-1)
+    summary_zh: S-1：2026 年 5 月谷歌投 H 轮 100 亿美元，使 Google 2026 NPA 可发行额度降至 200 亿美元，截至 2026 年 6 月 30 日尚未发行。不是「累计已投 300 亿」。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Convertible Notes: Google", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: investment
+    from: AMZN
+    to: ANTHROPIC
+    amount_usd: 20000000000
+    amount_text: $5.0B invested in Series H (May 2026) + up to $15.0B available under the Amazon 2026 NPA in $5B increments (none issued as of Jun 30, 2026)
+    instrument: preferred_equity_plus_convertible_note_facility
+    term: NPA notes 8.0% compounded, ten-year maturity; tranches tied to compute milestones
+    announced: "2026-04-20"
+    status: signed
+    title_zh: 亚马逊投 Anthropic H 轮 50 亿美元，另有 150 亿美元附条件额度
+    title_en: Amazon $5B Series H investment plus up to $15B note/stock facility (S-1)
+    summary_zh: S-1：2026 年 4 月 Amazon 2026 NPA 额度 200 亿美元；5 月亚马逊投 H 轮 50 亿美元后剩 150 亿美元，截至 6 月 30 日未发行。2023/2024 协议的 62 亿美元可转债为存量，另计。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Convertible Notes: Amazon", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: investment
+    from: AMD
+    to: ANTHROPIC
+    amount_usd: 5000000000
+    amount_text: up to $5.0 billion of Class N common stock, if certain conditions are achieved
+    instrument: equity_commitment
+    term: conditional on deployment milestones under the Hardware Supply Agreement
+    announced: "2026-07-01"
+    status: announced
+    title_zh: AMD 承诺在条件达成时认购至多 50 亿美元 Anthropic 股票
+    title_en: AMD commits to purchase up to $5B of Anthropic Class N stock (S-1)
+    summary_zh: S-1：2026 年 7 月硬件供应协议中，AMD 承诺在特定条件达成时认购至多 50 亿美元 N 类普通股。附条件，尚未发生。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm", title: "Anthropic, PBC Form S-1 — Subsequent Events: Compute and Infrastructure Transactions", publisher: "SEC / Anthropic S-1", date: "2026-10-26", tier: 1}
+  - kind: guarantee
+    from: NVDA
+    to: OPENAI
+    amount_usd: 105000000000
+    amount_text: guarantees capped at a total of $105 billion (credit support for OpenAI's leases at SB Energy's PORTS campus)
+    instrument: lease_credit_support
+    term: nine phases, first expected FY2029; each guarantee effective on lease commencement, declining over each 20-year lease; terminates if OpenAI achieves satisfactory credit rating
+    capacity: ~4.25 GW IT load, Pike County, Ohio; option for ~3.8 GW more
+    announced: "2026-08-01"
+    status: signed
+    title_zh: 英伟达为 OpenAI 俄亥俄 PORTS 园区租约提供至多 1,050 亿美元信用支持
+    title_en: NVIDIA guarantees capped at $105B supporting OpenAI leases at SB Energy PORTS campus (10-Q)
+    summary_zh: 10-Q：2026 年 8 月与 SB Energy 签署担保，上限 1,050 亿美元，为 OpenAI 关联方在俄亥俄 PORTS 园区约 4.25 GW 的土地、电力、机房租约提供信用支持；分九期随建设完工生效，首期预计 2029 财年，仅覆盖租金和电费的约定部分；OpenAI 取得合格信用评级即终止。园区独家部署英伟达基础设施。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm", title: "NVIDIA Form 10-Q (quarter ended Jul 26, 2026) — Guarantees", publisher: "SEC / NVIDIA 10-Q", date: "2026-08-26", tier: 1}
+  - kind: guarantee
+    from: NVDA
+    to: UNDISCLOSED
+    amount_usd: 3500000000
+    amount_text: maximum gross exposure $3.5 billion under all agreements
+    instrument: lease_credit_support
+    announced: "2026-07-26"
+    status: signed
+    title_zh: 英伟达为若干 AI 云伙伴的机房租约提供担保，最大敞口 35 亿美元
+    title_en: NVIDIA land, power and shell guarantees for select AI cloud partners, $3.5B max exposure (10-Q)
+    summary_zh: 10-Q：为部分 AI 云伙伴的数据中心租约违约提供土地、电力、机房担保，所有协议最大总敞口 35 亿美元，按信用衍生品核算。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm", title: "NVIDIA Form 10-Q (quarter ended Jul 26, 2026) — Guarantees", publisher: "SEC / NVIDIA 10-Q", date: "2026-08-26", tier: 1}
