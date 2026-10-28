@@ -67,4 +67,4 @@ overrides:
   - {match: {id: 54},  action: merge, into: 33, note: "银行 $42B 贷款是 $63B SPV 融资的第一留置权部分（另 $21B 为黑石第二留置权），此前被误判为 #1 担保的重复，放出后需并入 #33"}
   - {match: {id: 91},  action: merge, into: 33, note: "「银行团为 Anthropic 设备租赁融资 $42B」是 $63B SPV 融资的第一留置权，同 #54；去重守卫放出后并入"}
   - {match: {id: 25},  action: set, fields: {instrument: finance_lease, title_zh: "Anthropic 向博通融资租赁 TPU 设备，租金合计约 1,612 亿美元"}, note: "去重把 #35 并进了更早的 #25，标题改用 S-1 口径"}
-
+  - {match: {id: 198}, action: confirm, note: "Amazon 2023 协议 $4B 与 2024 协议 $4B（#112）金额相同被聚类误判；S-1 分别列明，两笔独立"}

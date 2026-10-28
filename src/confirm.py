@@ -70,7 +70,12 @@ def upsert_edge(con, ev, f, t, source, seed=0, distinct=False):
     """ev: dict（模型事件或种子）；source: dict(url,title,publisher,date,tier,quote,article_id)。返回 edge_id。"""
     kind = ev["kind"]
     amount = ev.get("amount_usd") or None
-    ex = None if distinct else find_edge(con, kind, f, t, amount, ev.get("announced"))
+    if distinct:
+        # 独立交易：只认同类型、同双方、同宣布日期且同样标记为独立的既有边，重复导入不新建
+        ex = con.execute("""SELECT * FROM edges WHERE kind=? AND from_entity=? AND to_entity=? AND distinct_deal=1
+                            AND announced=? AND review!='deleted' ORDER BY id LIMIT 1""", (kind, f, t, ev.get("announced"))).fetchone()
+    else:
+        ex = find_edge(con, kind, f, t, amount, ev.get("announced"))
     st = ev.get("status") or "announced"
     conf = float(ev.get("confidence") or (0.95 if seed else 0.5))
     if ex:
