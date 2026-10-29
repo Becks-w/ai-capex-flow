@@ -1,0 +1,32 @@
+# Nexus Data Centers（Anthropic 得州 Hubbard 园区）两笔融资，2026-10-29 对账补入。
+deals:
+  - kind: debt
+    from: NEXUS
+    to: MS
+    amount_usd: 15600000000
+    amount_text: $15.6 billion construction financing (Evercore 8-K exhibit); reported as ~$15B bank package led by Morgan Stanley ($14B bridge to be refinanced + revolver), split not disclosed
+    instrument: construction_loan
+    term: bridge expected to be refinanced in fall 2026; banks required credit support from Google, which guarantees billions of Anthropic's lease and power-payment obligations and is expected to take ~20% equity in the project
+    announced: "2026-07-30"
+    status: signed
+    title_zh: 摩根士丹利牵头 156 亿美元建设融资，Nexus 得州 Hubbard 园区（Anthropic 承租）
+    title_en: Morgan Stanley-led $15.6B construction financing for Nexus Data Centers' Hubbard, Texas campus (Anthropic tenant)
+    summary_zh: Nexus Data Centers 为其首个数据中心加燃气发电园区（得州 Hubbard，约 2,900 英亩，Anthropic 为主要租户）筹得约 156 亿美元建设融资，摩根士丹利牵头的银团提供约 150 亿（140 亿过桥贷款 + 循环授信，过桥拟于 2026 年秋再融资），谷歌为 Anthropic 的租金与电费支付提供数十亿美元担保并预计获约 20% 项目股权。156 亿的金额来自 Nexus 顾问 Evercore 的 2026 年三季度业绩公告（8-K 附件）。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/1360901/000162828026067716/earningsrelease3q26.htm", title: "Evercore Q3 2026 earnings release (8-K Exhibit 99.1) — advised Nexus Data Centers on the $15.6 billion construction financing", publisher: "SEC / Evercore 8-K", date: "2026-10-28", tier: 1, quote: "Nexus Data Centers on the $15.6 billion construction financing for its inaugural data center and power development project"}
+      - {url: "https://www.globaldatacenterhub.com/p/morgan-stanley-leads-15-billion-financing", title: "Morgan Stanley Leads $15 Billion Financing Talks for Anthropic's Texas Campus", publisher: "Global Data Center Hub", date: "2026-08-03", tier: 3, quote: "The financing package totals roughly $15 billion, consisting of a $14 billion bridge loan plus a revolving credit facility."}
+      - {url: "https://qz.com/morgan-stanley-anthropic-nexus-data-centers-texas-loan-073126", title: "Morgan Stanley leading $15B loan for Anthropic Texas data center", publisher: "Quartz", date: "2026-07-31", tier: 3}
+  - kind: debt
+    from: NEXUS
+    to: PRIVATE_CREDIT
+    amount_usd: 1300000000
+    amount_text: ~$1.3 billion mezzanine loan led by Eagle Point Credit Management, below ~$15B senior bank debt in a ~$16B project financing; pricing undisclosed
+    instrument: mezzanine_loan
+    announced: "2026-08-19"
+    status: signed
+    title_zh: Eagle Point 牵头 13 亿美元夹层贷款，Nexus 得州园区（Anthropic 承租）
+    title_en: Eagle Point-led ~$1.3B mezzanine loan for Nexus Data Centers' Anthropic-anchored Texas campus
+    summary_zh: Bloomberg 2026 年 8 月 19 日报道，Eagle Point Credit Management 牵头向 Nexus Data Centers 的得州 Hubbard 园区提供约 13 亿美元私募信贷夹层贷款，位于摩根士丹利牵头的约 150 亿高级债之下，合计约 160 亿项目融资；定价未披露。
+    sources:
+      - {url: "https://www.bloomberg.com/news/articles/2026-08-19/anthropic-tied-data-center-inks-1-3-billion-private-credit-loan", title: "Anthropic-Tied Data Center Inks $1.3 Billion Private Credit Loan", publisher: "Bloomberg", date: "2026-08-19", tier: 3}
+      - {url: "https://www.privateequitywire.co.uk/eagle-point-leads-1-3bn-private-credit-loan-for-anthropic-linked-texas-data-centre/", title: "Eagle Point leads $1.3bn private credit loan for Anthropic-linked Texas data centre", publisher: "Private Equity Wire", date: "2026-08-20", tier: 3, quote: "Eagle Point Credit Management is providing about $1.3bn of private credit financing ... part of a much larger $16bn project financing package for Nexus Data Centers' planned 2,900-acre campus"}

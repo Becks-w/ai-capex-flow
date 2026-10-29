@@ -178,3 +178,4 @@ entities:
   - {id: BRK, name: Berkshire Hathaway, name_zh: 伯克希尔, group: financier, ticker: BRK-B, country: US, aliases: ["Berkshire Hathaway", "Berkshire Hathaway Inc.", "Berkshire"]}
   - {id: HUGGING_FACE, name: Hugging Face, name_zh: Hugging Face, group: model_lab, country: US, aliases: ["Hugging Face", "HuggingFace"]}
   - {id: GENERAC, name: Generac, name_zh: Generac, group: equipment, ticker: GNRC, country: US, aliases: [Generac, "Generac Holdings", "Generac Holdings Inc."]}
+  - {id: NEXUS, name: Nexus Data Centers, name_zh: Nexus Data Centers, group: datacenter, country: US, aliases: ["Nexus Data Centers", "Nexus Data Center"]}
