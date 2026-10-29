@@ -35,6 +35,20 @@ python3 src/export.py                      # 只导出
 
 本地预览：`python3 -m http.server 8765 --directory docs` 然后打开 http://localhost:8765
 
+## Telegram 投递
+
+每轮 `run.sh` 结束后由 `src/notify.py` 自动跑（`--skip-notify` 可关）：
+
+- **日报**：本地时间过了 `digest_hour`（10 点）后的第一轮 run 发当天日报——新计入交易、候选升级为计入、≥10 亿美元的大额候选、新快照、分项累计。每条带一手来源链接。
+- **即时提醒**：任一轮 run 新计入 ≥ `alert_min_usd`（100 亿美元）的交易，当场推一条。
+- 凭据在仓库外 `~/.ai-capital-flows/.env`（`TELEGRAM_BOT_TOKEN`、`TELEGRAM_CHAT_ID`），不进 config。状态在 `data/notify_state.json`（已 gitignore 的 data/ 目录）。
+
+```bash
+python3 src/notify.py --digest --dry-run        # 看看日报长什么样，不发
+python3 src/notify.py --digest                  # 立即发日报
+python3 src/notify.py --baseline                # 大批回填后重记基线，避免下次日报刷屏
+```
+
 ## 目录
 
 | 路径 | 作用 |
