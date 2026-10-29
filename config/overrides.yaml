@@ -137,3 +137,7 @@ overrides:
   - {match: {id: 294}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
   - {match: {id: 296}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
   - {match: {id: 328}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+
+  # ===== 2026-10-29 第十一批：用户裁定 =====
+  - {match: {id: 236}, action: set, fields: {title_zh: "软银以 Arm 股票质押的保证金贷款增至 250 亿美元，为 OpenAI 增资筹资", summary_zh: "Bloomberg（经 The Edge 转载）与 Newsquawk 报道：软银把以 Arm 股票为抵押的保证金贷款额度增至 250 亿美元，用途是为对 OpenAI 的追加投资筹资。借款主体是软银集团、抵押物是 Arm 股票，不是 AI 公司自身的债务，但资金直接流向 AI 投资，按裁定计入债务分项。"}, note: "用户裁定：计入，备注为 OpenAI 增资筹资"}
+  - {match: {id: 236}, action: confirm, note: "用户裁定（2026-10-29）：双媒体来源、用途为 OpenAI 增资，计入债务分项"}
