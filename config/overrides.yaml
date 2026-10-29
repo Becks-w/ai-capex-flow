@@ -52,16 +52,16 @@ overrides:
   - {match: {id: 162}, action: delete, note: "S-1 无对 NVIDIA 的直接承诺；$86B = Nscale $44.6B + Lambda $41.3B，按实际服务商记录"}
   - {match: {id: 17},  action: set, fields: {amount_usd: 114500000000, amount_text: "at least approximately $114.5 billion (Apr 2026 – Jul 2033)", announced: "2026-03-01", title_zh: "Anthropic 承诺向谷歌至少支出 1,145 亿美元算力"}, note: "S-1 原文 $114.5B，取代 2025-10 公告的「数百亿」口径"}
   - {match: {id: 16},  action: set, fields: {amount_usd: 110000000000, amount_text: "at least $110.0 billion (May 2026 – Apr 2036)", title_zh: "Anthropic 承诺十年向亚马逊至少支出 1,100 亿美元"}, note: "S-1 原文 $110B，公告口径为逾 $100B"}
-  - {match: {id: 35},  action: set, fields: {kind: lease, instrument: finance_lease, title_zh: "Anthropic 向博通融资租赁 TPU 设备，租金合计约 1,612 亿美元"}, note: "S-1：五年期设备主租约，按融资租赁核算，非采购订单"}
-  - {match: {id: 47},  action: merge, into: 35, note: "S-1：博通租约由 Anthropic 两家 SPV 签约，二季度博通把一份租约的部分权利转让给第三方，即 $63B 银团融资对应部分；$63B 租赁包含在 $161.2B 内。SPV 债务 #33 与博通担保 #1 照留"}
+  - {match: {id: 35},  action: merge, into: 25, note: "S-1：五年期设备主租约，按融资租赁核算，非采购订单。去重已把 #35 并入更早的 #25，原来的 set 每次导出都把 #35 复活成零来源的候选，改为 merge"}
+  - {match: {id: 47},  action: merge, into: 25, note: "S-1：博通租约由 Anthropic 两家 SPV 签约，二季度博通把一份租约的部分权利转让给第三方，即 $63B 银团融资对应部分；$63B 租赁包含在 $161.2B 内。SPV 债务 #33 与博通担保 #1 照留"}
   - {match: {id: 116}, action: set, fields: {amount_usd: 20000000000, amount_text: "$5B invested (Series H, May 2026) + up to $15B facility under Amazon 2026 NPA, none issued as of Jun 30, 2026", announced: "2026-04-20", title_zh: "亚马逊投 Anthropic H 轮 50 亿美元，另有 150 亿美元附条件额度"}, note: "S-1 口径：2026 NPA 总额 $20B，已投 $5B 后剩 $15B；原记 $25B 多算 $5B"}
   - {match: {id: 154}, action: merge, into: 116, note: "「至多 $15B 分三期」即 Amazon 2026 NPA 剩余额度"}
   - {match: {id: 18},  action: supersede, by: 112, note: "「$8B 可转债」是 2023 + 2024 协议的累计数（$4B + $4B），非新投资"}
   - {match: {id: 153}, action: supersede, by: 112, note: "「持有 $6.2B 可转债」是 2023 协议展期票据 $2.2B + 2024 协议 $4B 的存量"}
 
   # ===== 2026-10-28 第三批：一手来源种子导入后的收尾 =====
-  - {match: {id: 191}, action: merge, into: 35, note: "S-1 种子按 order 匹配不到已改为 lease 的 #35，并入以挂上 S-1 来源"}
-  - {match: {id: 41},  action: merge, into: 35, note: "「博通联合银行与黑石设 $63B 租赁融资」是 $161.2B 主租约中由 SPV 融资的部分"}
+  - {match: {id: 191}, action: merge, into: 25, note: "S-1 种子按 order 匹配不到已改为 lease 的 #35，并入以挂上 S-1 来源"}
+  - {match: {id: 41},  action: merge, into: 25, note: "「博通联合银行与黑石设 $63B 租赁融资」是 $161.2B 主租约中由 SPV 融资的部分"}
   - {match: {id: 66},  action: merge, into: 193, note: "10-Q 原文：$108.5B = SB Energy/OpenAI $105B（#193）+ AI 云 $3.5B（#194），非最低收入担保"}
   - {match: {id: 22},  action: confirm, note: "Nscale $44.6B 与微软 $44.9B 金额相近、同日披露，被聚类误判为同一笔；S-1 分别列明，两笔独立"}
   - {match: {id: 54},  action: merge, into: 33, note: "银行 $42B 贷款是 $63B SPV 融资的第一留置权部分（另 $21B 为黑石第二留置权），此前被误判为 #1 担保的重复，放出后需并入 #33"}
@@ -95,3 +95,8 @@ overrides:
   - {match: {id: 371}, action: merge, into: 45, note: "Meta $25B 普通股定价是 #45 $37.5B 股权发行的组成（#3 已并入过一次）"}
   - {match: {id: 372}, action: merge, into: 45, note: "Meta $12.5B 强制可转优先股是 #45 的组成（#89 已并入过一次）"}
   - {match: {id: 45}, action: set, fields: {amount_usd: 37500000000, amount_text: "$25B Class A common (40M shares at $625, upsized from $22.5B) + $12.5B mandatory convertible preferred (250M depositary shares at $50)"}, note: "普通股档定价时从 $22.5B 上调到 $25B，合计 $37.5B（10-27 定价公告）"}
+
+  # ===== 2026-10-29 第七批：管理员复盘发现 =====
+  - {match: {id: 373}, action: delete, note: "「Meta 计划股权融资 $97.5B」是 #45（$37.5B 普通股+优先股）与 #50（$60B ATM）的汇总记法，计入会重复"}
+  - {match: {id: 40},  action: delete, note: "「Meta 最高 $95B 股权融资」同上，汇总记法"}
+  - {match: {id: 80},  action: confirm, note: "[A] 用户裁定：认 $9.1B，承租方写未披露；三家媒体正文一致，置信 0.5 是因为承租方未具名，不应因此留在候选区"}
