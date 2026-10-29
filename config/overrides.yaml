@@ -122,3 +122,18 @@ overrides:
   - {match: {id: 185}, action: delete, note: "NextEra 全股票收购 Dominion $67B：公用事业并购，不是 AI 算力交易"}
   - {match: {id: 381}, action: delete, note: "美国能源部向 Constellation 贷款 $5B 扩容核电：政府贷款、电力侧项目，范围外"}
   - {match: {id: 386}, action: delete, note: "英特尔收购量子软件 Classiq $2.3B：量子计算，范围外"}
+
+  # ===== 2026-10-29 第十批：ATM 增发计划标「额度」（用户裁定：保留在投资分项，但标注为额度上限） =====
+  - {match: {id: 50}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 205}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 212}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 213}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 229}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 268}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 283}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 286}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 289}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 290}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 294}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 296}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}
+  - {match: {id: 328}, action: set, fields: {instrument: atm_program}, note: "ATM 计划上限，非已募资金；页面标「额度」"}

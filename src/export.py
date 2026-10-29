@@ -9,6 +9,14 @@ from confirm import apply_overrides, recompute_all, dedupe, cluster_duplicates
 SITE = ROOT / SETTINGS.get("site_dir", "docs")
 
 
+# 「额度」：金额是计划 / 授信上限而非已募、已提款；页面标注，但仍计入分项
+FACILITY_INSTRUMENTS = {"atm_program", "revolver", "revolving_credit_facility", "revolving_credit_line", "credit_facility", "private_credit_facility"}
+
+
+def is_facility(e):
+    return (e["instrument"] or "") in FACILITY_INSTRUMENTS
+
+
 def counted(e):
     return e["tier"] in ("confirmed", "reported") and e["status"] != "cancelled" and not e["superseded_by"] and e["review"] not in ("deleted", "duplicate")
 
@@ -39,6 +47,7 @@ def export(con):
                                  "first_seen", "last_seen", "superseded_by", "seed", "review")}
         row["sources"] = srcs.get(e["id"], [])
         row["kind_zh"] = KIND_ZH.get(e["kind"], e["kind"])
+        row["facility"] = is_facility(e)
         if counted(e) and not quarantined:
             out_edges.append(row)
             v = e["amount_usd"] or 0
@@ -73,7 +82,9 @@ def export(con):
     for k in KINDS:
         rows = [e for e in out_edges if e["kind"] == k and not e.get("cancelled")]
         by_kind[k] = {"zh": KIND_ZH[k], "count": len(rows), "usd": sum(e["amount_usd"] or 0 for e in rows),
-                      "undisclosed": sum(1 for e in rows if not e["amount_usd"])}
+                      "undisclosed": sum(1 for e in rows if not e["amount_usd"]),
+                      "facility_usd": sum(e["amount_usd"] or 0 for e in rows if is_facility(e)),
+                      "facility_count": sum(1 for e in rows if is_facility(e))}
     news = [dict(r) for r in con.execute("""SELECT id, tier, source_name, publisher, title, COALESCE(orig_url, url) AS url, published_at, status, entity_hits
                                              FROM articles WHERE tier IN (2,3) AND prefilter_hit=1 ORDER BY published_at DESC, fetched_at DESC LIMIT ?""",
                                           (SETTINGS["news_feed_items"],))]
