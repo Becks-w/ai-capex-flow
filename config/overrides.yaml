@@ -100,3 +100,19 @@ overrides:
   - {match: {id: 373}, action: delete, note: "「Meta 计划股权融资 $97.5B」是 #45（$37.5B 普通股+优先股）与 #50（$60B ATM）的汇总记法，计入会重复"}
   - {match: {id: 40},  action: delete, note: "「Meta 最高 $95B 股权融资」同上，汇总记法"}
   - {match: {id: 80},  action: confirm, note: "[A] 用户裁定：认 $9.1B，承租方写未披露；三家媒体正文一致，置信 0.5 是因为承租方未具名，不应因此留在候选区"}
+
+  # ===== 2026-10-29 第八批：管理台「可执行」项 =====
+  - {match: {id: 389}, action: merge, into: 244, note: "Sopaipilla（Meta 埃尔帕索 SPV）债券：10-28 媒体回顾的「逾 $12B」与 7-23 定价的 $12.5B 种子是同一笔，债务 21 天窗口没合并"}
+  - {match: {id: 177}, action: merge, into: 33, note: "「银行与黑石组建 $63B 博通 AI 融资工具」是 SPV 银团贷款 #33 的投资记法，不是黑石对博通的投资"}
+  - {match: {id: 92},  action: merge, into: 33, note: "黑石的 $9B 承诺是 #33 $63B 银团里的份额"}
+  - {match: {id: 335}, action: merge, into: 38, note: "SpaceX $40B「GPU 租赁」是 Apollo 融资 #38 的租赁记法"}
+  - {match: {id: 32},  action: delete, note: "亚马逊投 Anthropic $8B 是 2023 $4B（#198）+ 2024 $4B（#112）的累计口径"}
+  - {match: {id: 2},   action: set, fields: {to_entity: UIG}, note: "收编 UIG，原隔离实体 NEW_UTILITY_INNOVATION_HOLDINGS_INC"}
+  - {match: {id: 380}, action: set, fields: {to_entity: UIG}, note: "同上，原 NEW_UTILITYINNOVATION_GROUP"}
+  - {match: {id: 380}, action: merge, into: 2, note: "Vertiv 收购 UIG 完成公告的两条记法（$1.45B 现金 + 最高 $1.15B 对价）"}
+  - {match: {id: 232}, action: set, fields: {from_entity: BRK}, note: "收编伯克希尔，6-K 已核实的 $10B 私募认购即计入"}
+  - {match: {id: 260}, action: merge, into: 232, note: "伯克希尔认购 Alphabet 的重复记法；改 set 会把它从「重复」复活成计入，必须 merge"}
+  - {match: {id: 383}, action: set, fields: {to_entity: HUGGING_FACE}, note: "收编 Hugging Face，英伟达 $12.9B 收购按投资计"}
+  - {match: {id: 382}, action: set, fields: {to_entity: GENERAC, announced: "2026-09-16", title_zh: "亚马逊向 Generac 采购 24 亿美元数据中心备用发电机，并获认股权证", amount_text: "$2.4 billion initial deliveries in 2027–2028; warrant for 1,693,745 shares at $200.9266 vesting on up to $8B of cumulative payments"}, note: "收编 Generac；Generac 8-K 2026-09-16（1.01 / 3.02）披露，媒体日期 10-28 是回顾"}
+  - {match: {id: 76},  action: set, fields: {announced: "2026-07-06", title_zh: "Anthropic 20 年租用 TeraWulf Hawesville 401MW 园区，合同租金约 190 亿美元"}, note: "TeraWulf 新闻稿 2026-07-06；此前记的 10-24 是 Yahoo 转载日期"}
+  - {match: {id: 61},  action: set, fields: {title_zh: "英伟达与 Amkor 达成 13 亿美元韩国先进封装产能协议", amount_text: "up to $1.3 billion agreement to expand 2.5D/3D advanced packaging capacity in South Korea (interposer wafer capacity +300% by end-2028); Arizona + Korea agreements total ~$3B"}, note: "韩国 $1.3B 与 7 月亚利桑那 $1.5B 是两笔，后者另以种子补入"}

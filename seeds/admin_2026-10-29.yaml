@@ -1,0 +1,71 @@
+# 管理台「可执行」项（2026-10-29）：给单源候选补公司公告 / 一手文件，并补 Amkor 7 月那笔。来源逐条核过原文。
+deals:
+  - kind: order
+    from: ANTHROPIC
+    to: WULF
+    amount_usd: 19000000000
+    amount_text: approximately $19 billion of contracted lease revenue over the initial 20-year term (≈401 MW critical IT load)
+    instrument: datacenter_lease
+    term: 20-year lease; Justified Data campus, Hawesville, Kentucky; initial capacity in service 2H 2027, full 401 MW by early 2028; investment-grade credit support expected
+    announced: "2026-07-06"
+    status: signed
+    title_zh: Anthropic 20 年租用 TeraWulf Hawesville 401MW 园区，合同租金约 190 亿美元
+    title_en: Anthropic signs 20-year lease for TeraWulf's 401 MW Justified Data campus (~$19B contracted revenue)
+    summary_zh: TeraWulf 2026 年 7 月 6 日新闻稿：与 Anthropic 签 20 年租约，肯塔基 Hawesville 园区约 401MW 关键 IT 负载，初始期合同租金约 190 亿美元，2027 下半年起投运、2028 年初满载；同时把 Abernathy 合资 50.1% 股权卖给 Fluidstack 牵头的投资方。
+    sources:
+      - {url: "https://investors.terawulf.com/news-events/press-releases/detail/142/", title: "TeraWulf Announces Anthropic Lease at Justified Data Campus and Sale of Majority Interest in Abernathy Joint Venture to Fluidstack", publisher: "TeraWulf (press release)", date: "2026-07-06", tier: 2, quote: "The lease is expected to generate approximately $19 billion of contracted lease revenue over the initial term"}
+  - kind: order
+    from: AMZN
+    to: GENERAC
+    amount_usd: 2400000000
+    amount_text: $2.4 billion initial deliveries in 2027–2028; warrant for 1,693,745 shares at $200.9266 vesting on up to $8B of cumulative payments
+    instrument: equipment_supply
+    term: Transaction Agreement 2026-09-16; backup generators for Amazon data centers; warrant to Amazon.com NV Investment Holdings exercisable through 2033-09-16
+    announced: "2026-09-16"
+    status: signed
+    title_zh: 亚马逊向 Generac 采购 24 亿美元数据中心备用发电机，并获认股权证
+    title_en: "Amazon–Generac transaction agreement: $2.4B of backup generators in 2027–28, warrant vesting on up to $8B"
+    summary_zh: Generac 2026 年 9 月 16 日 8-K（1.01 / 3.02 项）：与亚马逊签交易协议，2027–2028 年初始交付备用发电机约 24 亿美元；亚马逊获最多 169 万股认股权证（行权价 200.93 美元），按累计付款最高 80 亿美元分批归属。
+    sources:
+      - {url: "https://www.sec.gov/Archives/edgar/data/0001474735/000143774926030550/gnrc20260915_8k.htm", title: "Generac Holdings Inc. Form 8-K (Items 1.01, 3.02) — Transaction Agreement with Amazon.com, Inc.", publisher: "SEC / Generac 8-K", date: "2026-09-16", tier: 1, quote: "Initial deliveries of backup generators are expected to total $2.4 billion in 2027 and 2028."}
+  - kind: investment
+    from: PRIVATE_ROUND
+    to: CRUSOE
+    amount_usd: 3000000000
+    amount_text: more than $3 billion at ~$30 billion post-money valuation (Bloomberg, people familiar; co-led by Atreides and Valor, Mubadala participating)
+    instrument: equity_round
+    announced: "2026-09-03"
+    status: completed
+    title_zh: Crusoe 融资逾 30 亿美元，估值约 300 亿
+    title_en: Crusoe raises over $3B at ~$30B valuation (Bloomberg)
+    summary_zh: Bloomberg 2026 年 9 月 3 日报道 Crusoe 完成逾 30 亿美元融资，投后估值约 300 亿美元，Atreides 与 Valor 领投、Mubadala 参与；Crusoe 未发正式公告，金额与估值均来自知情人。此前 2025 年 10 月 E 轮 13.75 亿美元。
+    sources:
+      - {url: "https://news.bgov.com/crypto/crusoe-raises-over-3-billion-in-round-at-30-billion-valuation", title: "Crusoe Raises Over $3 Billion in Round at $30 Billion Valuation", publisher: "Bloomberg (via Bloomberg Government)", date: "2026-09-03", tier: 3, quote: "has raised over $3 billion in a funding round that values the startup at roughly $30 billion"}
+      - {url: "https://pulse2.com/crusoe-reportedly-raises-over-3-billion-at-30-billion-valuation-to-expand-ai-infrastructure/", title: "Crusoe Reportedly Raises Over $3 Billion At $30 Billion Valuation To Expand AI Infrastructure", publisher: "Pulse 2.0", date: "2026-09-11", tier: 3, quote: "has reportedly raised more than $3 billion in a new funding round ... values the AI cloud computing and data center infrastructure company at approximately $30 billion"}
+  - kind: order
+    from: NVDA
+    to: AMKOR
+    amount_usd: 1300000000
+    amount_text: up to $1.3 billion agreement to expand 2.5D/3D advanced packaging capacity in South Korea (interposer wafer capacity +300% by end-2028); Arizona + Korea agreements total ~$3B
+    instrument: capacity_prepayment
+    announced: "2026-10-21"
+    status: announced
+    title_zh: 英伟达与 Amkor 达成 13 亿美元韩国先进封装产能协议
+    title_en: NVIDIA–Amkor up to $1.3B South Korea advanced packaging capacity agreement
+    summary_zh: Amkor 2026 年 10 月 21 日公告（Business Wire）追加韩国产能投资，与英伟达在亚利桑那和韩国的多年期协议合计 30 亿美元；韩国这笔上限 13 亿美元来自媒体报道，公告本身只给合计数。与 7 月 23 日的 15 亿美元亚利桑那协议是两笔。
+    sources:
+      - {url: "https://iconnect007.com/article/152088/amkor-technology-nvidia-expand-ai-infrastructure-partnership/152085/aep", title: "Amkor Technology, NVIDIA Expand AI Infrastructure Partnership (Business Wire reprint)", publisher: "iConnect007 (Business Wire)", date: "2026-10-21", tier: 3, quote: "Amkor's multi-year agreements with NVIDIA in Arizona and South Korea total $3 billion."}
+  - kind: order
+    from: NVDA
+    to: AMKOR
+    distinct: true
+    amount_usd: 1500000000
+    amount_text: $1.5 billion multi-year advanced packaging and development agreement; NVIDIA prepayment to expand Amkor's U.S. (Arizona) advanced packaging capacity
+    instrument: capacity_prepayment
+    announced: "2026-07-23"
+    status: signed
+    title_zh: 英伟达预付 15 亿美元支持 Amkor 美国先进封装产能
+    title_en: NVIDIA–Amkor $1.5B multi-year advanced packaging agreement (U.S. capacity prepayment)
+    summary_zh: Amkor 2026 年 7 月 23 日新闻稿：与英伟达签 15 亿美元多年期先进封装与开发协议，英伟达预付款支持 Amkor 美国（亚利桑那）先进封装产能扩建。与 10 月 21 日韩国 13 亿美元协议是两笔，合计约 30 亿美元。
+    sources:
+      - {url: "https://www.businesswire.com/news/home/20260723873230/en/", title: "Amkor Technology Announces Strategic Partnership with NVIDIA to Expand Advanced Packaging and Test for Next Generation AI Infrastructure", publisher: "Amkor (Business Wire press release)", date: "2026-07-23", tier: 2, quote: "$1.5 Billion Multi-Year Advanced Packaging and Development Agreement to Support Expansion of Amkor's U.S. Advanced Packaging Capacity"}

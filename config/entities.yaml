@@ -173,3 +173,8 @@ entities:
   - {id: LENDER_SYNDICATE, name: Lender syndicate (unnamed banks), name_zh: 未具名银团, group: financier, pooled: true, aliases: []}
   - {id: PRIVATE_CREDIT, name: Private credit lenders (unnamed), name_zh: 未具名私募信贷, group: financier, pooled: true, aliases: []}
   - {id: UNDISCLOSED, name: Undisclosed counterparty, name_zh: 未披露对手方, group: other, pooled: true, aliases: []}
+  # 2026-10-29 管理台收编（原为抽取器自动建的 NEW_* 隔离实体）
+  - {id: UIG, name: UtilityInnovation Group, name_zh: UIG（Utility Innovation）, group: equipment, country: US, aliases: ["UtilityInnovation Group", "Utility Innovation Holdings", "Utility Innovation Group", "UIG"]}
+  - {id: BRK, name: Berkshire Hathaway, name_zh: 伯克希尔, group: financier, ticker: BRK-B, country: US, aliases: ["Berkshire Hathaway", "Berkshire Hathaway Inc.", "Berkshire"]}
+  - {id: HUGGING_FACE, name: Hugging Face, name_zh: Hugging Face, group: model_lab, country: US, aliases: ["Hugging Face", "HuggingFace"]}
+  - {id: GENERAC, name: Generac, name_zh: Generac, group: equipment, ticker: GNRC, country: US, aliases: [Generac, "Generac Holdings", "Generac Holdings Inc."]}
