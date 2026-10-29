@@ -119,6 +119,7 @@ tr.rowc:hover td{background:var(--surface-2)}
 .pill.t1{color:var(--good)}.pill.t2{color:var(--muted)}.pill.t3{color:var(--warn)}
 .pill.st{color:var(--muted);border-color:var(--line-2)}
 .pill.st.completed,.pill.st.signed{color:var(--good)}.pill.st.rumored{color:var(--warn)}.pill.st.cancelled{color:var(--bad)}
+.pill.fac{color:var(--warn);border-color:var(--warn);border-style:dashed}
 .pill.grp{color:#fff;border-color:transparent;background:var(--c)}
 
 /* 右侧面板 */

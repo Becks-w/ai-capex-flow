@@ -137,7 +137,7 @@
   function renderTop() {
     const d = state.data; const bk = d.stats.by_kind;
     const other = ['lease', 'guarantee', 'vendor_financing'];
-    const tiles = [['order', '订单'], ['investment', '投资'], ['debt', '债务']].map(([k, zh]) => `<div class="kpi" style="--k:${KIND_COLOR(k)}"><div class="k">${zh}</div><div class="v">${fmtUSD(bk[k].usd, true) || '—'}</div><div class="n">${bk[k].count} 笔${bk[k].undisclosed ? ` · 另 ${bk[k].undisclosed} 笔未披露金额` : ''}</div></div>`);
+    const tiles = [['order', '订单'], ['investment', '投资'], ['debt', '债务']].map(([k, zh]) => `<div class="kpi" style="--k:${KIND_COLOR(k)}"><div class="k">${zh}</div><div class="v">${fmtUSD(bk[k].usd, true) || '—'}</div><div class="n">${bk[k].count} 笔${bk[k].facility_usd ? ` · 含额度 ${fmtUSD(bk[k].facility_usd, true)}` : ''}${bk[k].undisclosed ? ` · 另 ${bk[k].undisclosed} 笔未披露金额` : ''}</div></div>`);
     const total = d.stats.total_usd || 1;
     const segs = KINDS.map(k => ({ k, v: bk[k].usd })).filter(s => s.v > 0);
     tiles.push(`<div class="kpi mix" style="--k:var(--line-2)"><div class="k">交易类型占比</div><div class="bar">${segs.map(s => `<i style="width:${(s.v / total * 100).toFixed(1)}%;background:${KIND_COLOR(s.k)}" title="${KIND_ZH[s.k]} ${fmtUSD(s.v)}"></i>`).join('')}</div><div class="lg">${segs.map(s => `<span><i class="sw" style="background:${KIND_COLOR(s.k)}"></i>${KIND_ZH[s.k]} <b>${(s.v / total * 100).toFixed(0)}%</b></span>`).join('')}</div><div class="n">${d.stats.edges} 笔交易 · ${d.stats.entities} 家公司${d.stats.candidates ? ` · ${d.stats.candidates} 条候选待核实` : ''}</div></div>`);
@@ -236,7 +236,7 @@
   const tip = $('#tip');
   function showTip(html, ev) { tip.innerHTML = html; tip.hidden = false; const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight; let x = ev.clientX + pad, y = ev.clientY + pad; if (x + w > innerWidth - 8) x = ev.clientX - w - pad; if (y + h > innerHeight - 8) y = ev.clientY - h - pad; tip.style.left = Math.max(4, x) + 'px'; tip.style.top = Math.max(4, y) + 'px'; }
   function hideTip() { tip.hidden = true; }
-  function dealTip(e) { return `<div class="t">${esc(entName(e.from_entity))} → ${esc(entName(e.to_entity))}</div><div><span class="pill kind" style="--c:${KIND_COLOR(e.kind)}">${KIND_ZH[e.kind]}</span> <b>${fmtUSD(e.amount_usd) || '金额未披露'}</b> · ${fmtDate(e.announced)} · ${STATUS_ZH[e.status] || e.status} · ${TIER_ZH[e.tier]}</div><div class="m">${esc(e.title_zh || e.title_en || '')}</div>`; }
+  function dealTip(e) { return `<div class="t">${esc(entName(e.from_entity))} → ${esc(entName(e.to_entity))}</div><div><span class="pill kind" style="--c:${KIND_COLOR(e.kind)}">${KIND_ZH[e.kind]}</span> <b>${fmtUSD(e.amount_usd) || '金额未披露'}</b> · ${fmtDate(e.announced)} · ${STATUS_ZH[e.status] || e.status}${e.facility ? ' · 额度上限' : ''} · ${TIER_ZH[e.tier]}</div><div class="m">${esc(e.title_zh || e.title_en || '')}</div>`; }
   function nodeTip(id, total, edges) { const e = state.ents.get(id); const n = edges.filter(x => x.from_entity === id || x.to_entity === id).length; return `<div class="t">${esc(e?.name || id)}${e?.name_zh && e.name_zh !== e.name ? ' · ' + esc(e.name_zh) : ''}</div><div class="m">${groupZh(e?.group)}${e?.ticker ? ' · ' + e.ticker : ''}</div><div>往来 <b>${fmtUSD(total) || '未披露'}</b> · ${n} 笔 · 点击查看明细</div>`; }
 
   // ---------- 选择 / 右侧面板 ----------
@@ -278,7 +278,7 @@
   }
   function dealCard(x, cp) {
     const srcs = (x.sources || []).slice(0, 4).map(s => `<a class="src t${s.tier}" href="${esc(s.url)}" target="_blank" rel="noopener" title="${esc(s.title || s.url)}">${esc(s.publisher || SRC_TIER[s.tier])}${s.tier <= 2 ? ' ✓' : ''}</a>`).join('');
-    const meta = [fmtDate(x.announced), `<span class="pill st ${x.status}">${STATUS_ZH[x.status] || x.status}</span>`, `<span class="pill t${x.tier === 'confirmed' ? 1 : x.tier === 'reported' ? 2 : 3}">${TIER_ZH[x.tier]}</span>`];
+    const meta = [fmtDate(x.announced), `<span class="pill st ${x.status}">${STATUS_ZH[x.status] || x.status}</span>${x.facility ? ' <span class="pill fac">额度</span>' : ''}`, `<span class="pill t${x.tier === 'confirmed' ? 1 : x.tier === 'reported' ? 2 : 3}">${TIER_ZH[x.tier]}</span>`];
     if (x.instrument && INSTR_ZH[x.instrument]) meta.push(INSTR_ZH[x.instrument]);
     if (x.term) meta.push(esc(x.term)); if (x.capacity) meta.push(esc(x.capacity));
     if (x.cancelled) meta.push('<span class="pill st cancelled">不计入总额</span>');
@@ -296,7 +296,7 @@
   // ---------- 表 ----------
   function renderTable() {
     const edges = edgesFiltered().sort((a, b) => (b.amount_usd || 0) - (a.amount_usd || 0));
-    $('#table tbody').innerHTML = edges.map(e => `<tr class="rowc" data-from="${esc(e.from_entity)}" data-edge="${e.id}"><td><span class="pill kind" style="--c:${KIND_COLOR(e.kind)}">${KIND_ZH[e.kind]}</span></td><td>${esc(entName(e.from_entity))}</td><td>${esc(entName(e.to_entity))}</td><td class="n r">${fmtUSD(e.amount_usd) || '<span class="muted" style="font-weight:400">未披露</span>'}</td><td>${fmtDate(e.announced)}</td><td><span class="pill st ${e.status}">${STATUS_ZH[e.status] || e.status}</span></td><td>${TIER_ZH[e.tier]}</td><td>${esc(e.title_zh || e.title_en || '')}</td><td class="r num">${(e.sources || []).length}</td></tr>`).join('');
+    $('#table tbody').innerHTML = edges.map(e => `<tr class="rowc" data-from="${esc(e.from_entity)}" data-edge="${e.id}"><td><span class="pill kind" style="--c:${KIND_COLOR(e.kind)}">${KIND_ZH[e.kind]}</span></td><td>${esc(entName(e.from_entity))}</td><td>${esc(entName(e.to_entity))}</td><td class="n r">${fmtUSD(e.amount_usd) || '<span class="muted" style="font-weight:400">未披露</span>'}</td><td>${fmtDate(e.announced)}</td><td><span class="pill st ${e.status}">${STATUS_ZH[e.status] || e.status}</span>${e.facility ? ' <span class="pill fac" title="计划 / 授信上限，非已募或已提款金额">额度</span>' : ''}</td><td>${TIER_ZH[e.tier]}</td><td>${esc(e.title_zh || e.title_en || '')}</td><td class="r num">${(e.sources || []).length}</td></tr>`).join('');
     $('#table tbody').querySelectorAll('tr').forEach(tr => tr.addEventListener('click', () => select(tr.dataset.from, true, +tr.dataset.edge)));
   }
 
