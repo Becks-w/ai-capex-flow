@@ -22,7 +22,7 @@ from export import counted, is_facility
 
 STATE = ROOT / "data" / "notify_state.json"
 ENV_FILES = [Path.home() / ".ai-capital-flows" / ".env", Path.home() / ".follow-builders" / ".env"]
-SITE_URL = SETTINGS.get("site_url", "https://becks-w.github.io/ai-capex-flow/")
+SITE_URL = SETTINGS.get("site_url", "https://heyneww.github.io/becky-ai-capex-flow/")
 DIGEST_HOUR = int(SETTINGS.get("digest_hour", 10))
 ALERT_MIN = float(SETTINGS.get("alert_min_usd", 10e9))
 CAND_MIN = float(SETTINGS.get("digest_candidate_min_usd", 1e9))

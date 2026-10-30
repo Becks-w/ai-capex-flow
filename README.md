@@ -3,7 +3,7 @@
 谁给谁下单、谁投资谁、谁欠谁的钱。自动盯 SEC 文件与新闻，`claude -p` 抽取（订阅额度，不走 API），两级核实后入账，
 导出到 `docs/` 由 GitHub Pages 公开展示。
 
-- 页面：`docs/index.html`，公开地址 https://becks-w.github.io/ai-capex-flow/ ；仓库 https://github.com/Becks-w/ai-capex-flow（Pages：main 分支 `/docs` 目录）
+- 页面：`docs/index.html`，公开地址 https://heyneww.github.io/becky-ai-capex-flow/ ；仓库 https://github.com/heyneww/becky-ai-capex-flow（Pages：main 分支 `/docs` 目录）
 - 数据：`docs/data/graph.json`，每日存档 `docs/data/archive/YYYY-MM-DD.json`（页面加 `?snapshot=YYYY-MM-DD` 回看）
 - 账本：`data/ledger.sqlite`（不进 git）
 

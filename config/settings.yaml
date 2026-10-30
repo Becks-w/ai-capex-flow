@@ -38,7 +38,7 @@ news_feed_items: 60
 filings_feed_items: 60
 
 # ---- Telegram 投递（凭据在 ~/.ai-capital-flows/.env，不进仓库）----
-site_url: https://becks-w.github.io/ai-capex-flow/
+site_url: https://heyneww.github.io/becky-ai-capex-flow/
 digest_hour: 10                     # 本地时间到这个小时后的第一轮 run 发当日日报（10:00 那轮，约 10:10 送达）
 alert_min_usd: 10000000000          # 新计入交易 ≥ 100 亿美元：每轮 run 结束立即推
 digest_candidate_min_usd: 1000000000   # 日报里列出的大额候选门槛
