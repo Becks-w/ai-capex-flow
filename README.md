@@ -1,11 +1,28 @@
-# ai-capital-flows — AI 订单与债务图谱
+# becky-ai-capex-flow — AI 订单与债务图谱
 
 谁给谁下单、谁投资谁、谁欠谁的钱。自动盯 SEC 文件与新闻，`claude -p` 抽取（订阅额度，不走 API），两级核实后入账，
 导出到 `docs/` 由 GitHub Pages 公开展示。
 
+**维护人**：Becky（[@Becks-w](https://github.com/Becks-w)）。2026-10-30 从个人仓库 `Becks-w/ai-capex-flow` 转入 heyneww，本机目录名仍叫 `ai-capital-flows`。
+代码改动请走 PR；数据纠错（确认 / 删除 / 合并某笔交易）不用改代码，改 `config/overrides.yaml` 即可，见「人工校对」。
+
 - 页面：`docs/index.html`，公开地址 https://heyneww.github.io/becky-ai-capex-flow/ ；仓库 https://github.com/heyneww/becky-ai-capex-flow（Pages：main 分支 `/docs` 目录）
 - 数据：`docs/data/graph.json`，每日存档 `docs/data/archive/YYYY-MM-DD.json`（页面加 `?snapshot=YYYY-MM-DD` 回看）
 - 账本：`data/ledger.sqlite`（不进 git）
+- `docs/` 下的内容由 Becky 本机的定时任务每 3 小时自动提交（提交信息 `Publish …`），不要手改；改页面逻辑请改 `docs/app.js` / `docs/style.css` 后走 PR
+
+## 同事如何跑起来
+
+仓库里没有账本和凭据，clone 下来后要自己准备：
+
+1. **Python 3.11+**，三个第三方包：`pip3 install requests feedparser pyyaml`。
+2. **`claude` CLI 已登录且有订阅**：抽取步骤调 `claude -p`，走订阅额度，不需要 API key。没装的话只能跑采集和导出（`--skip-extract`）。
+3. **SEC 要求 User-Agent 带联系邮箱**：把 `config/settings.yaml` 第 2 行 `sec_user_agent` 的邮箱换成自己的，否则 EDGAR 会拒绝。
+4. **Telegram 可选**：想收日报就在仓库外建 `~/.ai-capital-flows/.env`，写 `TELEGRAM_BOT_TOKEN` 和 `TELEGRAM_CHAT_ID`；不建则 `notify.py` 自动跳过。
+5. **账本从零开始**：第一次跑 `python3 src/seed_import.py` 导入 `seeds/` 的人工核实交易，再 `python3 src/collect_edgar.py 30` 回填一个月 EDGAR，然后 `python3 src/run.py --skip-publish` 本地看效果。
+6. **不要直接 `./run.sh`**：它最后一步会 `git push` 到本仓库 main，正式发布只由维护人的机器跑。本地验证一律加 `--skip-publish`。
+
+`launchd/` 里的 plist 写死了 `/Users/beckywang/...` 路径，仅供维护人本机使用；别的机器要定时跑需改路径。
 
 ## 流程
 
